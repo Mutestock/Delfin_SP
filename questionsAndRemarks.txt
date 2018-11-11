@@ -8,6 +8,8 @@ træner = medlem?
 betaling afdrag?
 Formand CRUD?
 Kasser + Træner User Case rettigheder (f.eks. Kan træner redigere i top 5 liste?)
+Medlemmer se top 5 ?
+
 
 
 use case remarks:
