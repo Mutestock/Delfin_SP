@@ -7,6 +7,7 @@ specifikt antal discipliner?
 træner = medlem?
 betaling afdrag?
 Formand CRUD
+Kasser + Træner User Case rettigheder (f.eks. Kan træner redigere i top 5 liste?)
 
 
 use case remarks:
