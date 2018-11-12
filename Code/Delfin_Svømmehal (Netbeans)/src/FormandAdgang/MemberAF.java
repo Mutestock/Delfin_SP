@@ -4,45 +4,40 @@ package FormandAdgang;
 public class MemberAF {
     
     Member member;
-    
-    boolean junior;
-    boolean senior;
     boolean ageBonus;
-
-    
+    boolean senior;
+    boolean junior;
     
     
     public MemberAF(Member member) {
         this.member = member;
-        this.junior = checkAgeJunior(member);
-        this.senior = checkAgeSenior(member);
-        this.ageBonus = checkAgeBonus(member);
-    }
-    
-    
-    public boolean checkAgeJunior(Member member) {
-        if (member.getAge() > 18) {
-            return false;
+        if (member.getAge() < 18) {
+            junior = true;
+            senior = false;
+        } else {
+            senior = true;
+            junior = false;
         }
-        return true;
-    }
-    
-    public boolean checkAgeSenior(Member member) {
-        if (member.getAge() <= 18) {
-            return false;
-        }
-        return true;
-    }
-    
-    public boolean checkAgeBonus(Member member) {
         if (member.getAge() > 60) {
-            return false;
+            ageBonus = true;
         }
-        return true;
     }
+
 
     public Member getMember() {
         return member;
     }
-    
+
+    public boolean isAgeBonus() {
+        return ageBonus;
+    }
+
+    public boolean isSenior() {
+        return senior;
+    }
+
+    public boolean isJunior() {
+        return junior;
+    }
+
 }
