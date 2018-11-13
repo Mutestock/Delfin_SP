@@ -5,12 +5,20 @@
  */
 package Kontingent;
 
+<<<<<<< HEAD
 import FormandAdgang.Member;
 import java.time.LocalDate;
 
 
 
 public class Kontingent {
+=======
+/**
+ *
+ * @author ahmed
+ */
+public class Kontingent extents FomandAdgang.member{
+>>>>>>> c7abae62ecbc3222151eb47a8566bfee5cf6ba50
     
     private LocalDate dayOfVisit = LocalDate.now();
     private String description;
