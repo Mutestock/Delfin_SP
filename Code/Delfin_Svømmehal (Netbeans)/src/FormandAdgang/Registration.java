@@ -3,7 +3,7 @@ package FormandAdgang;
 
 public class Registration {
     
-    
+    //det som jeg har lavet
     
 }
 
