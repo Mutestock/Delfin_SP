@@ -5,7 +5,6 @@ public class Member {
     
     String name;
     int age;
-    
     boolean activity;
     boolean competetive;
 
