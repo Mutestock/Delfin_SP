@@ -12,11 +12,11 @@ import java.util.Scanner;
 
 public class Registration {
 
-    ArrayList<Member> registeredMembers = new ArrayList();
+    ArrayList<MemberAF> registeredMembers = new ArrayList();
     String membersFile  ;
     private static final boolean DEBUG = true;
     
-    public void registerMember(Member member) {
+    public void registerMember(MemberAF member) {
         this.registeredMembers.add(member);
         System.out.println(registeredMembers);            
             
@@ -54,11 +54,16 @@ public class Registration {
         Member member1 = new Member("Emil",20,true,true);
         Member member2 = new Member("ahmed",20,true,true);
         Member member3 = new Member("Emil skov",20,false,true);
+        
+        MemberAF memberaf1 = new MemberAF(member1);
+        MemberAF memberaf2 = new MemberAF(member2);
+        MemberAF memberaf3 = new MemberAF(member3);
+        
         System.out.println(member1);
         Registration r = new Registration();
-        r.registerMember(member1);
-        r.registerMember(member2);
-        r.registerMember(member3);
+        r.registerMember(memberaf1);
+        r.registerMember(memberaf2);
+        r.registerMember(memberaf3);
     }
     
 }

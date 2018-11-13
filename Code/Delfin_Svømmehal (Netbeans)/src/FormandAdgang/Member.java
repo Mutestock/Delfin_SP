@@ -35,7 +35,7 @@ public class Member {
     
     @Override
     public String toString() {
-        return "Name: " + name + ", Age: " + age + ", Activity: " + activity + ", Competetive: " + competetive;
+        return "NAME: " + name + ", AGE: " + age + ", ACTIVITY: " + activity + ", COMPETETIVE: " + competetive;
     }
     
     

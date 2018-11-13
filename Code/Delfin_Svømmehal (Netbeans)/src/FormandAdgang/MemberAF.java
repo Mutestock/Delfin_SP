@@ -40,4 +40,12 @@ public class MemberAF {
         return junior;
     }
 
+    @Override
+    public String toString() {
+        return member + ", AGEBONUS: " + ageBonus + ", SENIOR: " + senior + ", JUNIOR: " + junior;
+    }
+
+    
+    
+    
 }
