@@ -6,6 +6,7 @@
 package Træner;
 
 import FormandAdgang.Member;
+import FormandAdgang.MemberAF;
 import java.util.ArrayList;
 
 /**
@@ -18,23 +19,22 @@ import java.util.ArrayList;
 public class Hold {
     
     
-    
-    ArrayList <Member> juniorTeam = new ArrayList();
-    ArrayList <Member> seniorTeam = new ArrayList();
-    ArrayList <Member> compJuiorTeam = new ArrayList();
-    ArrayList <Member> compSeniorteam = new ArrayList();
+    ArrayList <MemberAF> juniorTeam = new ArrayList();
+    ArrayList <MemberAF> seniorTeam = new ArrayList();
+    ArrayList <MemberAF> compJuniorTeam = new ArrayList();
+    ArrayList <MemberAF> compSeniorTeam = new ArrayList();
 
-    public void addMembers(Member members){
-       /if(Member.getAge >= 18 && Member.isCompetetive == true){
-        compSeniorteam.add(members);
+    public void addMembers(MemberAF members){
+       if(members.isSenior()&&members.getMember().isCompetetive()){
+        compSeniorTeam.add(members);
         }
-        if(Member.getAge >= 18 && Member.isCompetetive == false){
+        if(members.isSenior()){
         seniorTeam.add(members);
         }
-        if(Member.getAge < 18 && Member.isCompetetive == true){
-        CompjuniorTeam.add(members);
+        if(members.isJunior()&&members.getMember().isCompetetive()){
+        compJuniorTeam.add(members);
         }
-        if(Member.getAge < 18 && Member.isCompetetive == false){
+        if(members.isJunior()){
         juniorTeam.add(members);
         }
     
