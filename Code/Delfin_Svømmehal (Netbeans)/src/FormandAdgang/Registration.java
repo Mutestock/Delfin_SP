@@ -3,7 +3,7 @@ package FormandAdgang;
 
 public class Registration {
     
-    
+    int val = 10;
     
 }
 
