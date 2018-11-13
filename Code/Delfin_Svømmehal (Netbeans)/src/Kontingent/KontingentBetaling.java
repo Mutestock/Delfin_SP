@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package Kontingent;
-
+import FormandAdgang.Member;
 /**
  *
  * @author emils
  */
-public class KontingentBetaling extends FormandAdgang.Member{
+public class KontingentBetaling {
     
 }
