@@ -1,5 +1,6 @@
 
 package FormandAdgang;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class Registration {
     
     public void registerMember(Member member) {
         this.registreredMembers.add(member);
+        File file = new File(membersFile);
     }
     
 }
