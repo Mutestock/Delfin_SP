@@ -5,7 +5,6 @@
  */
 package Træner;
 
-
 /**
  *
  * @author ahmed
