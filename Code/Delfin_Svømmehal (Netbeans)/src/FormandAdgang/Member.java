@@ -36,7 +36,7 @@ public class Member {
     
     @Override
     public String toString() {
-        return "Member{" + "name=" + name + ", age=" + age + ", activityForm=" + activity + ", competetive=" + competetive + '}';
+        return "Name: " + name + ", Age: " + age + ", Activity: " + activity + ", Competetive: " + competetive;
     }
     
     
