@@ -17,10 +17,25 @@ import java.util.ArrayList;
 
 public class Hold {
     
-    ArrayList <Member> team = new ArrayList();
     
+    ArrayList <Member> juniorTeam = new ArrayList();
+    ArrayList <Member> seniorTeam = new ArrayList();
+    ArrayList <Member> compJuiorTeam = new ArrayList();
+    ArrayList <Member> compSeniorteam = new ArrayList();
 
-    public void addMember(){
+    public void addMembers(Member members){
+        if(Member.getAge >= 18 && Member.isCompetetive == true){
+        compSeniorteam.add(members);
+        }
+        if(Member.getAge >= 18 && Member.isCompetetive == false){
+        seniorTeam.add(members);
+        }
+        if(Member.getAge < 18 && Member.isCompetetive == true){
+        CompjuniorTeam.add(members);
+        }
+        if(Member.getAge < 18 && Member.isCompetetive == false){
+        juniorTeam.add(members);
+        }
     
     }
     

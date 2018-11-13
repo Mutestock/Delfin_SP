@@ -9,6 +9,6 @@ package Kontingent;
  *
  * @author ahmed
  */
-public class Kontingent {
+public class Kontingent extents FomandAdgang.member{
     
 }
