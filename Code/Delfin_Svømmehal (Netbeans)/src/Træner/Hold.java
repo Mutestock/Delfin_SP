@@ -18,13 +18,14 @@ import java.util.ArrayList;
 public class Hold {
     
     
+    
     ArrayList <Member> juniorTeam = new ArrayList();
     ArrayList <Member> seniorTeam = new ArrayList();
     ArrayList <Member> compJuiorTeam = new ArrayList();
     ArrayList <Member> compSeniorteam = new ArrayList();
 
     public void addMembers(Member members){
-        if(Member.getAge >= 18 && Member.isCompetetive == true){
+       /if(Member.getAge >= 18 && Member.isCompetetive == true){
         compSeniorteam.add(members);
         }
         if(Member.getAge >= 18 && Member.isCompetetive == false){
