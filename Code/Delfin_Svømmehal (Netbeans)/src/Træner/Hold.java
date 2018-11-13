@@ -5,10 +5,29 @@
  */
 package Træner;
 
+import FormandAdgang.Member;
+import java.util.ArrayList;
+
 /**
  *
  * @author Emil PC
  */
+
+    
+
 public class Hold {
+    
+    ArrayList <Member> team = new ArrayList();
+    
+
+    public void addMember(){
+    
+    }
+    
+    
+    
+    
+    
+    
     
 }
