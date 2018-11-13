@@ -23,12 +23,7 @@ public class Trainer extends FormandAdgang.Member{
     }
     
     public boolean isTrainer(){
-       if(trainer == true){
-       return true;
-       } 
-       else{
-       return false;}
-    
+       return trainer;
     }
 
     @Override
