@@ -21,6 +21,8 @@ public class GUI2 extends javax.swing.JFrame {
     public GUI2(GUI gui) {
         initComponents();
         this.gui = gui;
+        
+        
     }
 
     /**
