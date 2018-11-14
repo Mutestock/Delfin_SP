@@ -11,8 +11,6 @@ package Trainer;
  */
 public class Trainer {
     
-    //public String TrainerName;
-    //public int TrainerAge;
     private String name;
     
     

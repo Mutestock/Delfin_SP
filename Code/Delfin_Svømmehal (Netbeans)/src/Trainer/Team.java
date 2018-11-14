@@ -18,16 +18,16 @@ public class Team {
     //Hold.getMembers();
     
 
-    public void addMember(MemberAF member){
+    public void addMemberToTeam(MemberAF member){
         //First if statement checks whether the member is a competetive
         //member of a team, and then adds member to the correct age grp.
         if (member.getMember().isCompetetive()) {
             if(member.isJunior()) {
-                compJuniorTeam.addMember(member);
+                compJuniorTeam.addMemberToTeam(member);
                 return;
             }
             if(member.isSenior()) {
-                compSeniorTeam.addMember(member);
+                compSeniorTeam.addMemberToTeam(member);
                 return;
             }
         } 
@@ -35,12 +35,12 @@ public class Team {
         //Now we know the member is not competetive, and we can simply
         //sort the member based on their age.
         if (member.isJunior()) {
-            juniorTeam.addMember(member);
+            juniorTeam.addMemberToTeam(member);
         }
         //If neither of the states above is shown correct, the member can
         //only be a casual senior member.
         else {
-            seniorTeam.addMember(member);
+            seniorTeam.addMemberToTeam(member);
         }       
     }
 
