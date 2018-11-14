@@ -1,13 +1,15 @@
 package Kontingent;
 
 import FormandAdgang.Member;
-<<<<<<< HEAD
 import FormandAdgang.MemberAF;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
-=======
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
->>>>>>> 2b9680d0ed788407d7da6767afefd659c5d07349
+import java.util.ArrayList;
 
 /**
  *
@@ -18,53 +20,58 @@ public class Kontingent {
     //The function of this class is for the kasserer(cashier) to manage the data of the subscribers.
     //This includes using the basic information which is derived from the "FormandAdgang" package,
     //as a means of calculating the fee of the subscriber.
-    
-<<<<<<< HEAD
 //    private LocalDate dayOfVisit = LocalDate.now();
 //    private String description;
- 
     Member member;
-    private String kontingentFile;
+
+    ArrayList<Member> subList = new ArrayList();
+    private String kontingentFile = "D:\\subList.txt";
     private int subCatalogueYear;
     private int subFee;
 
-    public Kontingent(Member member,int subCatalogueYear) {
+    private static final boolean DEBUG = true;
+
+    public Kontingent(Member member, int subCatalogueYear) {
         this.subCatalogueYear = subCatalogueYear;
-        
-        if (member.isActivity()==true)
-        {
-            if (member.getAge()<=60)
-            {
+        this.subList.add(member);
+
+        if (member.isActivity() == true) {
+            if (member.getAge() <= 60) {
                 subFee = 1200;
-            }
-            else if (member.getAge()<=18)
-            {
+            } else if (member.getAge() <= 18) {
                 subFee = 1600;
-            }
-            else
-            {
+            } else {
                 subFee = 1000;
             }
         }
-        subFee= 500;  
-    }
+        subFee = 500;
+   
+        PrintWriter out = null;
+        try {
+            File file = new File(kontingentFile);
+            out = new PrintWriter(file);
 
-    //Currently working as a separate entity, not using the list of registered members.
+            for (int i = 0; i < subList.size(); ++i) {
+                out.println(subList.get(i));
+            }
+
+        } catch (FileNotFoundException ex) {
+            if (DEBUG) {
+                ex.printStackTrace();
+            }
+        } finally {
+            out.close();
+        }
+    }
     
-    public int calcFee (Member member)
-    {
-        if (member.isActivity()==true)
-        {
-            if (member.getAge()<=60)
-            {
+    //Currently working as a separate entity, not using the list of registered members.
+    public int calcFee(Member member) {
+        if (member.isActivity() == true) {
+            if (member.getAge() <= 60) {
                 return 1200;
-            }
-            else if (member.getAge()<=18)
-            {
+            } else if (member.getAge() <= 18) {
                 return 1600;
-            }
-            else
-            {
+            } else {
                 return 1000;
             }
         }
@@ -74,8 +81,6 @@ public class Kontingent {
     public int getSubCatalogueYear() {
         return subCatalogueYear;
     }
-    
-  
 
     public int getSubFee() {
         return subFee;
@@ -85,30 +90,4 @@ public class Kontingent {
         this.subFee = subFee;
     }
 
-
- 
-
-=======
-    private LocalDateTime kontingentÅr;
-    private String sum ;
-  
-
-    public Kontingent(LocalDateTime Kontingent,String sum) {
-        this.kontingentÅr = kontingentÅr;
-        this.sum = sum;
-    }
-    
-    public Kontingent(String sum)
-    {
-        this(LocalDateTime.now(), sum);
-    }
-    
-    String opDate = kontingentÅr.format(DateTimeFormatter.ISO_LOCAL_DATE);
-    
-  /*  public Kontingent( LocalDateTime hasPaid, String name, int age, boolean activityForm, boolean competetive ){   
-        super( name, age, activityForm, competetive);
-        this.Kontingent = hasPaid;
-        
-    }*/
->>>>>>> 2b9680d0ed788407d7da6767afefd659c5d07349
 }
