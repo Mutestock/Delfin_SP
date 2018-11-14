@@ -161,8 +161,13 @@ public class GUI2 extends javax.swing.JFrame {
         gui.setVisible(true);
         this.setVisible(false);
         
-        //SwingUtilities.updateComponentTreeUI(this);
         
+        
+        this.NameInput.setText("");
+        this.AgeInput.setText("");
+        this.compBox.setSelectedIndex(0);
+        this.actBox.setSelectedIndex(0);
+
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
@@ -171,9 +176,10 @@ public class GUI2 extends javax.swing.JFrame {
 
         gui.setVisible(true);
         this.setVisible(false);
-       this.NameInput.setText("");
-       this.AgeInput.setText("");
-      // this.compBox.se
+        this.NameInput.setText("");
+        this.AgeInput.setText("");
+        this.compBox.setSelectedIndex(0);
+        this.actBox.setSelectedIndex(0);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
