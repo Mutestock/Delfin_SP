@@ -10,16 +10,24 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import Trainer.*;
 
 public class Registration {
 
+    
+    
     ArrayList<MemberAF> registeredMembers = new ArrayList();
     String membersFile;
+    Team team;
     private static final boolean DEBUG = true;
 
+    
     public void registerMember(MemberAF member) {
+        //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
-        System.out.println(registeredMembers);
+        
+        //team.addMember is a method of adding the member to the correct team.
+        team.addMember(member);
 
         PrintWriter out = null;
         try {
