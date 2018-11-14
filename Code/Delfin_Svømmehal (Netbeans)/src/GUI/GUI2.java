@@ -21,8 +21,7 @@ public class GUI2 extends javax.swing.JFrame {
     public GUI2(GUI gui) {
         initComponents();
         this.gui = gui;
-        
-        
+
     }
 
     /**
@@ -152,32 +151,40 @@ public class GUI2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameInputActionPerformed
-        // TODO add your handling code here:
+        // This is where the age is put in.
     }//GEN-LAST:event_NameInputActionPerformed
 
     private void AgeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgeInputActionPerformed
-        // TODO add your handling code here:
+        // This is where the age is put in.
     }//GEN-LAST:event_AgeInputActionPerformed
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
+        // the confirm button, when the all inputs have been chosen.
+        
+         // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
-        
-        
-        
+
+        // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
         this.compBox.setSelectedIndex(0);
         this.actBox.setSelectedIndex(0);
 
-
+        int age = Integer.parseInt(AgeInput.getText());
+        String name = NameInput.getText();
+        boolean Active= (Boolean) this.actBox.getSelectedItem();
+        boolean Competetiv = (Boolean) this.compBox.getSelectedItem();
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
-    // public GUI2 gui2= new GUI2();
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // the return button to the menu.
+        
+         // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
+        // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
         this.compBox.setSelectedIndex(0);
