@@ -13,6 +13,7 @@ package GUI;
 public class GUI extends javax.swing.JFrame {
 
     private GUI2 gui2;
+    private GUIMember guiM;
 
     /**
      * Creates new form GUI
@@ -20,7 +21,7 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         gui2 = new GUI2(this);
-        
+        guiM = new GUIMember(this);
     }
 
     /**
@@ -49,6 +50,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("Delfine Svømmehal Prog.");
 
         jButton2.setText("Se medlemmer");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,12 +89,18 @@ public class GUI extends javax.swing.JFrame {
 
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
         this.setVisible(false);
         gui2.setVisible(true);
-        
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        guiM.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

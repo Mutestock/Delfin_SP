@@ -34,7 +34,7 @@ public class GUI2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        MenuButton = new javax.swing.JButton();
         Name = new javax.swing.JLabel();
         Age = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -49,10 +49,10 @@ public class GUI2 extends javax.swing.JFrame {
 
         jLabel1.setText("Add a new member:");
 
-        jButton2.setText("Back to menu");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        MenuButton.setText("Back to menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                MenuButtonActionPerformed(evt);
             }
         });
 
@@ -108,7 +108,7 @@ public class GUI2 extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ConfirmButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(MenuButton))
                     .addComponent(jLabel1))
                 .addGap(39, 39, 39))
         );
@@ -142,7 +142,7 @@ public class GUI2 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
+                            .addComponent(MenuButton)
                             .addComponent(ConfirmButton))
                         .addGap(33, 33, 33))))
         );
@@ -178,7 +178,7 @@ public class GUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // the return button to the menu.
         
          // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
@@ -190,7 +190,7 @@ public class GUI2 extends javax.swing.JFrame {
         this.compBox.setSelectedIndex(0);
         this.actBox.setSelectedIndex(0);
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -231,11 +231,11 @@ public class GUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel Age;
     private javax.swing.JTextField AgeInput;
     private javax.swing.JButton ConfirmButton;
+    private javax.swing.JButton MenuButton;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField NameInput;
     private javax.swing.JComboBox<String> actBox;
     private javax.swing.JComboBox<String> compBox;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
