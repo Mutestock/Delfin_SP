@@ -156,7 +156,7 @@ public class GUI2 extends javax.swing.JFrame {
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         gui.setVisible(true);
         this.setVisible(false);
-        gui.reload();
+        //gui.reload();
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
         
