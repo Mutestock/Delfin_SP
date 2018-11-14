@@ -11,29 +11,19 @@ package Trainer;
  */
 public class Trainer {
     
-    //public String TrainerName;
-    //public int TrainerAge;
-    public boolean trainer;
     private String name;
     
     
-    public Trainer(String name, boolean isTrainer ){   
+    public Trainer(String name){   
 
         this.name = name;
-        this.trainer = isTrainer;
         
-    }
-    
-    public boolean isTrainer(){
-       return trainer;
     }
 
     @Override
     public String toString() {
-        return name + " being a trainer is " + trainer + ". " +'}';
+        return "Trainer{" + "name=" + name + '}';
     }
-
-    
-    
+ 
     
 }

@@ -14,21 +14,29 @@ import Trainer.*;
 
 public class Registration {
 
-    
-    
     ArrayList<MemberAF> registeredMembers = new ArrayList();
     String membersFile;
-    Team team;
     private static final boolean DEBUG = true;
 
+    //Since this is just a reference, and not an instance,
+    //we will have to initialize the Team class in the GUI
+    //once the user will start the program.
+    Team team;
     
+    
+    public Registration() {
+        this.membersFile = "D:\\members.txt";
+    }
+    
+
     public void registerMember(MemberAF member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
-        
-        //team.addMember is a method of adding the member to the correct team.
-        team.addMember(member);
 
+        //team.addMember is a method of adding the member to the correct team.
+        team.addMemberToTeam(member);
+
+        //This 
         PrintWriter out = null;
         try {
             File file = new File(membersFile);
@@ -37,16 +45,20 @@ public class Registration {
             for (int i = 0; i < registeredMembers.size(); ++i) {
                 out.println(registeredMembers.get(i));
             }
-
-        } catch (FileNotFoundException ex) {
+        } 
+        
+        catch (FileNotFoundException ex) {
             if (DEBUG) {
                 ex.printStackTrace();
             }
-        } finally {
+        } 
+        
+        finally {
             out.close();
         }
     }
 
+<<<<<<< HEAD
     /* finally {
             try {
                 out.close();
@@ -58,6 +70,8 @@ public class Registration {
     public Registration() {
         this.membersFile = "C:\\Users/emils/Desktop/delfin opgave/members.txt";
     }
+=======
+>>>>>>> e108a771a47df7b2f4838a7efda1a19b59f4eaba
 
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 20, true, true);
