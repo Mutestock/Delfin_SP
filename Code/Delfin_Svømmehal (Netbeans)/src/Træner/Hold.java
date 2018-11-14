@@ -13,42 +13,28 @@ import java.util.ArrayList;
  *
  * @author Emil PC
  */
-
-    
-
 public class Hold {
-    
-    
-    ArrayList <MemberAF> juniorTeam = new ArrayList();
-    ArrayList <MemberAF> seniorTeam = new ArrayList();
-    ArrayList <MemberAF> compJuniorTeam = new ArrayList();
-    ArrayList <MemberAF> compSeniorTeam = new ArrayList();
 
-    public void addMembers(MemberAF members){
-       if(members.isSenior()&&members.getMember().isCompetetive()){
-        compSeniorTeam.add(members);
-        }
-        if(members.isSenior()){
-        seniorTeam.add(members);
-        }
-        if(members.isJunior()&&members.getMember().isCompetetive()){
-        compJuniorTeam.add(members);
-        }
-        if(members.isJunior()){
-        juniorTeam.add(members);
-        }
-    
+    ArrayList<MemberAF> SwimTeam = new ArrayList();
+
+    public void addMember(MemberAF members) {
+        SwimTeam.add(members);
     }
+<<<<<<< HEAD
     public void showMembers(){
      
     
        
+=======
+
+    public void showMembers(int numb) {
+
+        //switch() 
+>>>>>>> 273e269f3d3ca47848c6bec5b0d2c49d5c039d3f
     }
-    
-    
-    
-    
-    
-    
-    
+
+    public ArrayList<MemberAF> getMembers() {
+        return SwimTeam;
+    }
+
 }
