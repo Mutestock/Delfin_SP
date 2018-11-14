@@ -87,6 +87,7 @@ public class GUI extends javax.swing.JFrame {
         this.setVisible(false);
         gui2.setVisible(true);
         
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

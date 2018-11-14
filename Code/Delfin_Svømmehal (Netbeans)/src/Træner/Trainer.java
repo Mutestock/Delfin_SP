@@ -9,15 +9,17 @@ package Træner;
  *
  * @author ahmed
  */
-public class Trainer extends FormandAdgang.Member{
+public class Trainer {
     
     //public String TrainerName;
     //public int TrainerAge;
     public boolean trainer;
+    private String name;
     
     
-    public Trainer( boolean isTrainer, String name, int age, boolean activityForm, boolean competetive ){   
-        super( name, age, activityForm, competetive);
+    public Trainer(String name, boolean isTrainer ){   
+
+        this.name = name;
         this.trainer = isTrainer;
         
     }
@@ -28,8 +30,9 @@ public class Trainer extends FormandAdgang.Member{
 
     @Override
     public String toString() {
-        return "Trainer{" + "trainer=" + trainer + '}';
+        return name + " being a trainer is " + trainer + ". " +'}';
     }
+
     
     
     
