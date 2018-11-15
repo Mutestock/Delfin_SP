@@ -20,8 +20,8 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
-    private String filePath;
-    private PrintWriter printwriter;
+    private static String filePath;
+    private static PrintWriter printwriter;
 
     public FilePrinter(String filePath, PrintWriter printwriter) {
         this.filePath = filePath;
@@ -69,14 +69,14 @@ public class FilePrinter {
         }
     }
    
-    public String getFilePath() {
+    public static String getFilePath() {
         return filePath;
     }
 
-    public PrintWriter getPrintwriter(String filePath) {
+    public static PrintWriter getPrintwriter(String filePath) {
         
     //private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
-        PrintWriter printwriter = FilePrinter.createFile(filePath);
+        printwriter = FilePrinter.createFile(filePath);
         
         return printwriter;
     }

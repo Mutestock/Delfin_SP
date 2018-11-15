@@ -69,6 +69,8 @@ public class Registration {
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
 
+              
+        FilePrinter.getPrintwriter(FilePrinter.getFilePath());
         registeredMembers.add(member1);
         registeredMembers.add(member2);
         registeredMembers.add(member3);
