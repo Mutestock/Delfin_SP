@@ -52,9 +52,9 @@ public class Kontingent {
         navngivet efter en String parameter. Den metode bør sættes i den kommende
         fil-håndterings-klasse.
     */
-    public PrintWriter createFile(String kontingentFilePath) {
+    public PrintWriter createFile(String FilePath) {
         try {
-            File listOfNames = new File(kontingentFilePath);
+            File listOfNames = new File(FilePath);
             PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames));
 
             return infoWriter;
