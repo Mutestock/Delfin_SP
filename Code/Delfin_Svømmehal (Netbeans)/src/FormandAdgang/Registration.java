@@ -71,30 +71,25 @@ public class Registration {
 //        r.registerMember(memberaf3);
 //        r.registerMember(memberaf4);
 
-        Kontingent kontingent1 = new Kontingent(member1, 2018);
-        Kontingent kontingent2 = new Kontingent(member2, 2018);
-        Kontingent kontingent3 = new Kontingent(member3, 2018);
-        Kontingent kontingent4 = new Kontingent(member4, 2018);
-
-        System.out.println(Kontingent.calcFee(member1));
-        System.out.println(Kontingent.calcFee(member2));
-        System.out.println(Kontingent.calcFee(member3));
-        System.out.println(Kontingent.calcFee(member4));
+        
+        
+        System.out.println(member4.calcFee());
+        System.out.println(member2.calcFee());
 
         String filePath = "D:\\subList.txt";
-        PrintWriter subOut = Kontingent.createFile(filePath);
+        //PrintWriter subOut = Kontingent.createFile(filePath);
 
         ArrayList<Kontingent> subList = new ArrayList<>();
-        subList.add(kontingent1);
-        subList.add(kontingent2);
+        //subList.add(kontingent1);
+        //subList.add(kontingent2);
 
-        for (Kontingent subscriber : subList) {
+        /*for (Kontingent subscriber : subList) {
             Kontingent.createSubscription(subscriber, subOut);
             System.out.println(subscriber);
         }
 
         subOut.close();
-        Kontingent.getFileInfo(filePath);
+        Kontingent.getFileInfo(filePath);*/
 
     }
 

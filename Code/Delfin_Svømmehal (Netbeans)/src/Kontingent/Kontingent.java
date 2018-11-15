@@ -17,34 +17,29 @@ public class Kontingent {
     //The function of this class is for the kasserer(cashier) to manage the data of the subscribers.
     //This includes using the basic information which is derived from the "FormandAdgang" package,
     //as a means of calculating the fee of the subscriber.
-//private LocalDate dayOfVisit = LocalDate.now();
-//private String description;
-    Member member;
+    //private LocalDate dayOfVisit = LocalDate.now();
+    //private String description;
+    
 
-    private int subCatalogueYear, subFee;
+    public Kontingent() {
 
-    public Kontingent(Member member, int subCatalogueYear) {
-        this.subCatalogueYear = subCatalogueYear;
-        this.member = member;
     }
 
     //Currently working as a separate entity, not using the list of registered members.
     //Note that using additional fields could improve the quality of the 60+ 25% rule.
-    public static int calcFee(Member member) {
-        if (member.isActivity() == true) {
-            if (member.getAge() >= 60) {
-                return 1200;
-            } else if (member.getAge() >= 18) {
-                return 1600;
-            } else {
-                return 1000;
-            }
-        }
-        return 500;
-    }
-
-    public static PrintWriter createFile(String kontingentFilePath) {
-
+    
+    
+    
+    
+    // ------------------------------------------
+    // ----------------To Henning----------------
+    // ------------------------------------------
+    // ------------------------------------------
+    /* createFile() bør være en metode som simpelthen bare kan lave en fil
+        navngivet efter en String parameter. Den metode bør sættes i den kommende
+        fil-håndterings-klasse.
+    */
+    public PrintWriter createFile(String kontingentFilePath) {
         try {
             File listOfNames = new File(kontingentFilePath);
             PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames));
@@ -58,14 +53,29 @@ public class Kontingent {
         return null;
     }
 
-    public static void createSubscription(Kontingent kontingent, PrintWriter output) {
+    // ------------------------------------------
+    // ----------------To Henning----------------
+    // ------------------------------------------
+    // ------------------------------------------
+    /* createSubscription() kan vi godt beholde her i en kontingentklasse
+        men jeg vil gerne have den simplificeret til det punkt hvor alt ang.
+        filer i denne metode foregår gennem andre metode fra fil klassen.
+    */
+    public void createSubscription(Member member, PrintWriter output) {
 
-        String feeConv = Integer.toString(calcFee(kontingent.member));
-        String subYear = Integer.toString(kontingent.subCatalogueYear);
-        output.println(kontingent + feeConv + subYear);
+        String feeConv = Integer.toString(member.calcFee());
+        String subYear = Integer.toString(member.getSubCatalogueYear());
+        output.println(member + feeConv + subYear);
     }
 
-    public static void getFileInfo(String path) {
+    
+    // ------------------------------------------
+    // ----------------To Henning----------------
+    // ------------------------------------------
+    // ------------------------------------------
+    /* Igen en metode som bør være under filhåndteringsklassen.
+    */
+    public void getFileInfo(String path) {
         System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
 
@@ -87,9 +97,6 @@ public class Kontingent {
         }
     }
 
-    @Override
-    public String toString() {
-        return member + " " + " " + subCatalogueYear + " Fee: " + subFee;
-    }
+
 
 }

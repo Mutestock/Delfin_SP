@@ -10,10 +10,14 @@ public class Member {
     private boolean competetive;
     //--Need to add more at a certain point (We need "stamoplysninger")!--//
     
+    //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
     private boolean senior;
     private boolean junior;
     
+    //Kontingent fields has been merged to 
+    private int subCatalogueYear;
+    private int subFee;
     
     
     public Member(String name, int age, boolean activityForm, boolean competetive) {
@@ -66,14 +70,39 @@ public class Member {
         return junior;
     }
 
-    
-    
-    @Override
-    public String toString() {
-        return "Member{" + "name=" + name + ", age=" + age + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + '}';
+    public int getSubCatalogueYear() {
+        return subCatalogueYear;
+    }
+
+    public int getSubFee() {
+        return subFee;
     }
 
     
+    
+    //Logic method used to calculate a certain members fee (based on their age)
+    public int calcFee() {
+        if (isActivity() == true) {
+            if (getAge() >= 60) {
+                return 1200;
+            } else if (getAge() >= 18) {
+                return 1600;
+            } else {
+                return 1000;
+            }
+        }
+        return 500;
+    }
+
+    
+    //toString will have to get simplified and easier to read.
+    @Override
+    public String toString() {
+        return "Member{" + "name=" + name + ", age=" + age + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + ", subCatalogueYear=" + subCatalogueYear + ", subFee=" + subFee + '}';
+    }
+    
+    
+   
     
     
     
