@@ -15,7 +15,6 @@ import Trainer.*;
 public class Registration {
 
     ArrayList<Member> registeredMembers = new ArrayList();
-    String membersFile;
     private static final boolean DEBUG = true;
 
     //Since this is just a reference, and not an instance,
@@ -26,7 +25,7 @@ public class Registration {
     
     
     public Registration() {
-        this.membersFile = "D:\\members.txt";
+        
     }
     
     
@@ -37,7 +36,13 @@ public class Registration {
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
 
-        PrintWriter out = null;
+        //Method that in theory could update the file of registered members
+        //by adding a new member as a parameter.
+        fileHandle.updateRegisteredMembers(member);
+        
+        //Code below was an attempt to update the file within the method of
+        //registering a new member.
+        /*PrintWriter out = null;
         try {
             File file = new File(membersFile);
             out = new PrintWriter(file);
@@ -53,7 +58,7 @@ public class Registration {
             }
         } finally {
             out.close();
-        }
+        }*/
     }
 
     
