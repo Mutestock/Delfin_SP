@@ -24,6 +24,9 @@ public class Registration {
 
     public Registration() {
 
+       
+        //this.membersFile = "D:\\members.txt";
+        
     }
     private static String registrationPath = "D:\\registrationNew.txt";
     private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
@@ -37,31 +40,16 @@ public class Registration {
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
 
-        //Method that in theory could update the file of registered members
-        //by adding a new member as a parameter.
-        //fileHandle.updateRegisteredMembers(member);
-        //Code below was an attempt to update the file within the method of
-        //registering a new member.
-        /*PrintWriter out = null;
-        try {
-            File file = new File(membersFile);
-            out = new PrintWriter(file);
-
-            for (int i = 0; i < registeredMembers.size(); ++i) {
-                out.println(registeredMembers.get(i));
-            }
-
-        } catch (FileNotFoundException ex) {
-
-            if (DEBUG) {
-                ex.printStackTrace();
-            }
-        } finally {
-            out.close();
-        }*/
     }
 
+<<<<<<< HEAD
  
+=======
+
+    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
+        for (int i = 0; i < arrayList.size(); ++i) {
+            printer.println(arrayList.get(i));}}
+>>>>>>> 260b28a201da7ddbe5cf64fe1176688b9e2aa61b
 
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);

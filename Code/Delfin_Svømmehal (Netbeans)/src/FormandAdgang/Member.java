@@ -50,7 +50,7 @@ public class Member {
         return age;
     }
 
-    public boolean isActivity() {
+    public boolean isActive() {
         return activity;
     }
 
@@ -82,7 +82,7 @@ public class Member {
     
     //Logic method used to calculate a certain members fee (based on their age)
     public int calcFee() {
-        if (isActivity() == true) {
+        if (isActive() == true) {
             if (getAge() >= 60) {
                 return 1200;
             } else if (getAge() >= 18) {
