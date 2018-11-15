@@ -14,7 +14,7 @@ import Trainer.*;
 
 public class Registration {
 
-    ArrayList<MemberAF> registeredMembers = new ArrayList();
+    ArrayList<Member> registeredMembers = new ArrayList();
     String membersFile;
     private static final boolean DEBUG = true;
 
@@ -23,6 +23,8 @@ public class Registration {
     //once the user will start the program.
     Team team;
 
+    
+    
     public Registration() {
         this.membersFile = "D:\\members.txt";
     }
@@ -30,7 +32,7 @@ public class Registration {
     
     
 
-    public void registerMember(MemberAF member) {
+    public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
 
@@ -63,11 +65,6 @@ public class Registration {
         Member member2 = new Member("ahmed", 20, true, true);
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
-
-        MemberAF memberaf1 = new MemberAF(member1);
-        MemberAF memberaf2 = new MemberAF(member2);
-        MemberAF memberaf3 = new MemberAF(member3);
-        MemberAF memberaf4 = new MemberAF(member4);
 
         // System.out.println(member1);
         Registration r = new Registration();
