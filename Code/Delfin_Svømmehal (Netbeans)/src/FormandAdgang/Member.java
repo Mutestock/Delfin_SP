@@ -3,11 +3,12 @@ package FormandAdgang;
 
 public class Member {
     
+    //The fields/values of a member.
     String name;
     int age;
     boolean activity;
     boolean competetive;
-
+    //--Need to add more at a certain point (We need "stamoplysninger")!--//
     
     public Member(String name, int age, boolean activityForm, boolean competetive) {
         this.name = name;

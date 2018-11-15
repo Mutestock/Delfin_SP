@@ -8,7 +8,8 @@ public class MemberAF {
     boolean senior;
     boolean junior;
     
-    
+    //The constructor of a members is consisted of giving a member a "shell"
+    //of which it is gained more values based on the members age.
     public MemberAF(Member member) {
         this.member = member;
         if (member.getAge() < 18) {

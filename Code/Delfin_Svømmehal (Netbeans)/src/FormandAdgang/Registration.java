@@ -58,6 +58,7 @@ public class Registration {
         }
     }
 
+    
 
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 20, true, true);
