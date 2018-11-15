@@ -14,19 +14,16 @@ import Trainer.*;
 
 public class Registration {
 
-    // static String registrationPath = ;
-    //static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
     static ArrayList<Member> registeredMembers = new ArrayList();
     private static final boolean DEBUG = true;
 
     //Since this is just a reference, and not an instance,
     //we will have to initialize the Team class in the GUI
-    //once the user will start the program.
+    //once the user will start the program. Initializer 
+    //that gets information from the text file upon starting.
     Team team;
 
     public Registration() {
-
-        //this.membersFile = "D:\\members.txt";
     }
 
     public void registerMember(Member member) {
@@ -35,7 +32,6 @@ public class Registration {
 
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
-
     }
 
     public static void main(String[] args) {
@@ -55,11 +51,6 @@ public class Registration {
 
         FilePrinter.subLister(registeredMembers, print);
 
-        // System.out.println(member1);
-//        r.registerMember(memberaf1);
-//        r.registerMember(memberaf2);
-//        r.registerMember(memberaf3);
-//        r.registerMember(memberaf4);
         print.close();
     }
 }
