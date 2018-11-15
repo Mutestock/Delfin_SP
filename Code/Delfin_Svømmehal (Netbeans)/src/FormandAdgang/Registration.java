@@ -14,6 +14,8 @@ import Trainer.*;
 
 public class Registration {
 
+    // static String registrationPath = ;
+    //static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
     static ArrayList<Member> registeredMembers = new ArrayList();
     private static final boolean DEBUG = true;
 
@@ -24,14 +26,8 @@ public class Registration {
 
     public Registration() {
 
-       
         //this.membersFile = "D:\\members.txt";
-        
     }
-    private static String registrationPath = "D:\\registrationNew.txt";
-    private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
-
-   
 
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
@@ -48,20 +44,22 @@ public class Registration {
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
 
-              
-        FilePrinter.getPrintwriter(FilePrinter.getFilePath());
+        String path = FilePrinter.getFilePath();
+        PrintWriter print = FilePrinter.getPrintwriter(path);
+
         registeredMembers.add(member1);
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
         Registration r = new Registration();
-        FilePrinter.subLister(registeredMembers, subOut1);
+
+        FilePrinter.subLister(registeredMembers, print);
 
         // System.out.println(member1);
 //        r.registerMember(memberaf1);
 //        r.registerMember(memberaf2);
 //        r.registerMember(memberaf3);
 //        r.registerMember(memberaf4);
-        subOut1.close();
+        print.close();
     }
 }
