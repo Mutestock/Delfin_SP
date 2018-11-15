@@ -13,66 +13,51 @@ import java.util.Scanner;
 import Trainer.*;
 
 public class Registration {
-    
+
     ArrayList<MemberAF> registeredMembers = new ArrayList();
     String membersFile;
     private static final boolean DEBUG = true;
-<<<<<<< HEAD
 
     //Since this is just a reference, and not an instance,
     //we will have to initialize the Team class in the GUI
     //once the user will start the program.
     Team team;
-    
-    
+
     public Registration() {
         this.membersFile = "C:\\Users/emils/Desktop/delfin opgave/members.txt";
         //this.membersFile = "D:\\members.txt";
     }
     
-
-=======
     
->>>>>>> pokasdf
+    
+
     public void registerMember(MemberAF member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
-<<<<<<< HEAD
 
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
 
-        //This 
-=======
-        System.out.println(registeredMembers);
-        
->>>>>>> pokasdf
         PrintWriter out = null;
         try {
             File file = new File(membersFile);
             out = new PrintWriter(file);
-            
+
             for (int i = 0; i < registeredMembers.size(); ++i) {
                 out.println(registeredMembers.get(i));
             }
-<<<<<<< HEAD
-        } 
-        
-        catch (FileNotFoundException ex) {
-=======
-            
+
         } catch (FileNotFoundException ex) {
->>>>>>> pokasdf
+
             if (DEBUG) {
                 ex.printStackTrace();
             }
-        } 
-        
-        finally {
+        } finally {
             out.close();
         }
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public ArrayList<MemberAF> getRegisteredMembers() {
         return registeredMembers;
@@ -113,12 +98,17 @@ public class Registration {
     
 >>>>>>> pokasdf
 >>>>>>> 22e330560ee4ff4eeb5324d1564c80e4f258fa20
+=======
+    
+    
+    
+>>>>>>> 0ee5ad5318bb60e8ea58d0105e74058edd92e951
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
-        
+
         MemberAF memberaf1 = new MemberAF(member1);
         MemberAF memberaf2 = new MemberAF(member2);
         MemberAF memberaf3 = new MemberAF(member3);
@@ -135,18 +125,15 @@ public class Registration {
         Kontingent kontingent2 = new Kontingent(member2, 2018);
         Kontingent kontingent3 = new Kontingent(member3, 2018);
         Kontingent kontingent4 = new Kontingent(member4, 2018);
-        
+
         System.out.println(Kontingent.calcFee(member1));
         System.out.println(Kontingent.calcFee(member2));
         System.out.println(Kontingent.calcFee(member3));
         System.out.println(Kontingent.calcFee(member4));
-        
-        
-        
-        
-        String filePath = "D:\\subList.txt";        
+
+        String filePath = "D:\\subList.txt";
         PrintWriter subOut = Kontingent.createFile(filePath);
-        
+
         ArrayList<Kontingent> subList = new ArrayList<>();
         subList.add(kontingent1);
         subList.add(kontingent2);
@@ -154,11 +141,11 @@ public class Registration {
         for (Kontingent subscriber : subList) {
             Kontingent.createSubscription(subscriber, subOut);
             System.out.println(subscriber);
-        }        
-        
+        }
+
         subOut.close();
         Kontingent.getFileInfo(filePath);
-        
+
     }
-    
+
 }
