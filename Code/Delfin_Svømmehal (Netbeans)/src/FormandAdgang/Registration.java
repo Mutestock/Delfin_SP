@@ -64,6 +64,7 @@ public class Registration {
         Member member2 = new Member("ahmed", 20, true, true);
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
+        
 
         MemberAF memberaf1 = new MemberAF(member1);
         MemberAF memberaf2 = new MemberAF(member2);

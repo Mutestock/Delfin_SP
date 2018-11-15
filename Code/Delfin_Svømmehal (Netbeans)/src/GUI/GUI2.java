@@ -1,5 +1,8 @@
 package GUI;
 
+import FormandAdgang.Member;
+import FormandAdgang.MemberAF;
+import FormandAdgang.Registration;
 import javax.swing.SwingUtilities;
 
 /*
@@ -160,10 +163,23 @@ public class GUI2 extends javax.swing.JFrame {
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         // the confirm button, when the all inputs have been chosen.
-        
-         // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+
+        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
+        
+        
+        // takes the input values and implements them into the register class to save them.
+        int age = Integer.parseInt(AgeInput.getText());
+        String name = NameInput.getText();
+        boolean active = (Boolean) this.actBox.getSelectedItem();
+        boolean competetive = (Boolean) this.compBox.getSelectedItem();
+
+        Member member = new Member(name, age, active, competetive);
+        MemberAF memberAF = new MemberAF(member);
+
+        Registration r = new Registration();
+        r.registerMember(memberAF);
 
         // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
@@ -171,17 +187,14 @@ public class GUI2 extends javax.swing.JFrame {
         this.compBox.setSelectedIndex(0);
         this.actBox.setSelectedIndex(0);
 
-        int age = Integer.parseInt(AgeInput.getText());
-        String name = NameInput.getText();
-        boolean Active= (Boolean) this.actBox.getSelectedItem();
-        boolean Competetiv = (Boolean) this.compBox.getSelectedItem();
+
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // the return button to the menu.
-        
-         // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+
+        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
         // makes sure that the input fields is always clean when is is open again
