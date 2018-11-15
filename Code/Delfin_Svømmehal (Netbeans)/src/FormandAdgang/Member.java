@@ -24,7 +24,7 @@ public class Member {
         return age;
     }
 
-    public boolean isActivity() {
+    public boolean isActivite() {
         return activity;
     }
 

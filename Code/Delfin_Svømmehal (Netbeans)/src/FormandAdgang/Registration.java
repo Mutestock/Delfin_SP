@@ -59,15 +59,26 @@ public class Registration {
         }
     }
 
-    /* finally {
-            try {
-                out.close();
-            } catch (IOException ex) {
-                if(DEBUG) {
-                }
-        }
-        }*/
- 
+    public ArrayList<MemberAF> getRegisteredMembers() {
+        return registeredMembers;
+    }
+
+    public String getMembersFile() {
+        return membersFile;
+    }
+
+    public static boolean isDEBUG() {
+        return DEBUG;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    
+    
+    
+    
        
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 20, true, true);
