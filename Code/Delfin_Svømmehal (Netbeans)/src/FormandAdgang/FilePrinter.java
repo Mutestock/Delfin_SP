@@ -25,9 +25,9 @@ public class FilePrinter {
         this.filePath = filePath;
     }
 
-    public static PrintWriter createFile(String FilePath) {
+    public static PrintWriter createFile(String filePath) {
         try {
-            File listOfNames = new File(FilePath);
+            File listOfNames = new File(filePath);
             PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames));
 
             return infoWriter;

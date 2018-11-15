@@ -62,9 +62,9 @@ public class Registration {
         }*/
     }
 
-    public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
-        for (int i = 0; i < ArrayList.size(); ++i) {
-            printer.println(ArrayList.get(i));
+    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
+        for (int i = 0; i < arrayList.size(); ++i) {
+            printer.println(arrayList.get(i));
         }
     }
 
