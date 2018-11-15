@@ -25,11 +25,10 @@ public class Registration {
     public Registration() {
 
     }
-    static String registrationPath = "D:\\registrationNew.txt";
-    static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
+    private static String registrationPath = "D:\\registrationNew.txt";
+    private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
 
-    static String sublistPath = "D:\\subListNew.txt";
-    static PrintWriter subOut2 = FilePrinter.createFile(sublistPath);
+   
 
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
@@ -62,11 +61,7 @@ public class Registration {
         }*/
     }
 
-    public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
-        for (int i = 0; i < ArrayList.size(); ++i) {
-            printer.println(ArrayList.get(i));
-        }
-    }
+ 
 
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);
@@ -78,18 +73,14 @@ public class Registration {
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
-        
-        subLister(registeredMembers, subOut1);
-        
+        Registration r = new Registration();
+        FilePrinter.subLister(registeredMembers, subOut1);
 
         // System.out.println(member1);
-        Registration r = new Registration();
 //        r.registerMember(memberaf1);
 //        r.registerMember(memberaf2);
 //        r.registerMember(memberaf3);
 //        r.registerMember(memberaf4);
-
         subOut1.close();
     }
-
 }

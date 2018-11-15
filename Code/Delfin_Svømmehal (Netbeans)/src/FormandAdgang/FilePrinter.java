@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +20,12 @@ import java.io.PrintWriter;
  */
 public class FilePrinter {
 
-    String filePath;
+    private String filePath;
+    private PrintWriter printwriter;
 
-    public FilePrinter(String filePath) {
+    public FilePrinter(String filePath, PrintWriter printwriter) {
         this.filePath = filePath;
+        this.printwriter = printwriter;
     }
 
     public static PrintWriter createFile(String FilePath) {
@@ -59,8 +62,24 @@ public class FilePrinter {
             System.out.println("IOException...");
             System.exit(0);
         }
-
+    }
+   public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
+        for (int i = 0; i < ArrayList.size(); ++i) {
+            printer.println(ArrayList.get(i));
+        }
+    }
+   
+    public String getFilePath() {
+        return filePath;
     }
 
-  
+    public PrintWriter getPrintwriter(String filePath) {
+        
+    //private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
+        PrintWriter printwriter = FilePrinter.createFile(filePath);
+        
+        return printwriter;
+    }
 }
+
+ 
