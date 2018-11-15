@@ -33,7 +33,17 @@ public class MemberTest {
         assertNotNull(memberTest);
         assertEquals("Skovbo",memberTest.getName());
         assertEquals(1,memberTest.getAge());
+        assertEquals(true,memberTest.isActivite());
+        assertEquals(true,memberTest.isCompetetive());
     }
     
+    
+    
+    @Test
+    public void testMemberAFMethods() {
+        // positive test
+        Member memberTest = new Member("Skovbo",1,true,true);
+        MemberAF memberAFTest = new MemberAF(memberTest);
+    }
 
 }
