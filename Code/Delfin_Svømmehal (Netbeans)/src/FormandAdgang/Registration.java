@@ -23,13 +23,10 @@ public class Registration {
     //once the user will start the program.
     Team team;
 
-    
-    
     public Registration() {
         this.membersFile = "D:\\members.txt";
     }
-    
-    
+
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
@@ -56,8 +53,6 @@ public class Registration {
         }
     }
 
-    
-
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
@@ -71,8 +66,10 @@ public class Registration {
 //        r.registerMember(memberaf3);
 //        r.registerMember(memberaf4);
 
+        String filePathNew =  "D:\\subListNew.txt";
+        Printer P = New Printer();
         
-        
+
         System.out.println(member4.calcFee());
         System.out.println(member2.calcFee());
 
@@ -90,7 +87,6 @@ public class Registration {
 
         subOut.close();
         Kontingent.getFileInfo(filePath);*/
-
     }
 
 }
