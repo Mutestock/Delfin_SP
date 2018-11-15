@@ -25,7 +25,8 @@ public class Registration {
     
     
     public Registration() {
-        this.membersFile = "D:\\members.txt";
+        this.membersFile = "C:\\Users/emils/Desktop/delfin opgave/members.txt";
+        //this.membersFile = "D:\\members.txt";
     }
     
 
@@ -58,7 +59,6 @@ public class Registration {
         }
     }
 
-<<<<<<< HEAD
     /* finally {
             try {
                 out.close();
@@ -67,12 +67,8 @@ public class Registration {
                 }
         }
         }*/
-    public Registration() {
-        this.membersFile = "C:\\Users/emils/Desktop/delfin opgave/members.txt";
-    }
-=======
->>>>>>> e108a771a47df7b2f4838a7efda1a19b59f4eaba
-
+ 
+       
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 20, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
