@@ -28,6 +28,8 @@ public class FilePrinter {
     static String sublistPath = "D:\\subListNew.txt";
     static PrintWriter subOut2 = FilePrinter.createFile(sublistPath);
 
+    
+    
     public FilePrinter(String filePath) {
         this.filePath = filePath;
     }
@@ -46,6 +48,8 @@ public class FilePrinter {
         return null;
     }
 
+    
+    
     public static void getFileInfo(String path) {
         System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
@@ -69,11 +73,12 @@ public class FilePrinter {
 
     }
     
+    
+    
     public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
         for (int i = 0; i < arrayList.size(); ++i) {
             printer.println(arrayList.get(i));
         }
     }
 
-  
 }

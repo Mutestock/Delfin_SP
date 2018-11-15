@@ -17,151 +17,6 @@ import static org.junit.Assert.*;
  * @author Gamer
  */
 public class MemberTest {
-    
-    public MemberTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of getName method, of class Member.
-     */
-    @org.junit.Test
-    public void testGetName() {
-        System.out.println("getName");
-        Member instance = null;
-        String expResult = "";
-        String result = instance.getName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getAge method, of class Member.
-     */
-    @org.junit.Test
-    public void testGetAge() {
-        System.out.println("getAge");
-        Member instance = null;
-        int expResult = 0;
-        int result = instance.getAge();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isActivity method, of class Member.
-     */
-    @org.junit.Test
-    public void testIsActivity() {
-        System.out.println("isActivity");
-        Member instance = null;
-        boolean expResult = false;
-        boolean result = instance.isActivity();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isCompetetive method, of class Member.
-     */
-    @org.junit.Test
-    public void testIsCompetetive() {
-        System.out.println("isCompetetive");
-        Member instance = null;
-        boolean expResult = false;
-        boolean result = instance.isCompetetive();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isAgeBonus method, of class Member.
-     */
-    @org.junit.Test
-    public void testIsAgeBonus() {
-        System.out.println("isAgeBonus");
-        Member instance = null;
-        boolean expResult = false;
-        boolean result = instance.isAgeBonus();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isSenior method, of class Member.
-     */
-    @org.junit.Test
-    public void testIsSenior() {
-        System.out.println("isSenior");
-        Member instance = null;
-        boolean expResult = false;
-        boolean result = instance.isSenior();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isJunior method, of class Member.
-     */
-    @org.junit.Test
-    public void testIsJunior() {
-        System.out.println("isJunior");
-        Member instance = null;
-        boolean expResult = false;
-        boolean result = instance.isJunior();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getSubCatalogueYear method, of class Member.
-     */
-    @org.junit.Test
-    public void testGetSubCatalogueYear() {
-        System.out.println("getSubCatalogueYear");
-        Member instance = null;
-        int expResult = 0;
-        int result = instance.getSubCatalogueYear();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getSubFee method, of class Member.
-     */
-    @org.junit.Test
-    public void testGetSubFee() {
-        System.out.println("getSubFee");
-        Member instance = null;
-        int expResult = 0;
-        int result = instance.getSubFee();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of calcFee method, of class Member.
@@ -169,26 +24,20 @@ public class MemberTest {
     @org.junit.Test
     public void testCalcFee() {
         System.out.println("calcFee");
-        Member instance = null;
-        int expResult = 0;
-        int result = instance.calcFee();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Member instance1 = new Member("test",7,true,true);
+        Member instance2 = new Member("test",23,true,true);
+        Member instance3 = new Member("test",72,true,true);
+        int expResult1 = 1000;
+        int expResult2 = 1600;
+        int expResult3 = 1200;
+        int result1 = instance1.calcFee();
+        int result2 = instance2.calcFee();
+        int result3 = instance3.calcFee();
+        
+        assertEquals(expResult1, result1);
+        assertEquals(expResult1, result1);
+        assertEquals(expResult1, result1);
     }
 
-    /**
-     * Test of toString method, of class Member.
-     */
-    @org.junit.Test
-    public void testToString() {
-        System.out.println("toString");
-        Member instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }
