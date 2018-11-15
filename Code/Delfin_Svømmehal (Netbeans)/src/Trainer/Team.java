@@ -5,7 +5,7 @@
  */
 package Trainer;
 
-import FormandAdgang.MemberAF;
+import FormandAdgang.Member;
 import java.util.ArrayList;
 
 public class Team {
@@ -18,10 +18,10 @@ public class Team {
     //Hold.getMembers();
     
 
-    public void addMemberToTeam(MemberAF member){
+    public void addMemberToTeam(Member member){
         //First if statement checks whether the member is a competetive
         //member of a team, and then adds member to the correct age grp.
-        if (member.getMember().isCompetetive()) {
+        if (member.isCompetetive()) {
             if(member.isJunior()) {
                 compJuniorTeam.addMemberToTeam(member);
                 return;
