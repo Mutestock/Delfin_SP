@@ -30,8 +30,6 @@ public class Registration {
     }
     
     
-    
-
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);

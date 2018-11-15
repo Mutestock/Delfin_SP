@@ -4,15 +4,17 @@ package FormandAdgang;
 public class Member {
     
     //The fields/values of a member.
-    String name;
-    int age;
-    boolean activity;
-    boolean competetive;
+    private String name;
+    private int age;
+    private boolean activity;
+    private boolean competetive;
     //--Need to add more at a certain point (We need "stamoplysninger")!--//
     
-    boolean ageBonus;
-    boolean senior;
-    boolean junior;
+    private boolean ageBonus;
+    private boolean senior;
+    private boolean junior;
+    
+    
     
     public Member(String name, int age, boolean activityForm, boolean competetive) {
         this.name = name;
@@ -20,6 +22,8 @@ public class Member {
         this.activity = activityForm;
         this.competetive = competetive;
         
+        //Sets the value of a member to either Junior or Senior
+        //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {
             junior = true;
             senior = false;
