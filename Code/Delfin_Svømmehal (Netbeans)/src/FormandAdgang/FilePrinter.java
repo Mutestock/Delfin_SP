@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,6 +21,12 @@ import java.io.PrintWriter;
 public class FilePrinter {
 
     String filePath;
+    
+    static String registrationPath = "D:\\registrationNew.txt";
+    static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
+
+    static String sublistPath = "D:\\subListNew.txt";
+    static PrintWriter subOut2 = FilePrinter.createFile(sublistPath);
 
     public FilePrinter(String filePath) {
         this.filePath = filePath;
@@ -60,6 +67,12 @@ public class FilePrinter {
             System.exit(0);
         }
 
+    }
+    
+    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
+        for (int i = 0; i < arrayList.size(); ++i) {
+            printer.println(arrayList.get(i));
+        }
     }
 
   

@@ -8,9 +8,21 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+
+/**
+ *
+ * @author Ahmed
+=======
 /**
  *
  * @author moi(
+>>>>>>> 22e330560ee4ff4eeb5324d1564c80e4f258fa20
  */
 public class Kontingent {
 
