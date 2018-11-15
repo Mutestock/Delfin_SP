@@ -17,9 +17,15 @@ import java.io.PrintWriter;
  *
  * @author Moi(
  */
-public class Printer {
-    
-     public PrintWriter createFile(String FilePath) {
+public class FilePrinter {
+
+    String filePath;
+
+    public FilePrinter(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public static PrintWriter createFile(String FilePath) {
         try {
             File listOfNames = new File(FilePath);
             PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames));
@@ -32,7 +38,8 @@ public class Printer {
         }
         return null;
     }
-    public void getFileInfo(String path) {
+
+    public static void getFileInfo(String path) {
         System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
 
@@ -52,5 +59,8 @@ public class Printer {
             System.out.println("IOException...");
             System.exit(0);
         }
+
     }
+
+  
 }

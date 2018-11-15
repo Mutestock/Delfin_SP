@@ -14,7 +14,7 @@ import Trainer.*;
 
 public class Registration {
 
-    ArrayList<Member> registeredMembers = new ArrayList();
+    static ArrayList<Member> registeredMembers = new ArrayList();
     private static final boolean DEBUG = true;
 
     //Since this is just a reference, and not an instance,
@@ -23,8 +23,13 @@ public class Registration {
     Team team;
 
     public Registration() {
-        
+
     }
+    static String registrationPath = "D:\\registrationNew.txt";
+    static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
+
+    static String sublistPath = "D:\\subListNew.txt";
+    static PrintWriter subOut2 = FilePrinter.createFile(sublistPath);
 
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
@@ -35,8 +40,7 @@ public class Registration {
 
         //Method that in theory could update the file of registered members
         //by adding a new member as a parameter.
-        fileHandle.updateRegisteredMembers(member);
-        
+        //fileHandle.updateRegisteredMembers(member);
         //Code below was an attempt to update the file within the method of
         //registering a new member.
         /*PrintWriter out = null;
@@ -58,11 +62,25 @@ public class Registration {
         }*/
     }
 
+    public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
+        for (int i = 0; i < ArrayList.size(); ++i) {
+            printer.println(ArrayList.get(i));
+        }
+    }
+
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
+
+        registeredMembers.add(member1);
+        registeredMembers.add(member2);
+        registeredMembers.add(member3);
+        registeredMembers.add(member4);
+        
+        subLister(registeredMembers, subOut1);
+        
 
         // System.out.println(member1);
         Registration r = new Registration();
@@ -71,27 +89,7 @@ public class Registration {
 //        r.registerMember(memberaf3);
 //        r.registerMember(memberaf4);
 
-        String filePathNew =  "D:\\subListNew.txt";
-        Printer P = New Printer();
-        
-
-        System.out.println(member4.calcFee());
-        System.out.println(member2.calcFee());
-
-        String filePath = "D:\\subList.txt";
-        //PrintWriter subOut = Kontingent.createFile(filePath);
-
-        ArrayList<Kontingent> subList = new ArrayList<>();
-        //subList.add(kontingent1);
-        //subList.add(kontingent2);
-
-        /*for (Kontingent subscriber : subList) {
-            Kontingent.createSubscription(subscriber, subOut);
-            System.out.println(subscriber);
-        }
-
-        subOut.close();
-        Kontingent.getFileInfo(filePath);*/
+        subOut1.close();
     }
 
 }
