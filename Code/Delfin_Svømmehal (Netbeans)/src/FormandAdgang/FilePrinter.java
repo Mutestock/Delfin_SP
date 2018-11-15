@@ -20,13 +20,12 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
-<<<<<<< HEAD
+
     private static String filePath;
     private static PrintWriter printwriter;
 
-    public FilePrinter(String filePath, PrintWriter printwriter) {
-=======
-    String filePath;
+    public FilePrinter(String filePath, PrintWriter printwriter){   
+    }
     
     static String registrationPath = "D:\\registrationNew.txt";
     static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
@@ -37,7 +36,6 @@ public class FilePrinter {
     
     
     public FilePrinter(String filePath) {
->>>>>>> 260b28a201da7ddbe5cf64fe1176688b9e2aa61b
         this.filePath = filePath;
         this.printwriter = printwriter;
     }
@@ -88,16 +86,8 @@ public class FilePrinter {
     public static String getFilePath() {
         return filePath;
     }
-    
-    
-    
-    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
-        for (int i = 0; i < arrayList.size(); ++i) {
-            printer.println(arrayList.get(i));
-        }
-    }
 
-<<<<<<< HEAD
+    
     public static PrintWriter getPrintwriter(String filePath) {
         
     //private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
@@ -105,8 +95,8 @@ public class FilePrinter {
         
         return printwriter;
     }
-=======
->>>>>>> 260b28a201da7ddbe5cf64fe1176688b9e2aa61b
+
+    
 }
 
  

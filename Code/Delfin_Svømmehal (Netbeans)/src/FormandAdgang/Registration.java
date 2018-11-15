@@ -42,15 +42,6 @@ public class Registration {
 
     }
 
-<<<<<<< HEAD
- 
-=======
-
-    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
-        for (int i = 0; i < arrayList.size(); ++i) {
-            printer.println(arrayList.get(i));}}
->>>>>>> 260b28a201da7ddbe5cf64fe1176688b9e2aa61b
-
     public static void main(String[] args) {
         Member member1 = new Member("Emil", 60, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
