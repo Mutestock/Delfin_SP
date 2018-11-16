@@ -19,7 +19,8 @@ import javax.swing.SwingUtilities;
 public class GUI2 extends javax.swing.JFrame {
 
     private FGUI gui;
-
+    
+    
     /**
      * Creates new form GUI2
      */
@@ -186,11 +187,33 @@ public class GUI2 extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
-
-        boolean active = this.actBox.getAutoscrolls();
-        boolean competetive = this.compBox.getAutoscrolls();
-
         
+        
+        boolean active = false;
+        String actStr = (String) actBox.getSelectedItem();
+        if(actStr.equals("yes")){
+        active = true;
+        }
+        else if(actStr.equals("no")){
+            active = false;
+        }
+        
+
+        boolean competetive = false;
+        String compStr = (String) actBox.getSelectedItem();
+        if(compStr.equals("yes")){
+        competetive = true;
+        }
+        else if(compStr.equals("no")){
+            competetive = false;
+        }
+                
+
+
+       
+        
+        //boolean competetive = this.compBox.getAutoscrolls();
+        //boolean active = this.actBox.getAutoscrolls();
         Member member = new Member(name, age, active, competetive);
 
         
@@ -228,6 +251,10 @@ public class GUI2 extends javax.swing.JFrame {
 
     private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
         // TODO add your handling code here:
+        //Boolean[] choices = {true, false};
+        //JComboBox actChoice = new JComboBox(choices);
+       // actBox.get(choices);
+        
     }//GEN-LAST:event_compBoxActionPerformed
 
     private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
