@@ -23,29 +23,8 @@ public class Member {
     private int subFee;
     
 
-<<<<<<< HEAD
     public Member(String name, int age, boolean activityForm, boolean competetive) {
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    public Member(String name, int age, boolean activityForm, boolean competetive) {
-=======
-    public Member() {
 
-    }
->>>>>>> c9a3f948eb2f1beb0973ad9c789b76cd8256e452
->>>>>>> 101d1917f923aa23cc1adb1e5d271717ef74c39e
-
-    public Member(String name, int age, boolean activityForm, boolean competetive, String subCatalogueYear) {
-<<<<<<< HEAD
->>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
->>>>>>> 101d1917f923aa23cc1adb1e5d271717ef74c39e
-=======
-
->>>>>>> 371bc6fb79cf2016c9d2e5d2b4a2d9e1516ec675
         this.name = name;
         this.age = age;
         this.activity = activityForm;
