@@ -1,9 +1,6 @@
-
 package FormandAdgang;
 
 public class Member {
-    
-
 
     // kan sætte af sammen med den her
     //The fields/values of a member.
@@ -12,38 +9,54 @@ public class Member {
     private boolean activity;
     private boolean competetive;
     //--Need to add more at a certain point (We need "stamoplysninger")!--//
-    
+
     //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
     private boolean senior;
     private boolean junior;
-    
+
     //Kontingent fields has been merged to 
-    private int subCatalogueYear;
+    private String subCatalogueYear;
     private int subFee;
 
+    public Member() {
 
-    public Member(String name, int age, boolean activityForm, boolean competetive) {
+    }
+
+    public Member(String name, int age, boolean activityForm, boolean competetive, String subCatalogueYear) {
         this.name = name;
         this.age = age;
         this.activity = activityForm;
         this.competetive = competetive;
-        
+        this.subCatalogueYear = subCatalogueYear;
+
         //Sets the value of a member to either Junior or Senior
         //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {
-            junior = true;
-            senior = false;
+            this.junior = true;
+            this.senior = false;
         } else {
-            senior = true;
-            junior = false;
+            this.senior = true;
+            this.junior = false;
         }
         if (getAge() > 60) {
-            ageBonus = true;
+            this.ageBonus = true;
+        }
+
+        if (activityForm) {
+            if (getAge() >= 60) {
+                this.subFee = 1200;
+            } else if (getAge() >= 18) {
+                this.subFee = 1600;
+            } else {
+                this.subFee = 1000;
+            }
+        }
+        else {
+            this.subFee = 500;
         }
     }
 
-    
     //A lot of get-methods.
     public String getName() {
         return name;
@@ -60,7 +73,7 @@ public class Member {
     public boolean isCompetetive() {
         return competetive;
     }
-    
+
     public boolean isAgeBonus() {
         return ageBonus;
     }
@@ -73,7 +86,7 @@ public class Member {
         return junior;
     }
 
-    public int getSubCatalogueYear() {
+    public String getSubCatalogueYear() {
         return subCatalogueYear;
     }
 
@@ -81,32 +94,13 @@ public class Member {
         return subFee;
     }
 
-    
-    
     //Logic method used to calculate a certain members fee (based on their age)
-    public int calcFee() {
-        if (isActive() == true) {
-            if (getAge() >= 60) {
-                return 1200;
-            } else if (getAge() >= 18) {
-                return 1600;
-            } else {
-                return 1000;
-            }
-        }
-        return 500;
-    }
-
     
+
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
         return "Member{" + "name=" + name + ", age=" + age + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + ", subCatalogueYear=" + subCatalogueYear + ", subFee=" + subFee + '}';
     }
-    
-    
-   
-    
-    
-    
+
 }

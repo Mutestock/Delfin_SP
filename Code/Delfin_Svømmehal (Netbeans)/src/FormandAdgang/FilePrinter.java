@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
+    //Defining filepath. Can be redefined if a new path is necessary.
     private static String filePath = "D:\\registrationNew.txt";
     private static PrintWriter printwriter = FilePrinter.createFile(filePath);
 
