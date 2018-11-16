@@ -13,7 +13,7 @@ public class Registration {
     //we will have to initialize the Team class in the GUI
     //once the user will start the program. Initializer 
     //that gets information from the text file upon starting.
-    Team team;
+    Team team; 
 
     public Registration() {
     }
@@ -40,6 +40,8 @@ public class Registration {
         registeredMembers.add(member3);
         registeredMembers.add(member4);
         
+        
+        FilePrinter.subLister(registeredMembers, print);
         print.close();
     }
 }

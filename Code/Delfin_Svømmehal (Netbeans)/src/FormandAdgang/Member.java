@@ -82,6 +82,14 @@ public class Member {
         return subFee;
     }
 
+    public void setSubCatalogueYear(int subCatalogueYear) {
+        this.subCatalogueYear = subCatalogueYear;
+    }
+
+    public void setSubFee(int subFee) {
+        this.subFee = subFee;
+    }
+
     
     
     //Logic method used to calculate a certain members fee (based on their age)

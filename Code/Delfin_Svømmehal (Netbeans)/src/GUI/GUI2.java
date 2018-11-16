@@ -187,21 +187,12 @@ public class GUI2 extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
-<<<<<<< HEAD
         boolean active = this.actBox.getAutoscrolls();
         boolean competetive = this.compBox.getAutoscrolls();
 
         
         Member member = new Member(name, age, active, competetive);
-=======
-        boolean active = (Boolean) this.actBox.getSelectedItem();
-        boolean competetive = (Boolean) this.compBox.getSelectedItem();
-        
-        //2018 will have to be changed to automatically get the current year
 
-        Member member = new Member(name, age, active, competetive, "2018");
-
->>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
         Registration r = new Registration();
         
         r.registerMember(member);
