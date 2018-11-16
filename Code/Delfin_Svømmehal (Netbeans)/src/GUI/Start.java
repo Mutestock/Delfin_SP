@@ -7,10 +7,13 @@ package GUI;
 public class Start extends javax.swing.JFrame {
 
     private FGUI guiF;
+    private TGUI guiT;
 
     public Start() {
         initComponents();
         guiF = new FGUI();
+        guiT = new TGUI();
+        
     }
 
     /**
