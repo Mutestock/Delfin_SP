@@ -27,10 +27,10 @@ public class Registration {
     }
 
     public static void main(String[] args) {
-        Member member1 = new Member("Emil", 60, true, true, "2018");
-        Member member2 = new Member("ahmed", 20, true, true, "2018");
-        Member member3 = new Member("Emil skov", 20, false, true, "2018");
-        Member member4 = new Member("Dolf bo", 15, true, true, "2015");
+        Member member1 = new Member("Emil", 60, true, true);
+        Member member2 = new Member("ahmed", 20, true, true);
+        Member member3 = new Member("Emil skov", 20, false, true);
+        Member member4 = new Member("Dolf bo", 15, true, true);
 
         String path = FilePrinter.getFilePath();
         PrintWriter print = FilePrinter.getPrintwriter(path);
@@ -39,15 +39,7 @@ public class Registration {
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
-
-<<<<<<< HEAD
-=======
-      //  Registration r = new Registration();
->>>>>>> 371bc6fb79cf2016c9d2e5d2b4a2d9e1516ec675
-
-        FilePrinter.subLister(registeredMembers, print);
-        FilePrinter.getFileInfo(path);
-
+        
         print.close();
     }
 }
