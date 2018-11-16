@@ -9,14 +9,18 @@ import FormandAdgang.Member;
 
 public class Team {
 
-    private Team juniorTeam = new Team();
-    private Team seniorTeam = new Team();
-    private Team compJuniorTeam = new Team();
-    private Team compSeniorTeam = new Team();
+    private Team juniorTeam;
+    private Team seniorTeam;
+    private Team compJuniorTeam;
+    private Team compSeniorTeam;
 
     
     
     public Team() {
+        juniorTeam = new Team();
+        seniorTeam = new Team();
+        compJuniorTeam = new Team();
+        compSeniorTeam = new Team();
     }
     
     
