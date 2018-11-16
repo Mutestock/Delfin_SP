@@ -42,6 +42,7 @@ public class Registration {
 
 
         FilePrinter.subLister(registeredMembers, print);
+        FilePrinter.getFileInfo(path);
 
         print.close();
     }
