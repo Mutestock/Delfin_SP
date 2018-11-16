@@ -2,6 +2,7 @@ package GUI;
 
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
+import Trainer.Team;
 import javax.swing.SwingUtilities;
 
 /*
@@ -15,12 +16,12 @@ import javax.swing.SwingUtilities;
  */
 public class GUI2 extends javax.swing.JFrame {
 
-    private GUI gui;
+    private FGUI gui;
 
     /**
      * Creates new form GUI2
      */
-    public GUI2(GUI gui) {
+    public GUI2(FGUI gui) {
         initComponents();
         this.gui = gui;
 
@@ -86,8 +87,18 @@ public class GUI2 extends javax.swing.JFrame {
         });
 
         compBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        compBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compBoxActionPerformed(evt);
+            }
+        });
 
         actBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        actBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,9 +172,8 @@ public class GUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_AgeInputActionPerformed
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
-        // the confirm button, when the all inputs have been chosen.
-
-        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+        //The confirm button.
+        // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
         gui.setVisible(true);
         this.setVisible(false);
         
@@ -171,12 +181,13 @@ public class GUI2 extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
-        boolean active = (Boolean) this.actBox.getSelectedItem();
-        boolean competetive = (Boolean) this.compBox.getSelectedItem();
+        boolean active = this.actBox.getAutoscrolls();
+        boolean competetive = this.compBox.getAutoscrolls();
 
+        
         Member member = new Member(name, age, active, competetive);
-
         Registration r = new Registration();
+        
         r.registerMember(member);
 
         // makes sure that the input fields is always clean when is is open again
@@ -192,7 +203,7 @@ public class GUI2 extends javax.swing.JFrame {
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // the return button to the menu.
 
-        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+        // When the button is pressed, the FGUI will gets "invisible" and FGUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
         // makes sure that the input fields is always clean when is is open again
@@ -202,6 +213,14 @@ public class GUI2 extends javax.swing.JFrame {
         this.actBox.setSelectedIndex(0);
 
     }//GEN-LAST:event_MenuButtonActionPerformed
+
+    private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_compBoxActionPerformed
+
+    private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actBoxActionPerformed
 
 //    /**
 //     * @param args the command line arguments

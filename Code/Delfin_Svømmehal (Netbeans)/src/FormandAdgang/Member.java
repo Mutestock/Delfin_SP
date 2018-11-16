@@ -5,8 +5,13 @@ public class Member {
     
 
 
+
     // kan sætte af sammen med den her
 
+
+
+
+    // kan sætte af sammen med den her
 
     //The fields/values of a member.
     private String name;
@@ -23,7 +28,6 @@ public class Member {
     //Kontingent fields has been merged to 
     private int subCatalogueYear;
     private int subFee;
-    
 
     public Member(String name, int age, boolean activityForm, boolean competetive) {
         this.name = name;

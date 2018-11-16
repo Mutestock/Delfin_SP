@@ -46,7 +46,7 @@ public class Registration {
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
-        Registration r = new Registration();
+      //  Registration r = new Registration();
 
         FilePrinter.subLister(registeredMembers, print);
 
