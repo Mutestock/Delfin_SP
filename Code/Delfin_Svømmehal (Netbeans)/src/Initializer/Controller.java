@@ -14,7 +14,10 @@ public class Controller {
     //Connect GUI to controller
     //Connect other functionalities to Controller and GUI.
     //Consider the functionality of the Main Method in registration when the Controller has been implemented
-    //
+    //Make it possible for the GUI to go back to the main menu after having chosen a role.
+    //Change GUI Class names.
+    //Clean up redundant GUI code
+    
             
     //Stretch goals:
     //Additional basic information for members and trainer (e.g. phonenumber).

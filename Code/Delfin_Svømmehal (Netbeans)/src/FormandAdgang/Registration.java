@@ -46,8 +46,9 @@ public class Registration {
         registeredMembers.add(member3);
         registeredMembers.add(member4);
         
-        //Printes each line without overwriting.
+        //Prints each line without overwriting.
         FilePrinter.subLister(registeredMembers, print);
+        
         //Closes the PrintWriter instance. print.close(); could be seen as a confirmation of the PrintWriters actions, before printing to the document.
         //No text will printed without it being there, and therefore it's absolutely necessary, and shouldn't be deleted.
         print.close();
