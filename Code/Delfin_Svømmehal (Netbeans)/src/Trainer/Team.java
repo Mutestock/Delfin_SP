@@ -6,7 +6,6 @@
 package Trainer;
 
 import FormandAdgang.Member;
-import java.util.ArrayList;
 
 public class Team {
 

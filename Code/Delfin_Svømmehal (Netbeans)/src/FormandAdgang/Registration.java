@@ -1,14 +1,7 @@
 package FormandAdgang;
 
-import java.awt.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 import Trainer.*;
 
 public class Registration {
@@ -34,10 +27,10 @@ public class Registration {
     }
 
     public static void main(String[] args) {
-        Member member1 = new Member("Emil", 60, true, true);
-        Member member2 = new Member("ahmed", 20, true, true);
-        Member member3 = new Member("Emil skov", 20, false, true);
-        Member member4 = new Member("Dolf bo", 15, true, true);
+        Member member1 = new Member("Emil", 60, true, true, "2018");
+        Member member2 = new Member("ahmed", 20, true, true, "2018");
+        Member member3 = new Member("Emil skov", 20, false, true, "2018");
+        Member member4 = new Member("Dolf bo", 15, true, true, "2015");
 
         String path = FilePrinter.getFilePath();
         PrintWriter print = FilePrinter.getPrintwriter(path);
@@ -46,7 +39,10 @@ public class Registration {
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
+<<<<<<< HEAD
       //  Registration r = new Registration();
+=======
+>>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
 
         FilePrinter.subLister(registeredMembers, print);
 
