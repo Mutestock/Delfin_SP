@@ -3,14 +3,7 @@ package FormandAdgang;
 
 public class Member {
     
-<<<<<<< HEAD
-    private String name;
-    private int age;
-    private boolean activity;
-    boolean competetive;
 
-    // kan sætte af sammen med den her
-=======
     //The fields/values of a member.
     private String name;
     private int age;
@@ -27,8 +20,7 @@ public class Member {
     private int subCatalogueYear;
     private int subFee;
     
-    
->>>>>>> 2cfeb695e65a84a082fe0b077901102514c95c2b
+
     public Member(String name, int age, boolean activityForm, boolean competetive) {
         this.name = name;
         this.age = age;
