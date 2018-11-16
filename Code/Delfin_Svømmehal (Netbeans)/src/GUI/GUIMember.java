@@ -15,9 +15,9 @@ public class GUIMember extends javax.swing.JFrame {
      * Creates new form GUIMember
      */
     
-    private GUI gui;
+    private FGUI gui;
     
-    public GUIMember(GUI gui) {
+    public GUIMember(FGUI gui) {
         initComponents();
         this.gui = gui;
         

@@ -39,6 +39,10 @@ public class Registration {
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
+<<<<<<< HEAD
+      //  Registration r = new Registration();
+=======
+>>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
 
         FilePrinter.subLister(registeredMembers, print);
         FilePrinter.getFileInfo(path);
