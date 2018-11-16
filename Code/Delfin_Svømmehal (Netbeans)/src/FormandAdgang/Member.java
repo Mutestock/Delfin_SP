@@ -3,12 +3,12 @@ package FormandAdgang;
 
 public class Member {
     
-    String name;
-    int age;
-    boolean activity;
+    private String name;
+    private int age;
+    private boolean activity;
     boolean competetive;
 
-    
+    // kan sætte af sammen med den her
     public Member(String name, int age, boolean activityForm, boolean competetive) {
         this.name = name;
         this.age = age;

@@ -41,7 +41,7 @@ public class Kontingent {
             }
         }
         return 500;
-    }
+    } // ville være en god ide at sætte den i member
 
     public static PrintWriter createFile(String kontingentFilePath) {
 
@@ -56,7 +56,7 @@ public class Kontingent {
 
         }
         return null;
-    }
+    } //lav en pakke som har createfile, så man har et sted med denne metode
 
     public static void createSubscription(Kontingent kontingent, PrintWriter output) {
 
