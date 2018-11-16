@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/Kontingent.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
@@ -10,6 +10,12 @@
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Trainer.java</file>
+=======
+            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
+            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/Kontingent.java</file>
+            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
+            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
+>>>>>>> b720b4073d1fe01e40283e0abb9fc0bc26edccb1
         </group>
     </open-files>
 </project-private>
