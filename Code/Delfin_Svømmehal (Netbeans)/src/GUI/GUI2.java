@@ -2,7 +2,6 @@ package GUI;
 
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
-import javax.swing.SwingUtilities;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
