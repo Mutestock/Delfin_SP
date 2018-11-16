@@ -39,8 +39,14 @@ public class Kontingent {
 
     //Currently working as a separate entity, not using the list of registered members.
     //Note that using additional fields could improve the quality of the 60+ 25% rule.
+<<<<<<< HEAD
     public static int calcFee(Member member) {
         if (member.isActivity() == true) {
+=======
+
+    public static int calcFee(Member member) {
+        if (member.isActive() == true) {
+>>>>>>> 47669fb9a660beae0f65e5b449a393d01c4f01b4
             if (member.getAge() >= 60) {
                 return 1200;
             } else if (member.getAge() >= 18) {
@@ -51,6 +57,7 @@ public class Kontingent {
         }
         return 500;
     } // ville være en god ide at sætte den i member
+<<<<<<< HEAD
 
     public static PrintWriter createFile(String kontingentFilePath) {
 
@@ -95,6 +102,8 @@ public class Kontingent {
         output.println(member + feeConv + subYear);
     }
 
+=======
+>>>>>>> 47669fb9a660beae0f65e5b449a393d01c4f01b4
     
     // ------------------------------------------
     // ----------------To Henning----------------
