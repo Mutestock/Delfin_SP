@@ -32,13 +32,17 @@ public class Registration {
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
 
+        
+       
         String path = FilePrinter.getFilePath();
         PrintWriter print = FilePrinter.getPrintwriter(path);
-
+        
         registeredMembers.add(member1);
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
+        
+        FilePrinter.subLister(registeredMembers, print);
         
         print.close();
     }

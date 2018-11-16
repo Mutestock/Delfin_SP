@@ -36,7 +36,7 @@ public class FilePrinter {
     public static PrintWriter createFile(String filePath) {
         try {
             File listOfNames = new File(filePath);
-            PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames));
+            PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames, true));
 
             return infoWriter;
         } catch (IOException ex) {
