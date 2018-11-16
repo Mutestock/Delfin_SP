@@ -2,8 +2,11 @@ package GUI;
 
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
+<<<<<<< HEAD
+=======
 import Trainer.Team;
 import javax.swing.SwingUtilities;
+>>>>>>> c9a3f948eb2f1beb0973ad9c789b76cd8256e452
 
 /*
  * To change this license header, choose License Headers in Project Properties.
