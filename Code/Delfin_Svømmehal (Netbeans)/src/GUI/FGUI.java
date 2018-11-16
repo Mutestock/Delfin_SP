@@ -24,7 +24,7 @@ public class FGUI extends javax.swing.JFrame {
     public FGUI() {
         initComponents();
         gui2 = new GUI2(this);
-        guiM = new GUIMember(this);
+        guiM = new GUIMember();
     }
 
     /**
