@@ -14,10 +14,15 @@ public class Team {
     private Team seniorTeam = new Team();
     private Team compJuniorTeam = new Team();
     private Team compSeniorTeam = new Team();
-    
-    //Hold.getMembers();
-    
 
+    
+    
+    public Team() {
+    }
+    
+    
+    
+    
     public void addMemberToTeam(Member member){
         //First if statement checks whether the member is a competetive
         //member of a team, and then adds member to the correct age grp.
@@ -42,6 +47,24 @@ public class Team {
         else {
             seniorTeam.addMemberToTeam(member);
         }       
+    }
+
+    
+    
+    public Team getJuniorTeam() {
+        return juniorTeam;
+    }
+
+    public Team getSeniorTeam() {
+        return seniorTeam;
+    }
+
+    public Team getCompJuniorTeam() {
+        return compJuniorTeam;
+    }
+
+    public Team getCompSeniorTeam() {
+        return compSeniorTeam;
     }
 
     
