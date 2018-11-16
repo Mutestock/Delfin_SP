@@ -27,12 +27,16 @@ public class Registration {
     }
 
     public static void main(String[] args) {
+        
+        //Creating instances of Member. 
+        //This is necessary when trying to test the functionality of the filePrinter class.
         Member member1 = new Member("Emil", 60, true, true);
         Member member2 = new Member("ahmed", 20, true, true);
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
 
-        
+       
+        //Defines the path and makes the PrintWriter instance write to it.
        
         String path = FilePrinter.getFilePath();
         PrintWriter print = FilePrinter.getPrintwriter(path);
@@ -42,8 +46,11 @@ public class Registration {
         registeredMembers.add(member3);
         registeredMembers.add(member4);
         
-        
+        //Printes each line without overwriting.
         FilePrinter.subLister(registeredMembers, print);
+        //Closes the PrintWriter instance. print.close(); could be seen as a confirmation of the PrintWriters actions, before printing to the document.
+        //No text will printed without it being there, and therefore it's absolutely necessary, and shouldn't be deleted.
+        print.close();
 
     }
 }

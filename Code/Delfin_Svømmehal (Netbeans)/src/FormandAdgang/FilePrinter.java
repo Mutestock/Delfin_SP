@@ -21,10 +21,11 @@ import java.util.ArrayList;
 public class FilePrinter {
 
     //Defining filepath. Can be redefined if a new path is necessary.
+    //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
     private static String filePath = "D:\\registrationNew.txt";
     
     
-    
+    //Creates file at set location. See createFile method
     private static PrintWriter printwriter = FilePrinter.createFile(filePath);
 
     public FilePrinter(String filePath, PrintWriter printwriter) {
@@ -33,10 +34,14 @@ public class FilePrinter {
         this.printwriter = printwriter;
     }
 
+    
+    //Creates new file at the chosen filepath and then writes to the file. 
+    //The boolean value in filwriter indicates, whether you want to append to the file or not. 
+    //if false or removed, the filewriter will overwrite
     public static PrintWriter createFile(String filePath) {
         try {
-            File listOfNames = new File(filePath);
-            PrintWriter infoWriter = new PrintWriter(new FileWriter(listOfNames, true));
+            File subInfo = new File(filePath);
+            PrintWriter infoWriter = new PrintWriter(new FileWriter(subInfo, true));
 
             return infoWriter;
         } catch (IOException ex) {
@@ -46,7 +51,8 @@ public class FilePrinter {
         }
         return null;
     }
-
+    //File reader. This method allows us to read and react from the .txt file. 
+    //This is necessary when using the function where the user pays his fee(kontingentBetaling)(WIP)
     public static void getFileInfo(String path) {
         System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
@@ -69,6 +75,7 @@ public class FilePrinter {
         }
     }
 
+    //Serves as to write each individual line. If removed, only the last of the added members would be printed.
     public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
         for (int i = 0; i < ArrayList.size(); ++i) {
             printer.println(ArrayList.get(i));
