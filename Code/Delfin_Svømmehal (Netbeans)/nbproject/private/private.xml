@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/Kontingent.java</file>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI2.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Team.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/test/FormandAdgang/MemberTest.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUIMember.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/Kontingent.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Trainer.java</file>
+=======
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Trainer.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUIMember.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Team.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/test/FormandAdgang/MemberTest.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
+            <file>file:/C:/Users/Moi(/Desktop/pull4/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI2.java</file>
+>>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
         </group>
     </open-files>
 </project-private>

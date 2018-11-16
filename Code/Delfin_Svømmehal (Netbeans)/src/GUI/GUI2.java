@@ -2,6 +2,7 @@ package GUI;
 
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
+import Trainer.Team;
 import javax.swing.SwingUtilities;
 
 /*
@@ -15,12 +16,12 @@ import javax.swing.SwingUtilities;
  */
 public class GUI2 extends javax.swing.JFrame {
 
-    private GUI gui;
+    private FGUI gui;
 
     /**
      * Creates new form GUI2
      */
-    public GUI2(GUI gui) {
+    public GUI2(FGUI gui) {
         initComponents();
         this.gui = gui;
 
@@ -35,6 +36,7 @@ public class GUI2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Age1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         MenuButton = new javax.swing.JButton();
         Name = new javax.swing.JLabel();
@@ -46,6 +48,8 @@ public class GUI2 extends javax.swing.JFrame {
         ConfirmButton = new javax.swing.JButton();
         compBox = new javax.swing.JComboBox<>();
         actBox = new javax.swing.JComboBox<>();
+
+        Age1.setText("Age:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,8 +90,18 @@ public class GUI2 extends javax.swing.JFrame {
         });
 
         compBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        compBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compBoxActionPerformed(evt);
+            }
+        });
 
         actBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        actBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,10 +110,10 @@ public class GUI2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Age)
-                    .addComponent(Name)
-                    .addComponent(AgeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(Age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AgeInput, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                     .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(actBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,25 +138,25 @@ public class GUI2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(Name))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Age)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AgeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jLabel4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(4, 4, 4)
                         .addComponent(actBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(50, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(MenuButton)
                             .addComponent(ConfirmButton))
@@ -161,9 +175,8 @@ public class GUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_AgeInputActionPerformed
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
-        // the confirm button, when the all inputs have been chosen.
-
-        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+        //The confirm button.
+        // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
         gui.setVisible(true);
         this.setVisible(false);
         
@@ -171,12 +184,23 @@ public class GUI2 extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
+<<<<<<< HEAD
+        boolean active = this.actBox.getAutoscrolls();
+        boolean competetive = this.compBox.getAutoscrolls();
+
+        
+        Member member = new Member(name, age, active, competetive);
+=======
         boolean active = (Boolean) this.actBox.getSelectedItem();
         boolean competetive = (Boolean) this.compBox.getSelectedItem();
+        
+        //2018 will have to be changed to automatically get the current year
 
-        Member member = new Member(name, age, active, competetive);
+        Member member = new Member(name, age, active, competetive, "2018");
 
+>>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
         Registration r = new Registration();
+        
         r.registerMember(member);
 
         // makes sure that the input fields is always clean when is is open again
@@ -192,7 +216,7 @@ public class GUI2 extends javax.swing.JFrame {
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // the return button to the menu.
 
-        // When the button is pressed, the GUI will gets "invisible" and GUI (the add member menu) get visible.
+        // When the button is pressed, the FGUI will gets "invisible" and FGUI (the add member menu) get visible.
         gui.setVisible(true);
         this.setVisible(false);
         // makes sure that the input fields is always clean when is is open again
@@ -202,6 +226,14 @@ public class GUI2 extends javax.swing.JFrame {
         this.actBox.setSelectedIndex(0);
 
     }//GEN-LAST:event_MenuButtonActionPerformed
+
+    private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_compBoxActionPerformed
+
+    private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actBoxActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -240,6 +272,7 @@ public class GUI2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Age;
+    private javax.swing.JLabel Age1;
     private javax.swing.JTextField AgeInput;
     private javax.swing.JButton ConfirmButton;
     private javax.swing.JButton MenuButton;
