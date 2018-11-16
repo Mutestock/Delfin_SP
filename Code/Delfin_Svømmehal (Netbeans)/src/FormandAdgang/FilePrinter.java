@@ -20,22 +20,11 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
+    private static String filePath = "D:\\registrationNew.txt";
+    private static PrintWriter printwriter = FilePrinter.createFile(filePath);
 
-    private static String filePath;
-    private static PrintWriter printwriter;
+    public FilePrinter(String filePath, PrintWriter printwriter) {
 
-    public FilePrinter(String filePath, PrintWriter printwriter){   
-    }
-    
-    static String registrationPath = "D:\\registrationNew.txt";
-    static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
-
-    static String sublistPath = "D:\\subListNew.txt";
-    static PrintWriter subOut2 = FilePrinter.createFile(sublistPath);
-
-    
-    
-    public FilePrinter(String filePath) {
         this.filePath = filePath;
         this.printwriter = printwriter;
     }
@@ -54,8 +43,6 @@ public class FilePrinter {
         return null;
     }
 
-    
-    
     public static void getFileInfo(String path) {
         System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
@@ -77,26 +64,21 @@ public class FilePrinter {
             System.exit(0);
         }
     }
-   public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
+
+    public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
         for (int i = 0; i < ArrayList.size(); ++i) {
             printer.println(ArrayList.get(i));
         }
     }
-   
+
     public static String getFilePath() {
         return filePath;
     }
 
-    
-    public static PrintWriter getPrintwriter(String filePath) {
-        
-    //private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
-        printwriter = FilePrinter.createFile(filePath);
-        
+    public static PrintWriter getPrintwriter(String path) {
+        printwriter = FilePrinter.createFile(path);
+
         return printwriter;
     }
 
-    
 }
-
- 

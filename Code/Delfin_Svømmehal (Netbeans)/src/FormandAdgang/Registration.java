@@ -19,19 +19,12 @@ public class Registration {
 
     //Since this is just a reference, and not an instance,
     //we will have to initialize the Team class in the GUI
-    //once the user will start the program.
+    //once the user will start the program. Initializer 
+    //that gets information from the text file upon starting.
     Team team;
 
     public Registration() {
-
-       
-        //this.membersFile = "D:\\members.txt";
-        
     }
-    private static String registrationPath = "D:\\registrationNew.txt";
-    private static PrintWriter subOut1 = FilePrinter.createFile(registrationPath);
-
-   
 
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
@@ -39,7 +32,6 @@ public class Registration {
 
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
-
     }
 
     public static void main(String[] args) {
@@ -48,20 +40,17 @@ public class Registration {
         Member member3 = new Member("Emil skov", 20, false, true);
         Member member4 = new Member("Dolf bo", 15, true, true);
 
-              
-        FilePrinter.getPrintwriter(FilePrinter.getFilePath());
+        String path = FilePrinter.getFilePath();
+        PrintWriter print = FilePrinter.getPrintwriter(path);
+
         registeredMembers.add(member1);
         registeredMembers.add(member2);
         registeredMembers.add(member3);
         registeredMembers.add(member4);
         Registration r = new Registration();
-        FilePrinter.subLister(registeredMembers, subOut1);
 
-        // System.out.println(member1);
-//        r.registerMember(memberaf1);
-//        r.registerMember(memberaf2);
-//        r.registerMember(memberaf3);
-//        r.registerMember(memberaf4);
-        subOut1.close();
+        FilePrinter.subLister(registeredMembers, print);
+
+        print.close();
     }
 }
