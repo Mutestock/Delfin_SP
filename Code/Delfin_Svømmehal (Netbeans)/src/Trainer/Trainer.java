@@ -15,9 +15,7 @@ public class Trainer {
     
     
     public Trainer(String name){   
-
         this.name = name;
-        
     }
 
     @Override
