@@ -26,15 +26,9 @@ public class Member {
     private String subCatalogueYear;
     private int subFee;
 
-<<<<<<< HEAD
-    public Member(String name, int age, boolean activityForm, boolean competetive) {
-=======
-    public Member() {
-
-    }
 
     public Member(String name, int age, boolean activityForm, boolean competetive, String subCatalogueYear) {
->>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
+
         this.name = name;
         this.age = age;
         this.activity = activityForm;
