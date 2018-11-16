@@ -23,7 +23,22 @@ public class Member {
     private int subFee;
     
 
+<<<<<<< HEAD
     public Member(String name, int age, boolean activityForm, boolean competetive) {
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    public Member(String name, int age, boolean activityForm, boolean competetive) {
+=======
+    public Member() {
+
+    }
+>>>>>>> c9a3f948eb2f1beb0973ad9c789b76cd8256e452
+
+    public Member(String name, int age, boolean activityForm, boolean competetive, String subCatalogueYear) {
+>>>>>>> fbd7945e520c0618004954346537f0abb3a196d7
+>>>>>>> 101d1917f923aa23cc1adb1e5d271717ef74c39e
         this.name = name;
         this.age = age;
         this.activity = activityForm;
