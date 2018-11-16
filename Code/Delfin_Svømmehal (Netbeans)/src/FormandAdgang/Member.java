@@ -4,8 +4,6 @@ package FormandAdgang;
 public class Member {
     
 
-
-    // kan sætte af sammen med den her
     //The fields/values of a member.
     private String name;
     private int age;
@@ -44,8 +42,7 @@ public class Member {
         }
     }
 
-    
-    //A lot of get-methods.
+
     public String getName() {
         return name;
     }
@@ -93,6 +90,9 @@ public class Member {
     
     
     //Logic method used to calculate a certain members fee (based on their age)
+    //It's functionality has been implemented in the constructor.
+    //Kept since it might become useful later.
+    
     public int calcFee() {
         if (isActive() == true) {
             if (getAge() >= 60) {
@@ -104,7 +104,7 @@ public class Member {
             }
         }
         return 500;
-    }
+   }
 
     
     //toString will have to get simplified and easier to read.

@@ -7,10 +7,13 @@ package GUI;
 public class Start extends javax.swing.JFrame {
 
     private FGUI guiF;
+    private TGUI guiT;
 
     public Start() {
         initComponents();
         guiF = new FGUI();
+        guiT = new TGUI();
+        
     }
 
     /**
@@ -42,9 +45,19 @@ public class Start extends javax.swing.JFrame {
 
         trainerButton.setText("Træner");
         trainerButton.setPreferredSize(new java.awt.Dimension(90, 25));
+        trainerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trainerButtonActionPerformed(evt);
+            }
+        });
 
         cashierButton.setText("Kasserer");
         cashierButton.setPreferredSize(new java.awt.Dimension(90, 25));
+        cashierButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashierButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,6 +96,16 @@ public class Start extends javax.swing.JFrame {
         this.setVisible(false);
         guiF.setVisible(true);
     }//GEN-LAST:event_chairmanButton1ActionPerformed
+
+    private void trainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerButtonActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_trainerButtonActionPerformed
+
+    private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cashierButtonActionPerformed
 
     /**
      * @param args the command line arguments

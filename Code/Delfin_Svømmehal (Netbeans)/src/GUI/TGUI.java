@@ -13,7 +13,7 @@ import Trainer.Team;
  */
 public class TGUI extends javax.swing.JFrame {
 
-    private GUI2 gui2;
+    //private GUI2 gui2;
     private GUIMember guiM;
 
     
@@ -24,7 +24,7 @@ public class TGUI extends javax.swing.JFrame {
     public TGUI() {
         initComponents();
         
-        guiM = new GUIMember(TGUI gui);
+        guiM = new GUIMember();
     }
 
     /**

@@ -2,11 +2,10 @@ package GUI;
 
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
-<<<<<<< HEAD
-=======
+
 import Trainer.Team;
 import javax.swing.SwingUtilities;
->>>>>>> c9a3f948eb2f1beb0973ad9c789b76cd8256e452
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,7 +19,8 @@ import javax.swing.SwingUtilities;
 public class GUI2 extends javax.swing.JFrame {
 
     private FGUI gui;
-
+    
+    
     /**
      * Creates new form GUI2
      */
@@ -187,25 +187,39 @@ public class GUI2 extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
-<<<<<<< HEAD
-
-=======
->>>>>>> 5d97dc00a92a56beee077962d70603d53e3d8f51
-        boolean active = this.actBox.getAutoscrolls();
-        boolean competetive = this.compBox.getAutoscrolls();
-
         
-        Member member = new Member(name, age, active, competetive);
-<<<<<<< HEAD
+        
+        boolean active = false;
+        String actStr = (String) actBox.getSelectedItem();
+        if(actStr.equals("yes")){
+        active = true;
+        }
+        else if(actStr.equals("no")){
+            active = false;
+        }
+        
 
-        boolean active = (Boolean) this.actBox.getSelectedItem();
-        boolean competetive = (Boolean) this.compBox.getSelectedItem();
+        boolean competetive = false;
+        String compStr = (String) actBox.getSelectedItem();
+        if(compStr.equals("yes")){
+        competetive = true;
+        }
+        else if(compStr.equals("no")){
+            competetive = false;
+        }
+                
+
+
+       
+        
+        //boolean competetive = this.compBox.getAutoscrolls();
+        //boolean active = this.actBox.getAutoscrolls();
+        Member member = new Member(name, age, active, competetive);
+
         
         //2018 will have to be changed to automatically get the current year
 
-        Member member = new Member(name, age, active, competetive, "2018");
-=======
->>>>>>> 5d97dc00a92a56beee077962d70603d53e3d8f51
+
 
         Registration r = new Registration();
         
@@ -237,6 +251,10 @@ public class GUI2 extends javax.swing.JFrame {
 
     private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
         // TODO add your handling code here:
+        //Boolean[] choices = {true, false};
+        //JComboBox actChoice = new JComboBox(choices);
+       // actBox.get(choices);
+        
     }//GEN-LAST:event_compBoxActionPerformed
 
     private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
