@@ -8,16 +8,16 @@ package Trainer;
 import FormandAdgang.Member;
 import java.util.ArrayList;
 
-public class Team {
+public class Teams {
 
-    private Team juniorTeam = new Team();
-    private Team seniorTeam = new Team();
-    private Team compJuniorTeam = new Team();
-    private Team compSeniorTeam = new Team();
+    private Teams juniorTeam = new Teams();
+    private Teams seniorTeam = new Teams();
+    private Teams compJuniorTeam = new Teams();
+    private Teams compSeniorTeam = new Teams();
 
     
     
-    public Team() {
+    public Teams() {
     }
     
     
@@ -51,19 +51,19 @@ public class Team {
 
     
     
-    public Team getJuniorTeam() {
+    public Teams getJuniorTeam() {
         return juniorTeam;
     }
 
-    public Team getSeniorTeam() {
+    public Teams getSeniorTeam() {
         return seniorTeam;
     }
 
-    public Team getCompJuniorTeam() {
+    public Teams getCompJuniorTeam() {
         return compJuniorTeam;
     }
 
-    public Team getCompSeniorTeam() {
+    public Teams getCompSeniorTeam() {
         return compSeniorTeam;
     }
 

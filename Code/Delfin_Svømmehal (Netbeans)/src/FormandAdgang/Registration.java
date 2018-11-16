@@ -20,7 +20,7 @@ public class Registration {
     //we will have to initialize the Team class in the GUI
     //once the user will start the program. Initializer 
     //that gets information from the text file upon starting.
-    Team team;
+    Teams team;
 
     public Registration() {
     }
