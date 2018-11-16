@@ -1,7 +1,6 @@
 package GUI;
 
 import FormandAdgang.Member;
-import FormandAdgang.MemberAF;
 import FormandAdgang.Registration;
 import javax.swing.SwingUtilities;
 
@@ -176,10 +175,9 @@ public class GUI2 extends javax.swing.JFrame {
         boolean competetive = (Boolean) this.compBox.getSelectedItem();
 
         Member member = new Member(name, age, active, competetive);
-        MemberAF memberAF = new MemberAF(member);
 
         Registration r = new Registration();
-        r.registerMember(memberAF);
+        r.registerMember(member);
 
         // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
