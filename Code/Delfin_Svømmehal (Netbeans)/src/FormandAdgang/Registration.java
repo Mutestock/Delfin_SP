@@ -43,6 +43,7 @@ public class Registration {
       //  Registration r = new Registration();
 
         FilePrinter.subLister(registeredMembers, print);
+        FilePrinter.getFileInfo(path);
 
         print.close();
     }
