@@ -35,8 +35,8 @@ public class MemberTest {
         int result3 = instance3.calcFee();
         
         assertEquals(expResult1, result1);
-        assertEquals(expResult1, result1);
-        assertEquals(expResult1, result1);
+        assertEquals(expResult2, result2);
+        assertEquals(expResult3, result3);
     }
 
     
