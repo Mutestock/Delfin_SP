@@ -7,9 +7,9 @@ public class Member {
     //The fields/values of a member.
     private String name;
     private int age;
+    private String phone;
     private boolean activity;
     private boolean competetive;
-    //--Need to add more at a certain point (We need "stamoplysninger")!--//
     
     //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
@@ -21,13 +21,13 @@ public class Member {
     private int subFee;
     
 
-    public Member(String name, int age, boolean activityForm, boolean competetive) {
+    public Member(String name, int age, String phone, boolean activityForm, boolean competetive) {
 
         this.name = name;
         this.age = age;
         this.activity = activityForm;
         this.competetive = competetive;
-        
+        this.phone = phone;
         //Sets the value of a member to either Junior or Senior
         //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {

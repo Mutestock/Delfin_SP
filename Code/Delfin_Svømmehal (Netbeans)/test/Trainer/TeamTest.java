@@ -17,10 +17,10 @@ public class TeamTest {
     
     @Test
     public void testAddMemberToTeam() {
-        Member juncomp = new Member("test", 7, true, true);
-        Member sencomp = new Member("test", 25, false, true);
-        Member juncas = new Member("test", 7, true, false);
-        Member sencas = new Member("test", 35, false, false);
+        Member juncomp = new Member("test", 7,"12345679", true, true);
+        Member sencomp = new Member("test", 25,"12345679", false, true);
+        Member juncas = new Member("test", 7,"12345679", true, false);
+        Member sencas = new Member("test", 35,"12345679", false, false);
 
         Team team = new Team();
         team.addMemberToTeam(juncomp);
