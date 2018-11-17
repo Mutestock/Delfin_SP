@@ -26,9 +26,9 @@ public class MemberTest {
     @org.junit.Test
     public void testCalcFee() {
         System.out.println("calcFee");
-        Member instance1 = new Member("test",7,true,true);
-        Member instance2 = new Member("test",23,true,true);
-        Member instance3 = new Member("test",72,true,true);
+        Member instance1 = new Member("test",7,"12345679",true,true);
+        Member instance2 = new Member("test",23,"12345679",true,true);
+        Member instance3 = new Member("test",72,"12345679",true,true);
         int expResult1 = 1000;
         int expResult2 = 1600;
         int expResult3 = 1200;

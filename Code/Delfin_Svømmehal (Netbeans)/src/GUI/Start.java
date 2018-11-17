@@ -99,6 +99,8 @@ public class Start extends javax.swing.JFrame {
 
     private void trainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerButtonActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        guiT.setVisible(true);
         
         
     }//GEN-LAST:event_trainerButtonActionPerformed

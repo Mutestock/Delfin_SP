@@ -30,10 +30,10 @@ public class Registration {
         
         //Creating instances of Member. 
         //This is necessary when trying to test the functionality of the filePrinter class.
-        Member member1 = new Member("Emil", 60, true, true);
-        Member member2 = new Member("ahmed", 20, true, true);
-        Member member3 = new Member("Emil skov", 20, false, true);
-        Member member4 = new Member("Dolf bo", 15, true, true);
+        Member member1 = new Member("Emil", 60, "12345678", true, true);
+        Member member2 = new Member("ahmed", 20, "33445566", true, true);
+        Member member3 = new Member("Emil skov", 20, "34343477", false, true);
+        Member member4 = new Member("Dolf bo", 15, "99998888", true, true);
 
        
         //Defines the path and makes the PrintWriter instance write to it.

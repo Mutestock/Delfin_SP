@@ -22,9 +22,11 @@ public class FGUI extends javax.swing.JFrame {
      * Creates new form GUI
      */
     public FGUI() {
+        this.setTitle("Formand side");
         initComponents();
         gui2 = new GUI2(this);
         guiM = new GUIMember();
+        this.setResizable(false);
     }
 
     /**
