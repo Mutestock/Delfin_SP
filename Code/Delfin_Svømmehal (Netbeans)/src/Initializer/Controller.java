@@ -24,9 +24,53 @@ public class Controller {
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
     
     
+    //Controller methods:
+    //createMember()                (added)
+    //updateMember(Member member)   ()
+    //deleteMember(Member member)   ()  
+    //getAllMembers()               ()
+    // - (^ read members)
+    
+    //Controller methods (methods of which we have yet to implement at all)
+    //top5Members(Diciplin diciplin)
+    // - (^ We should create a class for eat diciplin and save
+    // - (the top 5 members of each diciplin in their seperate classes)
+    //registerResult()
+    //getResult(-unknown parameter-)
+    //getBalanceSheet()
+    //createContingentPayment(Member member);
+    
+    
     public Controller() {
     }
     
+    
+    
+    //Methods
+    
+    //createMember creates a new instance of a member and adds it to the .txt file.
+    public void createMember(String name, int age, String phone, boolean activityForm, boolean competetive)  {
+        Member member = new Member(name, age, phone, activityForm, competetive);
+        Registration r = new Registration();
+        r.registerMember(member);
+    }
+    
+    //updateMember should in the easiest way update any parameter of any member
+    //from the .txt file.
+    public void updateMember() {
+        
+    }
+    
+    //deleteMember deletes a member from the .txt file.
+    public void deleteMember() {
+        
+    }
+    
+    //getAllMembers should be used to show all the added members of the .txt
+    //file and show them in the GUI. (Could also be called readMembers()).
+    public void getAllMembers() {
+        
+    }
     
     
     

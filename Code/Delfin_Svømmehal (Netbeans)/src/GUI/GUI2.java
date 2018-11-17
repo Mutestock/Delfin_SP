@@ -215,7 +215,7 @@ public class GUI2 extends javax.swing.JFrame {
         //boolean competetive = this.compBox.getAutoscrolls();
         //boolean active = this.actBox.getAutoscrolls();
         Member member = new Member(name, age, active, competetive);
-
+        //^^^^^^ I have updated the member class, you need a Phonenumber parameter.
         
         //2018 will have to be changed to automatically get the current year
 
