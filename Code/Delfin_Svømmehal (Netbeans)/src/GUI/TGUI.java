@@ -15,6 +15,7 @@ public class TGUI extends javax.swing.JFrame {
 
     //private GUI2 gui2;
     private GUIMember guiM;
+    private Start sMenu;
 
     
     
@@ -25,6 +26,7 @@ public class TGUI extends javax.swing.JFrame {
         initComponents();
         
         guiM = new GUIMember();
+        
     }
 
     /**
