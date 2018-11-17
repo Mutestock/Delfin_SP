@@ -42,10 +42,10 @@ public class Registration {
         String path = FilePrinter.getFilePath();
         PrintWriter print = FilePrinter.getPrintwriter(path);
         
-        registeredMembers.add(member1);
+        /*registeredMembers.add(member1);
         registeredMembers.add(member2);
         registeredMembers.add(member3);
-        registeredMembers.add(member4);
+        registeredMembers.add(member4);*/
         
         //Prints each line without overwriting.
         FilePrinter.subLister(registeredMembers, print);
@@ -65,6 +65,12 @@ public class Registration {
         
         System.out.println("");
         Controller c = new Controller();
+        for (int i = 0; i < c.getAllMembers().size(); ++i) {
+            System.out.println(c.getAllMembers().get(i));
+        }
+        
+        f.getFileInfo(FilePrinter.getFilePath());
+        System.out.println("");
         for (int i = 0; i < c.getAllMembers().size(); ++i) {
             System.out.println(c.getAllMembers().get(i));
         }

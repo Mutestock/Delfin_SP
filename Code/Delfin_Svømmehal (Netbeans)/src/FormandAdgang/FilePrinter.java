@@ -58,10 +58,12 @@ public class FilePrinter {
     public void getFileInfo(String path) {
         //System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
+        membersArrayList.clear();
 
         try {
             BufferedReader getInfo = new BufferedReader(new FileReader(subListUpgrade));
             String subInfo = getInfo.readLine();
+            
 
             while (subInfo != null) {
                 membersArrayList.add(subInfo);
