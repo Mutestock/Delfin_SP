@@ -23,6 +23,22 @@ public class Controller {
     //Additional basic information for members and trainer (e.g. phonenumber).
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
     
+    //Controller methods:
+    //createMember()
+    //updateMember(Member member)
+    //deleteMember(Member member)
+    //getAllMembers()
+    // - (^ read members)
+    //top5Members(Diciplin diciplin)
+    // - (^ We should create a class for eat diciplin and save
+    // - (the top 5 members of each diciplin in their seperate classes)
+    
+    //Controller methods (methods of which we have yet to implement at all)
+    //registerResult()
+    //getResult(-unknown parameter-)
+    //getBalanceSheet()
+    //createContingentPayment(Member member);
+    
     
     public Controller() {
     }
