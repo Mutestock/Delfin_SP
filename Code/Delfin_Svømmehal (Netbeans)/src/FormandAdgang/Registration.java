@@ -1,5 +1,6 @@
 package FormandAdgang;
 
+import Controller.Controller;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import Trainer.*;
@@ -49,9 +50,23 @@ public class Registration {
         //Prints each line without overwriting.
         FilePrinter.subLister(registeredMembers, print);
         
+        FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
+        
+        
+        
         //Closes the PrintWriter instance. print.close(); could be seen as a confirmation of the PrintWriters actions, before printing to the document.
         //No text will printed without it being there, and therefore it's absolutely necessary, and shouldn't be deleted.
         print.close();
 
+        
+        //Testing controller functionality..
+        f.getFileInfo(FilePrinter.getFilePath());
+        f.printArrayList();
+        
+        System.out.println("");
+        Controller c = new Controller();
+        for (int i = 0; i < c.getAllMembers().size(); ++i) {
+            System.out.println(c.getAllMembers().get(i));
+        }
     }
 }

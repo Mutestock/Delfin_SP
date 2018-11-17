@@ -1,6 +1,7 @@
 
-package Initializer;
+package Controller;
 import FormandAdgang.*;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -66,10 +67,11 @@ public class Controller {
         
     }
     
-    //getAllMembers should be used to show all the added members of the .txt
-    //file and show them in the GUI. (Could also be called readMembers()).
-    public void getAllMembers() {
-        
+    //getAllMembers returns a String list of all members registered in the .txt file.
+    public ArrayList<String> getAllMembers() {
+        FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
+        f.getFileInfo(FilePrinter.getFilePath());
+        return f.getMembersArrayList();
     }
     
     
