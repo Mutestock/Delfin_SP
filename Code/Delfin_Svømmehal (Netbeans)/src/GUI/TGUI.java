@@ -25,7 +25,7 @@ public class TGUI extends javax.swing.JFrame {
     public TGUI() {
         initComponents();
         
-        guiM = new GUIMember();
+        //guiM = new GUIMember();
         
     }
 
