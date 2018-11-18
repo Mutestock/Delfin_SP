@@ -20,6 +20,8 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
+    ArrayList<String> membersArrayList = new ArrayList();
+    
     //Defining filepath. Can be redefined if a new path is necessary.
     //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
     private static String filePath = "D:\\registrationNew.txt";
@@ -53,16 +55,18 @@ public class FilePrinter {
     }
     //File reader. This method allows us to read and react from the .txt file. 
     //This is necessary when using the function where the user pays his fee(kontingentBetaling)(WIP)
-    public static void getFileInfo(String path) {
-        System.out.println("Info written to file...\n");
+    public void getFileInfo(String path) {
+        //System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
+        membersArrayList.clear();
 
         try {
             BufferedReader getInfo = new BufferedReader(new FileReader(subListUpgrade));
             String subInfo = getInfo.readLine();
+            
 
             while (subInfo != null) {
-                System.out.println(subInfo);
+                membersArrayList.add(subInfo);
                 subInfo = getInfo.readLine();
             }
 
@@ -90,6 +94,20 @@ public class FilePrinter {
         printwriter = FilePrinter.createFile(path);
 
         return printwriter;
+    }
+
+    
+    
+    
+    public ArrayList<String> getMembersArrayList() {
+        return membersArrayList;
+    }
+    
+    public void printArrayList() {
+        for (int i = 0; i < membersArrayList.size(); ++i) {
+            System.out.println(membersArrayList.get(i));
+        }
+        
     }
 
 }
