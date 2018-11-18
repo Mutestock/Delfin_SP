@@ -1,5 +1,8 @@
 package GUI;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+
 /**
  *
  * @author ahmed
@@ -8,10 +11,12 @@ public class Start extends javax.swing.JFrame {
 
     private FGUI guiF;
     private TGUI guiT;
+    
+    String info = "hello there, hope this works";
 
     public Start() {
         initComponents();
-        guiF = new FGUI();
+        //guiF = new FGUI();
         guiT = new TGUI();
         
     }
@@ -107,6 +112,8 @@ public class Start extends javax.swing.JFrame {
 
     private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
         // TODO add your handling code here:
+       // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
     }//GEN-LAST:event_cashierButtonActionPerformed
 
     /**
