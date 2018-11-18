@@ -66,6 +66,7 @@ public class Registration {
         System.out.println("");
         Controller c = new Controller();
         c.deleteMembersRedo2();
+        c.updateMember();
         for (int i = 0; i < c.getAllMembers().size(); ++i) {
             System.out.println(c.getAllMembers().get(i));
         }

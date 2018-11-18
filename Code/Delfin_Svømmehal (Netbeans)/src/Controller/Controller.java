@@ -7,7 +7,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Stream;
@@ -58,11 +61,20 @@ public class Controller {
     //from the .txt file.
     public void updateMember() {
 
+        try {
+            Path path = Paths.get("D:\\test.txt");
+            Charset charset = StandardCharsets.UTF_8;
+
+            String content = new String(Files.readAllBytes(path), charset);
+            content = content.replaceAll("age", "bar");
+            Files.write(path, content.getBytes(charset));
+        } catch (IOException ex) {
+
+        }
     }
 
- //Deletes all lines containing the contents of lineToRemove from a .txt
- //Comments in the code are not mine //Moi(
-    
+    //Deletes all lines containing the contents of lineToRemove from a .txt
+    //Comments in the code are not mine //Moi(
     public void deleteMembersRedo2() {
         String inputFileName = "D:\\registrationNew.txt";
         String outputFileName = "D:\\out.txt";
@@ -89,7 +101,7 @@ public class Controller {
 
         }
     }
-    
+
     public ArrayList<String> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
