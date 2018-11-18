@@ -53,6 +53,8 @@ public class FilePrinter {
         }
         return null;
     }
+    
+    
     //File reader. This method allows us to read and react from the .txt file. 
     //This is necessary when using the function where the user pays his fee(kontingentBetaling)(WIP)
     public void getFileInfo(String path) {
