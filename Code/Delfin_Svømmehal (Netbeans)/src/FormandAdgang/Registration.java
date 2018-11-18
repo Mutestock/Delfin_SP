@@ -65,14 +65,11 @@ public class Registration {
         
         System.out.println("");
         Controller c = new Controller();
+        c.deleteMembersRedo2();
         for (int i = 0; i < c.getAllMembers().size(); ++i) {
             System.out.println(c.getAllMembers().get(i));
         }
-        
-        f.getFileInfo(FilePrinter.getFilePath());
-        System.out.println("");
-        for (int i = 0; i < c.getAllMembers().size(); ++i) {
-            System.out.println(c.getAllMembers().get(i));
-        }
+       
+
     }
 }
