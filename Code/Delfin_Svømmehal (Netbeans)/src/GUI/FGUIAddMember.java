@@ -210,8 +210,8 @@ public class FGUIAddMember extends javax.swing.JFrame {
         
         //- Hvad hvis man vil adde flere members på én gang? Tror det er
         //overflødigt når man alligevel har en "menu-knap" i samme gui.
-        fGUI.setVisible(true);
-        this.setVisible(false);
+        //fGUI.setVisible(true);
+        //this.setVisible(false);
 
         Controller c = new Controller();
 
@@ -227,6 +227,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
         // makes sure that the input fields is always clean when it is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
+        this.PhoneInput.setText("");
         this.compBox.setSelectedIndex(0);
         this.actBox.setSelectedIndex(0);
 
