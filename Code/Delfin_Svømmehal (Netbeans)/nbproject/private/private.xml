@@ -3,46 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
-            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/TGUI.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
-            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/test/FormandAdgang/MemberTest.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/test/Trainer/TeamTest.java</file>
-            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI2.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Controller/Controller.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUIShowMembers.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUIStart.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/test/Controller/ControllerTest.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/FGUIDeleteMember.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/TGUI.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Teams.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/test/FormandAdgang/MemberTest.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Trainer.java</file>
+            <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/FGUIAddMember.java</file>
             <file>file:/C:/Users/emils/Desktop/delfin%20opgave/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/FGUI.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/Initializer/Controller.java</file>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
-            <file>file:/C:/Users/Emil%20PC/Desktop/GitHub%20Projekt%20test/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/GUI2.java</file>
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 3da70f9e2964e7c76c9606f2a9c7bb572f03da4d
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/FGUI.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/test/FormandAdgang/MemberTest.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/GUI/TGUI.java</file>
-<<<<<<< HEAD
-=======
-            <file>file:/C:/Users/Moi(/Desktop/pull6/Code/Delfin_Svømmehal%20(Netbeans)/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/Moi(/Desktop/pull6/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/FilePrinter.java</file>
-            <file>file:/C:/Users/Moi(/Desktop/pull6/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Registration.java</file>
-            <file>file:/C:/Users/Moi(/Desktop/pull6/Code/Delfin_Svømmehal%20(Netbeans)/src/FormandAdgang/Member.java</file>
->>>>>>> 33c50164c9ce6ff786bdc7f77e5c9147695d6cef
->>>>>>> db5919ceced133bfc3953cfc7494b01f2c997645
->>>>>>> 7923f7e937ae4ca088d2280479d328998880a6d5
-=======
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Kontingent/KontingentBetaling.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/gitBS/Code/Delfin_Svømmehal%20(Netbeans)/src/Trainer/Trainer.java</file>
->>>>>>> 3da70f9e2964e7c76c9606f2a9c7bb572f03da4d
         </group>
     </open-files>
 </project-private>
