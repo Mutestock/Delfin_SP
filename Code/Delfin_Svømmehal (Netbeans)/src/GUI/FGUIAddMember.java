@@ -81,7 +81,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Do the person wish to be an active swimmer?");
+        jLabel5.setText("Do the person wish an active subscription?");
 
         jLabel3.setText("Phone:");
 

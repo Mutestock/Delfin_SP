@@ -65,8 +65,8 @@ public class Controller {
 
     //updateMember should in the easiest way update all parameters of any member
     //from the .txt file.
-    public void updateMember() {
-        try {
+    public Member getMember(String phone) {
+        /*try {
             Path path = Paths.get("D:\\test.txt");
             Charset charset = StandardCharsets.UTF_8;
 
@@ -75,7 +75,69 @@ public class Controller {
             Files.write(path, content.getBytes(charset));
         } catch (IOException ex) {
 
+        }*/
+        String inputFileName = FilePrinter.getFilePath();
+        String outputFileName = FilePrinter.getFilePath();
+        String lineToUpdate = phone;
+
+        File inputFile = new File(inputFileName);
+        File outputFile = new File(outputFileName);
+
+        Member member = null;
+        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String line = reader.readLine();
+            String temp = new String();
+            while (line != null) {
+                if (line.contains(lineToUpdate)) {
+                    temp = line;
+                    break;
+                }
+            }
+            reader.close();
+            String name = "";
+            String parseAge = "";
+            boolean activityForm = false; 
+            boolean competetive = false;
+            int counter = 0;
+            for (int i = 0; i < line.length(); ++i){
+                if (line.charAt(i) == ','){
+                    counter ++;
+                }
+                
+                if (counter == 0){
+                    name += line.charAt(i);
+                }
+                
+                if (counter == 1){
+                    if (line.charAt(i) == ','){
+                        
+                    }
+                    else {
+                    parseAge += line.charAt(i);
+                    }
+                }
+                
+                if (counter == 2){
+                    if (line.charAt(i) == 't'){
+                        activityForm = true;
+                    }
+                }
+                
+                if (counter == 3){
+                    if (line.charAt(i) == 't'){
+                        competetive = true;
+                    }
+                }
+            }
+            System.out.println(parseAge);
+            int age = Integer.parseInt(parseAge);
+            member = new Member(name,age,phone,activityForm,competetive);
+            
+        } catch (Exception e) {
         }
+        return member;
     }
 
     //Returns a list of all the members that is contained by the .txt file from
