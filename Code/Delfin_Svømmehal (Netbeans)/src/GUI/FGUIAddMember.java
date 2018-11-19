@@ -236,7 +236,6 @@ public class FGUIAddMember extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-        // TODO add your handling code here:
         // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
         fGUI.setVisible(true);
         this.setVisible(false);
