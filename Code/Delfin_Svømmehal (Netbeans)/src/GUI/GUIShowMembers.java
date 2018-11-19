@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author ahmed
@@ -16,12 +18,15 @@ public class GUIShowMembers extends javax.swing.JFrame {
      */
     
     private FGUI guiF;
-    private Start sGUI;
+    private TGUI guiT;
     
-    public GUIShowMembers() {
+    // + , JFrame tGui
+    
+    public GUIShowMembers(JFrame fGui) {
         initComponents();
-        this.guiF = guiF;
-        sGUI = new Start();
+        this.guiF = (FGUI) fGui;
+        //this.guiT = (TGUI) tGui;
+        
         
         
     }
@@ -138,7 +143,7 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
         
-        sGUI.setVisible(true);
+        guiF.setVisible(true);
         this.setVisible(false);
         
     }//GEN-LAST:event_MenuButtonActionPerformed

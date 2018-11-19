@@ -23,6 +23,7 @@ public class Controller {
     //The Controller's purpose is to collect methods and make them easy to handle and instanciate.
     //Since this also acts as a hub for the GUI to interact with the rest of the classes.
     //Could be seen as the brain of the program (WIP).
+    
     //To do list:
     //merge junior/senior as a single boolean value
     //Implement Controller
@@ -32,14 +33,16 @@ public class Controller {
     //Make it possible for the GUI to go back to the main menu after having chosen a role.
     //Change GUI Class names.
     //Clean up redundant GUI code
+    
     //Stretch goals:
     //Additional basic information for members and trainer (e.g. phonenumber).
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
+    
     //Controller methods:
     //createMember()                (added)
     //updateMember(Member member)   ()
-    //deleteMember(Member member)   ()  
-    //getAllMembers()               ()
+    //deleteMember(Member member)   (added)  
+    //getAllMembers()               (added)
     // - (^ read members)
     //Controller methods (methods of which we have yet to implement at all)
     //top5Members(Diciplin diciplin)
@@ -62,8 +65,8 @@ public class Controller {
 
     //updateMember should in the easiest way update all parameters of any member
     //from the .txt file.
-    public void updateMember() {
-        try {
+    public Member getMember(String phone) {
+        /*try {
             Path path = Paths.get("D:\\test.txt");
             Charset charset = StandardCharsets.UTF_8;
 
@@ -72,9 +75,73 @@ public class Controller {
             Files.write(path, content.getBytes(charset));
         } catch (IOException ex) {
 
+        }*/
+        String inputFileName = FilePrinter.getFilePath();
+        String outputFileName = FilePrinter.getFilePath();
+        String lineToUpdate = phone;
+
+        File inputFile = new File(inputFileName);
+        File outputFile = new File(outputFileName);
+
+        Member member = null;
+        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String line = reader.readLine();
+            String temp = new String();
+            while (line != null) {
+                if (line.contains(lineToUpdate)) {
+                    temp = line;
+                    break;
+                }
+            }
+            reader.close();
+            String name = "";
+            String parseAge = "";
+            boolean activityForm = false; 
+            boolean competetive = false;
+            int counter = 0;
+            for (int i = 0; i < line.length(); ++i){
+                if (line.charAt(i) == ','){
+                    counter ++;
+                }
+                
+                if (counter == 0){
+                    name += line.charAt(i);
+                }
+                
+                if (counter == 1){
+                    if (line.charAt(i) == ','){
+                        
+                    }
+                    else {
+                    parseAge += line.charAt(i);
+                    }
+                }
+                
+                if (counter == 2){
+                    if (line.charAt(i) == 't'){
+                        activityForm = true;
+                    }
+                }
+                
+                if (counter == 3){
+                    if (line.charAt(i) == 't'){
+                        competetive = true;
+                    }
+                }
+            }
+            System.out.println(parseAge);
+            int age = Integer.parseInt(parseAge);
+            member = new Member(name,age,phone,activityForm,competetive);
+            
+        } catch (Exception e) {
         }
+        return member;
     }
 
+    //Returns a list of all the members that is contained by the .txt file from
+    //getFilePath();
     public ArrayList<String> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
@@ -82,69 +149,34 @@ public class Controller {
     }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
-    //Comments in the code are not mine //Moi(
     public void deleteMember(String phone) {
         String inputFileName = FilePrinter.getFilePath();
-        String outputFileName = "D:\\out.txt";
+        String outputFileName = FilePrinter.getFilePath();
         String lineToRemove = phone;
 
-        // The traps any possible read/write exceptions which might occur
         File inputFile = new File(inputFileName);
         File outputFile = new File(outputFileName);
-        // Open the reader/writer, this ensure that's encapsulated
-        // in a try-with-resource block, automatically closing
-        // the resources regardless of how the block exists
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-            // Read each line from the reader and compare it with
-            // with the line to remove and write if required
-            String line = null;
-            while ((line = reader.readLine()) != null) {
+            String line = reader.readLine();
+            ArrayList<String> temp = new ArrayList();
+            while (line != null) {
                 if (!line.contains(lineToRemove)) {
-                    writer.write(line);
-                    writer.newLine();
+                    temp.add(line);
                 }
+                line = reader.readLine();
             }
             reader.close();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+            for (int i = 0; i < temp.size(); ++i) {
+                writer.write(temp.get(i));
+                writer.newLine();
+            }
             writer.close();
             
-            Path path = Paths.get(FilePrinter.getFilePath());
-            Files.delete(path);
-            outputFile.renameTo(inputFile);
-           
         } catch (IOException e) {}
     }
 
-    //(Svense her) Jeg prøvede at implementere en metode der i stedet for laver
-    //en ny fil og gemmer den opdaterede member liste der, så sletter den bare
-    //den gamle og opdatere den der i samme fil.
-    public void deleteMember2(String phone) {
-        String inputFileName = "D:\\registrationNew.txt";
-        String outputFileName = "D:\\out.txt";
-        String lineToRemove = phone;
-
-        File inputFile = new File(inputFileName);
-        File outputFile = new File(outputFileName);
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-
-            String currentLine;
-
-            while ((currentLine = reader.readLine()) != null) {
-                // trim newline when comparing with lineToRemove
-                String trimmedLine = currentLine.trim();
-                if (trimmedLine.equals(lineToRemove)) {
-                    continue;
-                }
-                writer.write(currentLine + System.getProperty("line.separator"));
-            }
-            writer.close();
-            reader.close();
-            boolean successful = outputFile.renameTo(inputFile);
-        }
-        catch (Exception IO) {}
-    }
 }
