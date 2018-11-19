@@ -1,6 +1,7 @@
 package GUI;
 
 import Trainer.Teams;
+import javax.swing.JFrame;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,16 +16,18 @@ public class FGUI extends javax.swing.JFrame {
 
     private FGUIAddMember fGUIADD;
     private GUIShowMembers guiM;
+    private GUIStart guiStart;
 
     /**
      * Creates new form GUI
      */
-    public FGUI() {
+    public FGUI(JFrame fGui) {
         this.setTitle("Formand side");
         initComponents();
-       // guiF = new FGUIAdd();
-        guiM = new GUIShowMembers();
+        fGUIADD = new FGUIAddMember(this);
+       // guiM = new GUIShowMembers();
         this.setResizable(false);
+        guiStart = (GUIStart) fGui;
     }
 
     /**
@@ -39,7 +42,7 @@ public class FGUI extends javax.swing.JFrame {
         addButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         memberButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,25 +63,32 @@ public class FGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Formand page");
+        jButton1.setText("Return");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(51, 51, 51)
-                            .addComponent(addButton)
-                            .addGap(75, 75, 75)
-                            .addComponent(memberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(126, 126, 126)
-                            .addComponent(jLabel1))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(addButton)
+                        .addGap(75, 75, 75)
+                        .addComponent(memberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel1)))
                 .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(54, 54, 54))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,9 +99,9 @@ public class FGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(memberButton)
                     .addComponent(addButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(43, 43, 43))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -100,9 +110,9 @@ public class FGUI extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         //When the button is pressed, the FGUI will gets "invisible" and FGUI (the add member menu) get visible.
-        fGUIADD = new FGUIAddMember();
-        this.setVisible(false);
-        fGUIADD.setVisible(true);
+
+       this.setVisible(false);
+       fGUIADD.setVisible(true);
 
 
     }//GEN-LAST:event_addButtonActionPerformed
@@ -113,16 +123,23 @@ public class FGUI extends javax.swing.JFrame {
         guiM.setVisible(true);
     }//GEN-LAST:event_memberButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        guiStart.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   /* public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+     /*   try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -142,17 +159,17 @@ public class FGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+     //   java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FGUI().setVisible(true);
+      //          new FGUI().setVisible(true);
             }
-        });
-    }
+      //  });
+   // } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton memberButton;
     // End of variables declaration//GEN-END:variables
 }

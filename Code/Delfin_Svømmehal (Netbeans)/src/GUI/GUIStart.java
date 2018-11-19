@@ -10,13 +10,14 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 public class GUIStart extends javax.swing.JFrame {
 
     private FGUI fGUI;
-    private TGUI tGUI;
+   // private TGUI tGUI;
     
     String info = "hello there, hope this works";
 
     public GUIStart() {
         initComponents();
-        tGUI = new TGUI();
+        //tGUI = new TGUI();
+        fGUI = new FGUI(this);
     }
 
     /**
@@ -96,15 +97,14 @@ public class GUIStart extends javax.swing.JFrame {
 
     private void chairmanButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chairmanButton1ActionPerformed
         // TODO add your handling code here:
-        fGUI = new FGUI();
         fGUI.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_chairmanButton1ActionPerformed
 
     private void trainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerButtonActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        tGUI.setVisible(true);
+        //this.setVisible(false);
+        //tGUI.setVisible(true);
         
         
     }//GEN-LAST:event_trainerButtonActionPerformed

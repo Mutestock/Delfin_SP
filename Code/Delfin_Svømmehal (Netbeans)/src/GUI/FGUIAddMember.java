@@ -3,6 +3,7 @@ package GUI;
 import Controller.Controller;
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
+import javax.swing.JFrame;
 
 /**
  *
@@ -14,9 +15,10 @@ public class FGUIAddMember extends javax.swing.JFrame {
 
     /**
      * Creates new form FGUIAdd
+     * 
      */
-    public FGUIAddMember() {
-        this.fGUI = new FGUI();
+    public FGUIAddMember(JFrame addGui) {
+        this.fGUI = (FGUI) addGui;
         
         initComponents();
         
