@@ -22,6 +22,7 @@ public class Registration {
     
     //registerMember now also registers the member to the .txt file.
     public void registerMember(Member member) {
+        this.registeredMembers.clear();
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
         //team.addMember is a method of adding the member to the correct team.
@@ -49,26 +50,32 @@ public class Registration {
       
         Registration r = new Registration();
         r.registerMember(member1);
-        
-        
+        r.registerMember(member2);
+        r.registerMember(member3);
+        r.registerMember(member4);
+
+        /*
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
         f.printArrayList();
-
+        */
         
         //Testing controller functionality..
+        
         Controller c = new Controller();
         System.out.println(c.getAllMembers());
+        c.deleteMember("12345678");
         
+        /*
         System.out.println("");
         
-        c.deleteMember("12345678");
+        
         //c.updateMember();
         for (int i = 0; i < c.getAllMembers().size(); ++i) {
             System.out.println(c.getAllMembers().get(i));
         }
        
         System.out.println(c.getAllMembers());
-
+        */
     }
 }

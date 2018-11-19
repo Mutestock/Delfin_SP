@@ -75,6 +75,8 @@ public class Controller {
         }
     }
 
+    //Returns a list of all the members that is contained by the .txt file from
+    //getFilePath();
     public ArrayList<String> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
@@ -85,66 +87,32 @@ public class Controller {
     //Comments in the code are not mine //Moi(
     public void deleteMember(String phone) {
         String inputFileName = FilePrinter.getFilePath();
-        String outputFileName = "D:\\out.txt";
+        String outputFileName = FilePrinter.getFilePath();
         String lineToRemove = phone;
 
-        // The traps any possible read/write exceptions which might occur
         File inputFile = new File(inputFileName);
         File outputFile = new File(outputFileName);
-        // Open the reader/writer, this ensure that's encapsulated
-        // in a try-with-resource block, automatically closing
-        // the resources regardless of how the block exists
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-            // Read each line from the reader and compare it with
-            // with the line to remove and write if required
-            String line = null;
-            while ((line = reader.readLine()) != null) {
+            String line = reader.readLine();
+            ArrayList<String> temp = new ArrayList();
+            while (line != null) {
                 if (!line.contains(lineToRemove)) {
-                    writer.write(line);
-                    writer.newLine();
+                    temp.add(line);
                 }
+                line = reader.readLine();
             }
             reader.close();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+            for (int i = 0; i < temp.size(); ++i) {
+                writer.write(temp.get(i));
+                writer.newLine();
+            }
             writer.close();
             
-            Path path = Paths.get(FilePrinter.getFilePath());
-            Files.delete(path);
-            outputFile.renameTo(inputFile);
-           
         } catch (IOException e) {}
     }
 
-    //(Svense her) Jeg prøvede at implementere en metode der i stedet for laver
-    //en ny fil og gemmer den opdaterede member liste der, så sletter den bare
-    //den gamle og opdatere den der i samme fil.
-    public void deleteMember2(String phone) {
-        String inputFileName = "D:\\registrationNew.txt";
-        String outputFileName = "D:\\out.txt";
-        String lineToRemove = phone;
-
-        File inputFile = new File(inputFileName);
-        File outputFile = new File(outputFileName);
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-
-            String currentLine;
-
-            while ((currentLine = reader.readLine()) != null) {
-                // trim newline when comparing with lineToRemove
-                String trimmedLine = currentLine.trim();
-                if (trimmedLine.equals(lineToRemove)) {
-                    continue;
-                }
-                writer.write(currentLine + System.getProperty("line.separator"));
-            }
-            writer.close();
-            reader.close();
-            boolean successful = outputFile.renameTo(inputFile);
-        }
-        catch (Exception IO) {}
-    }
 }
