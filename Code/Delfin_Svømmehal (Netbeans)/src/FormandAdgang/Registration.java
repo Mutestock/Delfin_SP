@@ -60,24 +60,6 @@ public class Registration {
         Controller c = new Controller();
         System.out.println(c.getAllMembers());
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        FilePrinter.subLister(registeredMembers, print);
-        
-
-        
-        FilePrinter.subLister(registeredMembers, print);
-
-=======
-        //Prints each line without overwriting.
-        FilePrinter.subLister(registeredMembers, print);
-        
-        //Closes the PrintWriter instance. print.close(); could be seen as a confirmation of the PrintWriters actions, before printing to the document.
-        //No text will printed without it being there, and therefore it's absolutely necessary, and shouldn't be deleted.
->>>>>>> 19d933801723c8892fa6ea1e3b996ec6ac39f1a4
-        print.close();
-=======
         System.out.println("");
         
         c.deleteMember("12345678");
@@ -87,7 +69,6 @@ public class Registration {
         }
        
         System.out.println(c.getAllMembers());
->>>>>>> db5919ceced133bfc3953cfc7494b01f2c997645
 
     }
 }
