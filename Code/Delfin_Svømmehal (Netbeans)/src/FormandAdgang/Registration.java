@@ -64,8 +64,8 @@ public class Registration {
         
         Controller c = new Controller();
         System.out.println(c.getAllMembers());
-        c.deleteMember("12345678");
-        
+        //c.deleteMember("12345678");
+        System.out.println(c.getMember("12345678"));
         /*
         System.out.println("");
         
