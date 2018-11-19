@@ -82,6 +82,9 @@
           <Dimension value="[90, 25]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="trainerButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="cashierButton">
       <Properties>
@@ -90,6 +93,9 @@
           <Dimension value="[90, 25]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cashierButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

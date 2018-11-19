@@ -1,16 +1,22 @@
 package GUI;
 
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+
 /**
  *
  * @author ahmed
  */
 public class Start extends javax.swing.JFrame {
 
-    private FGUI guiF;
+    private FGUI fGUI;
+    private TGUI tGUI;
+    
+    String info = "hello there, hope this works";
 
     public Start() {
         initComponents();
-        guiF = new FGUI();
+        tGUI = new TGUI();
     }
 
     /**
@@ -42,9 +48,19 @@ public class Start extends javax.swing.JFrame {
 
         trainerButton.setText("Træner");
         trainerButton.setPreferredSize(new java.awt.Dimension(90, 25));
+        trainerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trainerButtonActionPerformed(evt);
+            }
+        });
 
         cashierButton.setText("Kasserer");
         cashierButton.setPreferredSize(new java.awt.Dimension(90, 25));
+        cashierButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashierButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,9 +96,24 @@ public class Start extends javax.swing.JFrame {
 
     private void chairmanButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chairmanButton1ActionPerformed
         // TODO add your handling code here:
+        fGUI = new FGUI();
+        fGUI.setVisible(true);
         this.setVisible(false);
-        guiF.setVisible(true);
     }//GEN-LAST:event_chairmanButton1ActionPerformed
+
+    private void trainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        tGUI.setVisible(true);
+        
+        
+    }//GEN-LAST:event_trainerButtonActionPerformed
+
+    private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
+        // TODO add your handling code here:
+       // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+    }//GEN-LAST:event_cashierButtonActionPerformed
 
     /**
      * @param args the command line arguments

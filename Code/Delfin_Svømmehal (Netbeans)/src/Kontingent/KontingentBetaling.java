@@ -11,6 +11,12 @@ import java.time.LocalDate;
  * @author moi(
  */
 
+
+
+// -------------- Not finished ---------------
+//All text below should be perceived as hypothetical and not final.
+
+
 //Please note that you can't use bufferedreader/writer in this class; we're going to have to read every single character and react to them.
 //This is because we want to find "Fee:" and whatever is after it and add it to a sum, that the subscriber then have to pay.
 

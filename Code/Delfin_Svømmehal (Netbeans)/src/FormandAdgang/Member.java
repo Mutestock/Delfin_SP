@@ -4,14 +4,12 @@ package FormandAdgang;
 public class Member {
     
 
-
-    // kan sætte af sammen med den her
     //The fields/values of a member.
     private String name;
     private int age;
+    private String phone;
     private boolean activity;
     private boolean competetive;
-    //--Need to add more at a certain point (We need "stamoplysninger")!--//
     
     //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
@@ -23,13 +21,13 @@ public class Member {
     private int subFee;
     
 
-    public Member(String name, int age, boolean activityForm, boolean competetive) {
+    public Member(String name, int age, String phone, boolean activityForm, boolean competetive) {
 
         this.name = name;
         this.age = age;
         this.activity = activityForm;
         this.competetive = competetive;
-        
+        this.phone = phone;
         //Sets the value of a member to either Junior or Senior
         //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {
@@ -44,8 +42,7 @@ public class Member {
         }
     }
 
-    
-    //A lot of get-methods.
+
     public String getName() {
         return name;
     }
@@ -93,6 +90,9 @@ public class Member {
     
     
     //Logic method used to calculate a certain members fee (based on their age)
+    //It's functionality has been implemented in the constructor.
+    //Kept since it might become useful later.
+    
     public int calcFee() {
         if (isActive() == true) {
             if (getAge() >= 60) {
@@ -104,14 +104,15 @@ public class Member {
             }
         }
         return 500;
-    }
+   }
 
     
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
-        return "Member{" + "name=" + name + ", age=" + age + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + ", subCatalogueYear=" + subCatalogueYear + ", subFee=" + subFee + '}';
+        return "Member{" + "name=" + name + ", age=" + age + ", phone=" + phone + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + ", subCatalogueYear=" + subCatalogueYear + ", subFee=" + subFee + '}';
     }
+    
     
     
    

@@ -1,5 +1,5 @@
 package GUI;
-import Trainer.Team;
+import Trainer.Teams;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,8 +13,9 @@ import Trainer.Team;
  */
 public class TGUI extends javax.swing.JFrame {
 
-    private GUI2 gui2;
-    private GUIMember guiM;
+    //private GUI2 gui2;
+    private GUIShowMembers guiM;
+    private Start sMenu;
 
     
     
@@ -24,7 +25,8 @@ public class TGUI extends javax.swing.JFrame {
     public TGUI() {
         initComponents();
         
-        guiM = new GUIMember(TGUI gui);
+        //guiM = new GUIMember();
+        
     }
 
     /**
