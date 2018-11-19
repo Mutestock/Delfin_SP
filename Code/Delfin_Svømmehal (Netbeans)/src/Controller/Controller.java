@@ -4,9 +4,12 @@ import FormandAdgang.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -72,20 +75,16 @@ public class Controller {
         }
     }
 
-
     public ArrayList<String> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
         return f.getMembersArrayList();
     }
 
-    
-    
-    
     //Deletes all lines containing the contents of lineToRemove from a .txt
     //Comments in the code are not mine //Moi(
     public void deleteMember(String phone) {
-        String inputFileName = "D:\\registrationNew.txt";
+        String inputFileName = FilePrinter.getFilePath();
         String outputFileName = "D:\\out.txt";
         String lineToRemove = phone;
 
@@ -95,8 +94,9 @@ public class Controller {
         // Open the reader/writer, this ensure that's encapsulated
         // in a try-with-resource block, automatically closing
         // the resources regardless of how the block exists
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
             // Read each line from the reader and compare it with
             // with the line to remove and write if required
             String line = null;
@@ -106,29 +106,45 @@ public class Controller {
                     writer.newLine();
                 }
             }
-        } catch (IOException e) {
-
-        }
+            reader.close();
+            writer.close();
+            
+            Path path = Paths.get(FilePrinter.getFilePath());
+            Files.delete(path);
+            outputFile.renameTo(inputFile);
+           
+        } catch (IOException e) {}
     }
-    
+
     //(Svense her) Jeg prøvede at implementere en metode der i stedet for laver
     //en ny fil og gemmer den opdaterede member liste der, så sletter den bare
     //den gamle og opdatere den der i samme fil.
-    /*public void deleteMember(String phone) {
-        ArrayList<String> members = getAllMembers();
-        for (int i = 0; i < members.size(); ++i) {
-            if (members.get(i).contains(phone)){
-                members.remove(i);
-            }
-        }
-        FilePrinter.createFile(FilePrinter.getFilePath());
+    public void deleteMember2(String phone) {
+        String inputFileName = "D:\\registrationNew.txt";
+        String outputFileName = "D:\\out.txt";
+        String lineToRemove = phone;
+
+        File inputFile = new File(inputFileName);
+        File outputFile = new File(outputFileName);
+
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(FilePrinter.getFilePath()));
-            for (int i = 0; i < members.size(); ++i) {
-                writer.write(members.get(i));
-                writer.newLine();
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+
+            String currentLine;
+
+            while ((currentLine = reader.readLine()) != null) {
+                // trim newline when comparing with lineToRemove
+                String trimmedLine = currentLine.trim();
+                if (trimmedLine.equals(lineToRemove)) {
+                    continue;
+                }
+                writer.write(currentLine + System.getProperty("line.separator"));
             }
+            writer.close();
+            reader.close();
+            boolean successful = outputFile.renameTo(inputFile);
         }
-        catch (Exception io) {}   
-    }*/
+        catch (Exception IO) {}
+    }
 }

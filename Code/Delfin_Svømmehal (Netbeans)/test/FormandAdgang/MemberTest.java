@@ -5,7 +5,7 @@
  */
 package FormandAdgang;
 
-import Trainer.Team;
+import Trainer.Teams;
 import Trainer.Trainer;
 import org.junit.After;
 import org.junit.AfterClass;

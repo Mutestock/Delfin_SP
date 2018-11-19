@@ -82,9 +82,9 @@ public class FilePrinter {
     }
 
     //Serves as to write each individual line. If removed, only the last of the added members would be printed.
-    public static void subLister(ArrayList<Member> ArrayList, PrintWriter printer) {
-        for (int i = 0; i < ArrayList.size(); ++i) {
-            printer.println(ArrayList.get(i));
+    public static void subLister(ArrayList<Member> arrayList, PrintWriter printer) {
+        for (int i = 0; i < arrayList.size(); ++i) {
+            printer.println(arrayList.get(i).toString());
         }
     }
 
@@ -94,12 +94,9 @@ public class FilePrinter {
 
     public static PrintWriter getPrintwriter(String path) {
         printwriter = FilePrinter.createFile(path);
-
         return printwriter;
     }
 
-    
-    
     
     public ArrayList<String> getMembersArrayList() {
         return membersArrayList;

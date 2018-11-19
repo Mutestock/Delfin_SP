@@ -1,5 +1,6 @@
 package GUI;
 
+import Controller.Controller;
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
 
@@ -7,15 +8,15 @@ import FormandAdgang.Registration;
  *
  * @author ahmed
  */
-public class FGUIAdd extends javax.swing.JFrame {
+public class FGUIAddMember extends javax.swing.JFrame {
 
-    private FGUI guiF;
+    private FGUI fGUI;
 
     /**
      * Creates new form FGUIAdd
      */
-    public FGUIAdd() {
-        this.guiF = new FGUI();
+    public FGUIAddMember() {
+        this.fGUI = new FGUI();
         
         initComponents();
         
@@ -61,6 +62,11 @@ public class FGUIAdd extends javax.swing.JFrame {
         jLabel1.setText("Name:");
 
         compBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "no" }));
+        compBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compBoxActionPerformed(evt);
+            }
+        });
 
         NameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,12 +75,17 @@ public class FGUIAdd extends javax.swing.JFrame {
         });
 
         actBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        actBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actBoxActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Do the person wish to be an active swimmer?");
 
         jLabel3.setText("Phone:");
 
-        ConfirmButton.setText("Comfirm");
+        ConfirmButton.setText("Confirm");
         ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmButtonActionPerformed(evt);
@@ -136,7 +147,7 @@ public class FGUIAdd extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
@@ -169,6 +180,7 @@ public class FGUIAdd extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -195,26 +207,35 @@ public class FGUIAdd extends javax.swing.JFrame {
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
-        guiF.setVisible(true);
+        
+        //- Hvad hvis man vil adde flere members på én gang? Tror det er
+        //overflødigt når man alligevel har en "menu-knap" i samme gui.
+        fGUI.setVisible(true);
         this.setVisible(false);
 
-        // makes sure that the input fields is always clean when is is open again
-        this.NameInput.setText("");
-        this.AgeInput.setText("");
-        this.compBox.setSelectedIndex(0);
-        this.actBox.setSelectedIndex(0);
+        Controller c = new Controller();
 
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
-        String phoneNumb = PhoneInput.getText();
+        String phone = PhoneInput.getText();
+        Boolean active = actBox.getAutoscrolls();
+        Boolean comp = compBox.getAutoscrolls();
+        
+        c.createMember(name, age, phone, true, true);
+        
+        // makes sure that the input fields is always clean when it is open again
+        this.NameInput.setText("");
+        this.AgeInput.setText("");
+        this.compBox.setSelectedIndex(0);
+        this.actBox.setSelectedIndex(0);
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
         // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
-        guiF.setVisible(true);
+        fGUI.setVisible(true);
         this.setVisible(false);
 
         // makes sure that the input fields is always clean when is is open again
@@ -223,6 +244,14 @@ public class FGUIAdd extends javax.swing.JFrame {
         this.compBox.setSelectedIndex(0);
         this.actBox.setSelectedIndex(0);
     }//GEN-LAST:event_MenuButtonActionPerformed
+
+    private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_compBoxActionPerformed
+
+    private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actBoxActionPerformed
 
     /**
      * @param args the command line arguments

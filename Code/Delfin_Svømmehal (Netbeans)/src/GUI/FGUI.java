@@ -1,6 +1,6 @@
 package GUI;
 
-import Trainer.Team;
+import Trainer.Teams;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,8 +13,8 @@ import Trainer.Team;
  */
 public class FGUI extends javax.swing.JFrame {
 
-    private FGUIAdd guiF;
-    private GUIMember guiM;
+    private FGUIAddMember fGUIADD;
+    private GUIShowMembers guiM;
 
     /**
      * Creates new form GUI
@@ -23,7 +23,7 @@ public class FGUI extends javax.swing.JFrame {
         this.setTitle("Formand side");
         initComponents();
        // guiF = new FGUIAdd();
-        guiM = new GUIMember();
+        guiM = new GUIShowMembers();
         this.setResizable(false);
     }
 
@@ -99,9 +99,10 @@ public class FGUI extends javax.swing.JFrame {
 
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // When the button is pressed, the FGUI will gets "invisible" and FGUI (the add member menu) get visible.
-        //this.setVisible(false);
-        //guiF.setVisible(true);
+        //When the button is pressed, the FGUI will gets "invisible" and FGUI (the add member menu) get visible.
+        fGUIADD = new FGUIAddMember();
+        this.setVisible(false);
+        fGUIADD.setVisible(true);
 
 
     }//GEN-LAST:event_addButtonActionPerformed

@@ -14,19 +14,30 @@ public class Registration {
     //we will have to initialize the Team class in the GUI
     //once the user will start the program. Initializer 
     //that gets information from the text file upon starting.
-    Team team; 
+    Teams team = new Teams(); 
 
     public Registration() {
     }
 
+    
+    //registerMember now also registers the member to the .txt file.
     public void registerMember(Member member) {
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
-
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
+        
+        String path = FilePrinter.getFilePath();
+        PrintWriter print = FilePrinter.getPrintwriter(path);
+        FilePrinter.subLister(registeredMembers, print);
+        print.close();
     }
 
+    
+    
+    
+    
+    //Testing area
     public static void main(String[] args) {
         
         //Creating instances of Member. 
@@ -35,38 +46,23 @@ public class Registration {
         Member member2 = new Member("ahmed", 20, "33445566", true, true);
         Member member3 = new Member("Emil skov", 20, "34343477", false, true);
         Member member4 = new Member("Dolf bo", 15, "99998888", true, true);
-
-       
-        //Defines the path and makes the PrintWriter instance write to it.
-       
-        String path = FilePrinter.getFilePath();
-        PrintWriter print = FilePrinter.getPrintwriter(path);
+      
+        Registration r = new Registration();
+        r.registerMember(member1);
         
-        registeredMembers.add(member1);
-        registeredMembers.add(member2);
-        registeredMembers.add(member3);
-        registeredMembers.add(member4);
-       
-        //Prints each line without overwriting.
-        FilePrinter.subLister(registeredMembers, print);
         
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
-        
-        
-        
-        //Closes the PrintWriter instance. print.close(); could be seen as a confirmation of the PrintWriters actions, before printing to the document.
-        //No text will printed without it being there, and therefore it's absolutely necessary, and shouldn't be deleted.
-        print.close();
-        Controller c = new Controller();
-        
-        //Testing controller functionality..
         f.getFileInfo(FilePrinter.getFilePath());
         f.printArrayList();
+
+        
+        //Testing controller functionality..
+        Controller c = new Controller();
         System.out.println(c.getAllMembers());
         
         System.out.println("");
         
-         c.deleteMember("99998888");
+        c.deleteMember("12345678");
         //c.updateMember();
         for (int i = 0; i < c.getAllMembers().size(); ++i) {
             System.out.println(c.getAllMembers().get(i));

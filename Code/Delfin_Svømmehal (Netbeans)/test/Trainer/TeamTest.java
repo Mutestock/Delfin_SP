@@ -22,7 +22,7 @@ public class TeamTest {
         Member juncas = new Member("test", 7,"12345679", true, false);
         Member sencas = new Member("test", 35,"12345679", false, false);
 
-        Team team = new Team();
+        Teams team = new Teams();
         team.addMemberToTeam(juncomp);
         team.addMemberToTeam(sencomp);
         team.addMemberToTeam(juncas);

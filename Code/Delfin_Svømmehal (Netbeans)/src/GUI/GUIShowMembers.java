@@ -9,7 +9,7 @@ package GUI;
  *
  * @author ahmed
  */
-public class GUIMember extends javax.swing.JFrame {
+public class GUIShowMembers extends javax.swing.JFrame {
 
     /**
      * Creates new form GUIMember
@@ -18,7 +18,7 @@ public class GUIMember extends javax.swing.JFrame {
     private FGUI guiF;
     private Start sGUI;
     
-    public GUIMember() {
+    public GUIShowMembers() {
         initComponents();
         this.guiF = guiF;
         sGUI = new Start();
@@ -176,14 +176,15 @@ public class GUIMember extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

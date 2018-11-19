@@ -3,7 +3,7 @@ package GUI;
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
 
-import Trainer.Team;
+import Trainer.Teams;
 import javax.swing.SwingUtilities;
 
 
