@@ -49,8 +49,8 @@ public class FGUIAddMember extends javax.swing.JFrame {
         PhoneInput = new javax.swing.JTextField();
         ConfirmButton = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        compCheck = new javax.swing.JCheckBox();
+        subCheck = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 470));
@@ -89,15 +89,15 @@ public class FGUIAddMember extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        compCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                compCheckActionPerformed(evt);
             }
         });
 
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        subCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                subCheckActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jCheckBox2)
+                                .addComponent(subCheck)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(ConfirmButton))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -130,7 +130,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PhoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1))
+                            .addComponent(compCheck))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -154,7 +154,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(7, 7, 7)
-                .addComponent(jCheckBox1)
+                .addComponent(compCheck)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +165,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
                             .addComponent(MenuButton)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jCheckBox2)))
+                        .addComponent(subCheck)))
                 .addContainerGap())
         );
 
@@ -230,12 +230,9 @@ public class FGUIAddMember extends javax.swing.JFrame {
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
         String phone = PhoneInput.getText();
-        boolean active = jCheckBox2.isSelected();
-        boolean comp = jCheckBox1.isSelected();
-        
-        
-        
-        System.out.println(active);
+        boolean active = subCheck.isSelected();
+        boolean comp = compCheck.isSelected();
+
         c.createMember(name, age, phone,active,comp);
         
         // makes sure that the input fields is always clean when it is open again
@@ -243,11 +240,11 @@ public class FGUIAddMember extends javax.swing.JFrame {
         this.AgeInput.setText("");
         this.PhoneInput.setText("");
         
-        if (jCheckBox2.isSelected()){
-            jCheckBox2.doClick();
+        if (subCheck.isSelected()){
+            subCheck.doClick();
         }
-        if (jCheckBox1.isSelected()){
-            jCheckBox1.doClick();
+        if (compCheck.isSelected()){
+            compCheck.doClick();
         }
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
@@ -260,21 +257,21 @@ public class FGUIAddMember extends javax.swing.JFrame {
         // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
-        if (jCheckBox2.isSelected()){
-            jCheckBox2.doClick();
+        if (subCheck.isSelected()){
+            subCheck.doClick();
         }
-        if (jCheckBox1.isSelected()){
-            jCheckBox1.doClick();
+        if (compCheck.isSelected()){
+            compCheck.doClick();
         }
     }//GEN-LAST:event_MenuButtonActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void subCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_subCheckActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void compCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_compCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,8 +318,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
     private javax.swing.JTextField PhoneInput;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox compCheck;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -331,5 +327,6 @@ public class FGUIAddMember extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JCheckBox subCheck;
     // End of variables declaration//GEN-END:variables
 }
