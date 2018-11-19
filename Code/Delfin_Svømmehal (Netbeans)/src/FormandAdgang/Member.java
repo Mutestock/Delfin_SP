@@ -110,7 +110,7 @@ public class Member {
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
-        return "Member{" + "name=" + name + ", age=" + age + ", phone=" + phone + ", activity=" + activity + ", competetive=" + competetive + ", ageBonus=" + ageBonus + ", senior=" + senior + ", junior=" + junior + ", subCatalogueYear=" + subCatalogueYear + ", subFee=" + subFee + '}';
+        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + subFee;
     }
     
     
