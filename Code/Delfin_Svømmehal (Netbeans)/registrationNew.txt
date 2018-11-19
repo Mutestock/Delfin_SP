@@ -1,0 +1,5 @@
+Member{name=ahmed, age=20, phone=33445566, activity=true, competetive=true, ageBonus=false, senior=true, junior=false, subCatalogueYear=0, subFee=0}
+Member{name=Emil skov, age=20, phone=34343477, activity=false, competetive=true, ageBonus=false, senior=true, junior=false, subCatalogueYear=0, subFee=0}
+Member{name=Dolf bo, age=15, phone=99998888, activity=true, competetive=true, ageBonus=false, senior=false, junior=true, subCatalogueYear=0, subFee=0}
+Member{name=emil, age=37, phone=12345678, activity=true, competetive=true, ageBonus=false, senior=true, junior=false, subCatalogueYear=0, subFee=0}
+Member{name=emfidj, age=39, phone=12345679, activity=true, competetive=true, ageBonus=false, senior=true, junior=false, subCatalogueYear=0, subFee=0}

@@ -67,7 +67,7 @@ public class Controller {
     //from the .txt file.
     public void updateMember() {
         try {
-            Path path = Paths.get("D:\\test.txt");
+            Path path = Paths.get("test.txt");
             Charset charset = StandardCharsets.UTF_8;
 
             String content = new String(Files.readAllBytes(path), charset);
