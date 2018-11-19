@@ -34,6 +34,8 @@ public class FGUIAddMember extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -41,14 +43,14 @@ public class FGUIAddMember extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         AgeInput = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        compBox = new javax.swing.JComboBox<>();
         NameInput = new javax.swing.JTextField();
-        actBox = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         PhoneInput = new javax.swing.JTextField();
         ConfirmButton = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 470));
@@ -63,23 +65,9 @@ public class FGUIAddMember extends javax.swing.JFrame {
 
         jLabel1.setText("Name:");
 
-        compBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "no" }));
-        compBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compBoxActionPerformed(evt);
-            }
-        });
-
         NameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NameInputActionPerformed(evt);
-            }
-        });
-
-        actBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
-        actBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actBoxActionPerformed(evt);
             }
         });
 
@@ -101,6 +89,18 @@ public class FGUIAddMember extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,24 +109,29 @@ public class FGUIAddMember extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(actBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ConfirmButton))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jCheckBox2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConfirmButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(AgeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 47, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MenuButton)
+                        .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
                             .addComponent(PhoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(AgeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 41, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MenuButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jCheckBox1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AgeInput, NameInput, PhoneInput});
@@ -148,15 +153,19 @@ public class FGUIAddMember extends javax.swing.JFrame {
                 .addComponent(PhoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
+                .addGap(7, 7, 7)
+                .addComponent(jCheckBox1)
                 .addGap(18, 18, 18)
-                .addComponent(compBox, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConfirmButton)
-                    .addComponent(MenuButton))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ConfirmButton)
+                            .addComponent(MenuButton)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jCheckBox2)))
                 .addContainerGap())
         );
 
@@ -221,22 +230,27 @@ public class FGUIAddMember extends javax.swing.JFrame {
         int age = Integer.parseInt(AgeInput.getText());
         String name = NameInput.getText();
         String phone = PhoneInput.getText();
-        Boolean active = actBox.getAutoscrolls();
-        Boolean comp = compBox.getAutoscrolls();
+        boolean active = jCheckBox2.isSelected();
+        boolean comp = jCheckBox1.isSelected();
         
+        System.out.println(active);
         c.createMember(name, age, phone, true, true);
         
         // makes sure that the input fields is always clean when it is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
         this.PhoneInput.setText("");
-        this.compBox.setSelectedIndex(0);
-        this.actBox.setSelectedIndex(0);
+        
+        if (jCheckBox2.isSelected()){
+            jCheckBox2.doClick();
+        }
+        if (jCheckBox1.isSelected()){
+            jCheckBox1.doClick();
+        }
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-        // TODO add your handling code here:
         // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
         fGUI.setVisible(true);
         this.setVisible(false);
@@ -244,17 +258,21 @@ public class FGUIAddMember extends javax.swing.JFrame {
         // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
-        this.compBox.setSelectedIndex(0);
-        this.actBox.setSelectedIndex(0);
+        if (jCheckBox2.isSelected()){
+            jCheckBox2.doClick();
+        }
+        if (jCheckBox1.isSelected()){
+            jCheckBox1.doClick();
+        }
     }//GEN-LAST:event_MenuButtonActionPerformed
 
-    private void compBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compBoxActionPerformed
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_compBoxActionPerformed
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-    private void actBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actBoxActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_actBoxActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,8 +317,10 @@ public class FGUIAddMember extends javax.swing.JFrame {
     private javax.swing.JButton MenuButton;
     private javax.swing.JTextField NameInput;
     private javax.swing.JTextField PhoneInput;
-    private javax.swing.JComboBox<String> actBox;
-    private javax.swing.JComboBox<String> compBox;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
