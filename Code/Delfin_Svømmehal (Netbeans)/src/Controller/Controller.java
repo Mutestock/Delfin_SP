@@ -134,6 +134,8 @@ public class Controller {
         }
         return member;
     }
+    
+    
 
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
