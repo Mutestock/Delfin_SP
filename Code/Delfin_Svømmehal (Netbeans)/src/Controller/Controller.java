@@ -23,6 +23,7 @@ public class Controller {
     //The Controller's purpose is to collect methods and make them easy to handle and instanciate.
     //Since this also acts as a hub for the GUI to interact with the rest of the classes.
     //Could be seen as the brain of the program (WIP).
+    
     //To do list:
     //merge junior/senior as a single boolean value
     //Implement Controller
@@ -32,14 +33,16 @@ public class Controller {
     //Make it possible for the GUI to go back to the main menu after having chosen a role.
     //Change GUI Class names.
     //Clean up redundant GUI code
+    
     //Stretch goals:
     //Additional basic information for members and trainer (e.g. phonenumber).
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
+    
     //Controller methods:
     //createMember()                (added)
     //updateMember(Member member)   ()
-    //deleteMember(Member member)   ()  
-    //getAllMembers()               ()
+    //deleteMember(Member member)   (added)  
+    //getAllMembers()               (added)
     // - (^ read members)
     //Controller methods (methods of which we have yet to implement at all)
     //top5Members(Diciplin diciplin)
@@ -84,7 +87,6 @@ public class Controller {
     }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
-    //Comments in the code are not mine //Moi(
     public void deleteMember(String phone) {
         String inputFileName = FilePrinter.getFilePath();
         String outputFileName = FilePrinter.getFilePath();
