@@ -16,12 +16,12 @@ public class GUIShowMembers extends javax.swing.JFrame {
      */
     
     private FGUI guiF;
-    private Start sGUI;
+    private GUIStart sGUI;
     
     public GUIShowMembers() {
         initComponents();
         this.guiF = guiF;
-        sGUI = new Start();
+        sGUI = new GUIStart();
         
         
     }
