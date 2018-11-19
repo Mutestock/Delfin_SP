@@ -126,7 +126,7 @@ public class FGUIUpdateMember extends javax.swing.JFrame {
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
-        fGUI.setAlwaysOnTop(true);
+        fGUI.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_MenuButtonActionPerformed
 
