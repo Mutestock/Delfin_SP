@@ -26,7 +26,7 @@ public class TGUI extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Træners side");
        
-        guiM = new GUIShowMembers();
+        //guiM = new GUIShowMembers();
         
     }
 
