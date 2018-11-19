@@ -6,20 +6,17 @@
 package Trainer;
 
 import FormandAdgang.Member;
+import java.util.ArrayList;
 
-public class Team {
+public class Teams {
     
-    private Team juniorTeam;
-    private Team seniorTeam;
-    private Team compJuniorTeam;
-    private Team compSeniorTeam;
+    private ArrayList<Member> juniorTeam = new ArrayList();
+    private ArrayList<Member> seniorTeam = new ArrayList();
+    private ArrayList<Member> compJuniorTeam = new ArrayList();
+    private ArrayList<Member> compSeniorTeam = new ArrayList();
     
     
-    public Team() {
-        juniorTeam = new Team();
-        seniorTeam = new Team();
-        compJuniorTeam = new Team();
-        compSeniorTeam = new Team();
+    public Teams() {
     }
     
     
@@ -30,11 +27,11 @@ public class Team {
         //member of a team, and then adds member to the correct age grp.
         if (member.isCompetetive()) {
             if(member.isJunior()) {
-                compJuniorTeam.addMemberToTeam(member);
+                compJuniorTeam.add(member);
                 return;
             }
             if(member.isSenior()) {
-                compSeniorTeam.addMemberToTeam(member);
+                compSeniorTeam.add(member);
                 return;
             }
         } 
@@ -42,30 +39,30 @@ public class Team {
         //Now we know the member is not competetive, and we can simply
         //sort the member based on their age.
         if (member.isJunior()) {
-            juniorTeam.addMemberToTeam(member);
+            juniorTeam.add(member);
         }
         //If neither of the states above is shown correct, the member can
         //only be a casual senior member.
         else {
-            seniorTeam.addMemberToTeam(member);
+            seniorTeam.add(member);
         }       
     }
 
     
     
-    public Team getJuniorTeam() {
+    public ArrayList<Member> getJuniorTeam() {
         return juniorTeam;
     }
 
-    public Team getSeniorTeam() {
+    public ArrayList<Member> getSeniorTeam() {
         return seniorTeam;
     }
 
-    public Team getCompJuniorTeam() {
+    public ArrayList<Member> getCompJuniorTeam() {
         return compJuniorTeam;
     }
 
-    public Team getCompSeniorTeam() {
+    public ArrayList<Member> getCompSeniorTeam() {
         return compSeniorTeam;
     }
 
