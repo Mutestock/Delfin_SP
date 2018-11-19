@@ -233,8 +233,10 @@ public class FGUIAddMember extends javax.swing.JFrame {
         boolean active = jCheckBox2.isSelected();
         boolean comp = jCheckBox1.isSelected();
         
+        
+        
         System.out.println(active);
-        c.createMember(name, age, phone, true, true);
+        c.createMember(name, age, phone,active,comp);
         
         // makes sure that the input fields is always clean when it is open again
         this.NameInput.setText("");
