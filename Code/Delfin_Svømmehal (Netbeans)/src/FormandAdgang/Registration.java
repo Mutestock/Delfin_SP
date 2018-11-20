@@ -67,7 +67,6 @@ public class Registration {
         //c.deleteMember("12345678");
         //System.out.println(c.getMember("22853084"));
         System.out.println(c.getAllMembers());
-        System.out.println(c.getAllJunior());
         /*
         System.out.println("");
         

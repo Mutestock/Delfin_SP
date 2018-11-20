@@ -140,61 +140,53 @@ public class Controller {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
 
-        String name = "";
-        String parseAge = "";
-        String phone = "";
-        boolean activityForm = false;
-        String act = "";
-        boolean competetive = false;
-        String comp = "";
         int counter = 0;
 
         ArrayList<Member> membersList = new ArrayList();
-        for (int i = 0; i < f.getMembersArrayList().size(); ++i) {
-            for (int j = 0; j < f.getMembersArrayList().get(i).length(); ++j) {
+        ArrayList<String> allMembers = f.getMembersArrayList();
+        for (int i = 0; i < allMembers.size(); ++i) {
+            String name = "";
+            String parseAge = "";
+            String phone = "";
+            boolean activityForm = false;
+            String act = "";
+            boolean competetive = false;
+            String comp = "";
+            
+            for (int j = 0; j < allMembers.get(i).length(); ++j) {
 
                 if (f.getMembersArrayList().get(i).charAt(j) == '.') {
                     int age = Integer.parseInt(parseAge);
                     Member member = new Member(name, age, phone, activityForm, competetive);
                     membersList.add(member);
-                    break;
+                    counter = 0;
                 }
 
                 if (f.getMembersArrayList().get(i).charAt(j) == ',') {
 
                     counter++;
-                }
-
-                else if (counter == 0) {
+                } else if (counter == 0) {
                     if (f.getMembersArrayList().get(i).charAt(j) == ',') {
 
                     } else {
-                    name += f.getMembersArrayList().get(i).charAt(j);
+                        name += f.getMembersArrayList().get(i).charAt(j);
                     }
-                }
-
-                else if (counter == 1) {
+                } else if (counter == 1) {
                     if (f.getMembersArrayList().get(i).charAt(j) == ',') {
 
                     } else {
                         parseAge += f.getMembersArrayList().get(i).charAt(j);
                     }
-                }
-                
-                else if (counter == 2) {
+                } else if (counter == 2) {
                     phone += f.getMembersArrayList().get(i).charAt(j);
-                }
-
-                else if (counter == 3) {
+                } else if (counter == 3) {
                     act += f.getMembersArrayList().get(i).charAt(j);
-                    if (act.contains("true")){
+                    if (act.contains("true")) {
                         activityForm = true;
                     }
-                }
-
-                else if (counter == 4) {
+                } else if (counter == 4) {
                     comp += f.getMembersArrayList().get(i).charAt(j);
-                    if (comp.contains("true")){
+                    if (comp.contains("true")) {
                         competetive = true;
                     }
                 }
@@ -202,20 +194,53 @@ public class Controller {
         }
         return membersList;
     }
-    
+
     public ArrayList<Member> getAllJunior() {
         ArrayList<Member> member = getAllMembers();
-        System.out.println(member);
         ArrayList<Member> junior = new ArrayList();
         for (int i = 0; i < member.size(); ++i) {
             Member memberinst = member.get(i);
-            System.out.println(memberinst);
             if (memberinst.isJunior()) {
-                System.out.println("test");
                 junior.add(memberinst);
             }
         }
         return junior;
+    }
+    
+    public ArrayList<Member> getAllSenior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> senior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isSenior()) {
+                senior.add(memberinst);
+            }
+        }
+        return senior;
+    }
+    
+    public ArrayList<Member> getAllCompJunior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> compJunior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isJunior() && memberinst.isCompetetive()) {
+                compJunior.add(memberinst);
+            }
+        }
+        return compJunior;
+    }
+    
+    public ArrayList<Member> getAllCompSenior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> senior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isSenior()&& memberinst.isCompetetive()) {
+                senior.add(memberinst);
+            }
+        }
+        return senior;
     }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
