@@ -27,7 +27,7 @@ public class TGUI extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Trainers menu");
         this.sMenu =  (GUIStart) TGui;
-        guiM = new GUIShowMembers(this);
+        //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
         
     }
@@ -95,8 +95,8 @@ public class TGUI extends javax.swing.JFrame {
     private void MemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        guiM.setVisible(true);
-        guiM.setCalledBy('t');
+        //guiM.setVisible(true);
+        //guiM.setCalledBy('t');
     }//GEN-LAST:event_MemberButtonActionPerformed
 
     /**
