@@ -53,7 +53,6 @@ public class FGUIAddMember extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 470));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel6.setText("Add a member");
@@ -126,7 +125,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
                                 .addGap(0, 47, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MenuButton)
-                        .addContainerGap(12, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PhoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
