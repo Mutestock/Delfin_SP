@@ -84,8 +84,7 @@ public class Controller {
                 line = reader.readLine();
             }
             reader.close();
-            
-            
+
             String name = "";
             String parseAge = "";
             boolean activityForm = false;
@@ -134,15 +133,89 @@ public class Controller {
         }
         return member;
     }
-    
-    
 
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
-    public ArrayList<String> getAllMembers() {
+    public ArrayList<Member> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
-        return f.getMembersArrayList();
+
+        String name = "";
+        String parseAge = "";
+        String phone = "";
+        boolean activityForm = false;
+        String act = "";
+        boolean competetive = false;
+        String comp = "";
+        int counter = 0;
+
+        ArrayList<Member> membersList = new ArrayList();
+        for (int i = 0; i < f.getMembersArrayList().size(); ++i) {
+            for (int j = 0; j < f.getMembersArrayList().get(i).length(); ++j) {
+
+                if (f.getMembersArrayList().get(i).charAt(j) == '.') {
+                    int age = Integer.parseInt(parseAge);
+                    Member member = new Member(name, age, phone, activityForm, competetive);
+                    membersList.add(member);
+                    break;
+                }
+
+                if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+
+                    counter++;
+                }
+
+                else if (counter == 0) {
+                    if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+
+                    } else {
+                    name += f.getMembersArrayList().get(i).charAt(j);
+                    }
+                }
+
+                else if (counter == 1) {
+                    if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+
+                    } else {
+                        parseAge += f.getMembersArrayList().get(i).charAt(j);
+                    }
+                }
+                
+                else if (counter == 2) {
+                    phone += f.getMembersArrayList().get(i).charAt(j);
+                }
+
+                else if (counter == 3) {
+                    act += f.getMembersArrayList().get(i).charAt(j);
+                    if (act.contains("true")){
+                        activityForm = true;
+                    }
+                }
+
+                else if (counter == 4) {
+                    comp += f.getMembersArrayList().get(i).charAt(j);
+                    if (comp.contains("true")){
+                        competetive = true;
+                    }
+                }
+            }
+        }
+        return membersList;
+    }
+    
+    public ArrayList<Member> getAllJunior() {
+        ArrayList<Member> member = getAllMembers();
+        System.out.println(member);
+        ArrayList<Member> junior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            System.out.println(memberinst);
+            if (memberinst.isJunior()) {
+                System.out.println("test");
+                junior.add(memberinst);
+            }
+        }
+        return junior;
     }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
