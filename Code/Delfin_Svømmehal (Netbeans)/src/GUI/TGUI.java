@@ -1,5 +1,6 @@
 package GUI;
 import Trainer.Teams;
+import javax.swing.JFrame;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,11 +23,12 @@ public class TGUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    public TGUI() {
+    public TGUI(JFrame TGui) {
         initComponents();
-        this.setTitle("Træners side");
-       
-        //guiM = new GUIShowMembers();
+        this.setTitle("Trainers menu");
+        this.sMenu =  (GUIStart) TGui;
+        guiM = new GUIShowMembers(this);
+        sMenu = (GUIStart) TGui;
         
     }
 
@@ -86,18 +88,19 @@ public class TGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         guiM.setVisible(true);
+        guiM.setCalledBy('t');
     }//GEN-LAST:event_MemberButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   /* public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+        /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -112,19 +115,19 @@ public class TGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+     /*   java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TGUI().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MemberButton;

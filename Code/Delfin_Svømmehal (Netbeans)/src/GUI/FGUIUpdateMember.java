@@ -23,6 +23,7 @@ public class FGUIUpdateMember extends javax.swing.JFrame {
     public FGUIUpdateMember(JFrame fGui) {
         initComponents();
         this.fGUI = (FGUI) fGui;
+        this.setTitle("Update member");
     }
 
     /**

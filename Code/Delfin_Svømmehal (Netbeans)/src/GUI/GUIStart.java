@@ -10,14 +10,16 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 public class GUIStart extends javax.swing.JFrame {
 
     private FGUI fGUI;
-   // private TGUI tGUI;
+    private TGUI tGUI;
+    
     
     String info = "hello there, hope this works";
 
     public GUIStart() {
         initComponents();
-        //tGUI = new TGUI();
+        tGUI = new TGUI(this);
         fGUI = new FGUI(this);
+        this.setTitle("Startup menu");
     }
 
     /**
@@ -103,8 +105,8 @@ public class GUIStart extends javax.swing.JFrame {
 
     private void trainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trainerButtonActionPerformed
         // TODO add your handling code here:
-        //this.setVisible(false);
-        //tGUI.setVisible(true);
+        this.setVisible(false);
+        tGUI.setVisible(true);
         
         
     }//GEN-LAST:event_trainerButtonActionPerformed

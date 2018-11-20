@@ -24,13 +24,12 @@ public class FGUI extends javax.swing.JFrame {
      * Creates new form GUI
      */
     public FGUI(JFrame fGui) {
-        this.setTitle("Formand side");
+        this.setTitle("Chairmans menu");
         initComponents();
         fGUIADD = new FGUIAddMember(this);
         fGUIUp = new FGUIUpdateMember(this);
         guiM = new GUIShowMembers(this);
         fGUIDel = new FGUIDeleteMember(this);
-       // guiM = new GUIShowMembers();
         this.setResizable(false);
         guiStart = (GUIStart) fGui;
     }
@@ -150,6 +149,7 @@ public class FGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         guiM.setVisible(true);
+        guiM.setCalledBy('f');
     }//GEN-LAST:event_memberButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
