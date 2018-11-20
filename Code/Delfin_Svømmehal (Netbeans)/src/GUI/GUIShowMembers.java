@@ -25,22 +25,12 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private GUIStart sGUI;
 
     // + , JFrame tGui
-<<<<<<< HEAD
-    public GUIShowMembers(JFrame fGui) {
 
-        initComponents();
- 
-        this.setTitle("Show members menu");
-
-//        this.guiF = (FGUI) fGui;
-        //this.guiT = (TGUI) tGui;
-=======
     public GUIShowMembers(JFrame Gui) {
         this.setTitle("Show members menu");
         initComponents();
         //this.guiF = (FGUI) Gui;
         //this.sGUI = (GUIStart) Gui;
->>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
     }
 
     public void setCalledBy(char input) {
@@ -241,17 +231,11 @@ public class GUIShowMembers extends javax.swing.JFrame {
         // TODO add your handling code here:
             sGUI.setVisible(true);
             this.setVisible(false);
-<<<<<<< HEAD
-        } else if (calledBy == 't') {
-            //guiT.setVisible(true);
-            // this.setVisible(false);
-        }
-=======
+
        /* else if (calledBy == 't') {
             guiT.setVisible(true);
            this.setVisible(false);
         }*/
->>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
 
 
     }//GEN-LAST:event_MenuButtonActionPerformed
