@@ -63,9 +63,9 @@ public class Registration {
         //Testing controller functionality..
         
         Controller c = new Controller();
-        System.out.println(c.getAllMembers());
+        //System.out.println(c.getAllMembers());
         //c.deleteMember("12345678");
-        System.out.println(c.getMember("12345678"));
+        System.out.println(c.getMember("22853084"));
         /*
         System.out.println("");
         

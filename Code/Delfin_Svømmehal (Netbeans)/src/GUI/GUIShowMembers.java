@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Controller.Controller;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -45,10 +47,9 @@ public class GUIShowMembers extends javax.swing.JFrame {
         SeniorButton = new javax.swing.JButton();
         CompJuniorButton = new javax.swing.JButton();
         CompSeniorButton = new javax.swing.JButton();
-        TextField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         Allmembers = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(630, 380));
@@ -82,16 +83,16 @@ public class GUIShowMembers extends javax.swing.JFrame {
         CompSeniorButton.setMaximumSize(new java.awt.Dimension(107, 25));
         CompSeniorButton.setPreferredSize(new java.awt.Dimension(107, 25));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         Allmembers.setText("All");
         Allmembers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AllmembersActionPerformed(evt);
             }
         });
+
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,21 +102,22 @@ public class GUIShowMembers extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(MenuButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(Allmembers, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
                                 .addComponent(SeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(CompJuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(CompSeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(MenuButton))
-                        .addGap(18, 18, 18)
-                        .addComponent(Allmembers, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1)
-                    .addComponent(TextField))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -129,12 +131,10 @@ public class GUIShowMembers extends javax.swing.JFrame {
                     .addComponent(CompSeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Allmembers))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(MenuButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -148,6 +148,22 @@ public class GUIShowMembers extends javax.swing.JFrame {
         
     }//GEN-LAST:event_MenuButtonActionPerformed
 
+    private void AllmembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllmembersActionPerformed
+        ArrayList<String> allMembers = new ArrayList();
+        String allMembersString = "";
+        Controller c = new Controller();
+        allMembers = c.getAllMembers();
+        
+        for (int i = 0; i < allMembers.size(); ++i) {
+            allMembersString += allMembers.get(i)+"\n";
+        }
+        
+        textArea.setText(allMembersString);
+
+        //banas java ep. 21.
+        
+    }//GEN-LAST:event_AllmembersActionPerformed
+
     private void CompJuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompJuniorButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CompJuniorButtonActionPerformed
@@ -155,13 +171,6 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void SeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeniorButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SeniorButtonActionPerformed
-
-    private void AllmembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllmembersActionPerformed
-        // TODO add your handling code here:
-        TextField.setText("hello there.");
-        //banas java ep. 21.
-        
-    }//GEN-LAST:event_AllmembersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,8 +218,7 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private javax.swing.JButton JuniorButton;
     private javax.swing.JButton MenuButton;
     private javax.swing.JButton SeniorButton;
-    private javax.swing.JTextField TextField;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
