@@ -31,14 +31,14 @@ public class Member {
         //Sets the value of a member to either Junior or Senior
         //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {
-            junior = true;
-            senior = false;
+            this.junior = true;
+            this.senior = false;
         } else {
-            senior = true;
-            junior = false;
+            this.senior = true;
+            this.junior = false;
         }
         if (getAge() > 60) {
-            ageBonus = true;
+            this.ageBonus = true;
         }
     }
 
@@ -110,7 +110,7 @@ public class Member {
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
-        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + subFee;
+        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + subFee + ".";
     }
     
     
