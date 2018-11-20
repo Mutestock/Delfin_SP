@@ -23,7 +23,6 @@ public class Controller {
     //The Controller's purpose is to collect methods and make them easy to handle and instanciate.
     //Since this also acts as a hub for the GUI to interact with the rest of the classes.
     //Could be seen as the brain of the program (WIP).
-    
     //To do list:
     //merge junior/senior as a single boolean value
     //Implement Controller
@@ -33,11 +32,9 @@ public class Controller {
     //Make it possible for the GUI to go back to the main menu after having chosen a role.
     //Change GUI Class names.
     //Clean up redundant GUI code
-    
     //Stretch goals:
     //Additional basic information for members and trainer (e.g. phonenumber).
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
-    
     //Controller methods:
     //createMember()                (added)
     //updateMember(Member member)   ()
@@ -67,6 +64,7 @@ public class Controller {
     //from the .txt file.
 
     public Member getMember(String phone) {
+<<<<<<< HEAD
         /*try {
             Path path = Paths.get("D:\\test.txt");
 >>>>>>> d5b0b1bbe594e38675dd1d3c673a2cbab040251d
@@ -78,6 +76,8 @@ public class Controller {
         } catch (IOException ex) {
 
         }*/
+=======
+>>>>>>> 8d86473f9a0d8161a26eefe585eedc4a5fa16338
         String inputFileName = FilePrinter.getFilePath();
         String outputFileName = FilePrinter.getFilePath();
         String lineToUpdate = phone;
@@ -86,7 +86,7 @@ public class Controller {
         File outputFile = new File(outputFileName);
 
         Member member = null;
-        
+
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             String line = reader.readLine();
@@ -96,51 +96,61 @@ public class Controller {
                     temp = line;
                     break;
                 }
+                line = reader.readLine();
             }
             reader.close();
+            
+            
             String name = "";
             String parseAge = "";
-            boolean activityForm = false; 
+            boolean activityForm = false;
             boolean competetive = false;
             int counter = 0;
-            for (int i = 0; i < line.length(); ++i){
-                if (line.charAt(i) == ','){
-                    counter ++;
+            for (int i = 0; i < line.length(); ++i) {
+                if (line.charAt(i) == ',') {
+                    counter++;
                 }
-                
-                if (counter == 0){
+
+                if (counter == 0) {
                     name += line.charAt(i);
                 }
-                
-                if (counter == 1){
-                    if (line.charAt(i) == ','){
-                        
-                    }
-                    else {
-                    parseAge += line.charAt(i);
-                    }
-                }
-                
-                if (counter == 2){
-                    if (line.charAt(i) == 't'){
-                        activityForm = true;
+
+                if (counter == 1) {
+                    if (line.charAt(i) == ',') {
+
+                    } else {
+                        parseAge += line.charAt(i);
                     }
                 }
-                
-                if (counter == 3){
-                    if (line.charAt(i) == 't'){
-                        competetive = true;
+
+                if (counter == 2) {
+                    if (line.charAt(i) == ',') {
+                    } else {
+                        if (line.charAt(i) == 't') {
+                            activityForm = true;
+                        }
+                    }
+                }
+
+                if (counter == 3) {
+                    if (line.charAt(i) == ',') {
+                    } else {
+                        if (line.charAt(i) == 't') {
+                            competetive = true;
+                        }
                     }
                 }
             }
             System.out.println(parseAge);
             int age = Integer.parseInt(parseAge);
-            member = new Member(name,age,phone,activityForm,competetive);
-            
+            member = new Member(name, age, phone, activityForm, competetive);
+
         } catch (Exception e) {
         }
         return member;
     }
+    
+    
 
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
@@ -177,8 +187,9 @@ public class Controller {
                 writer.newLine();
             }
             writer.close();
-            
-        } catch (IOException e) {}
+
+        } catch (IOException e) {
+        }
     }
 
 }

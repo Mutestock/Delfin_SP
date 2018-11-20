@@ -17,6 +17,8 @@ public class FGUI extends javax.swing.JFrame {
     private FGUIAddMember fGUIADD;
     private GUIShowMembers guiM;
     private GUIStart guiStart;
+    private FGUIUpdateMember fGUIUp;
+    private FGUIDeleteMember fGUIDel;
 
     /**
      * Creates new form GUI
@@ -25,6 +27,9 @@ public class FGUI extends javax.swing.JFrame {
         this.setTitle("Formand side");
         initComponents();
         fGUIADD = new FGUIAddMember(this);
+        fGUIUp = new FGUIUpdateMember(this);
+        guiM = new GUIShowMembers(this);
+        fGUIDel = new FGUIDeleteMember(this);
        // guiM = new GUIShowMembers();
         this.setResizable(false);
         guiStart = (GUIStart) fGui;
@@ -43,10 +48,12 @@ public class FGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         memberButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        DeleteMember = new javax.swing.JButton();
+        UpdateMember = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addButton.setText("Tilføj et nyt medlem");
+        addButton.setText("Add a new member");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -56,17 +63,31 @@ public class FGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Delfine Svømmehal Prog.");
 
-        memberButton.setText("Se medlemmer");
+        memberButton.setText("Show all members");
         memberButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 memberButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Return");
+        jButton1.setText("Return to menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        DeleteMember.setText("Remove a member");
+        DeleteMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteMemberActionPerformed(evt);
+            }
+        });
+
+        UpdateMember.setText("Update member");
+        UpdateMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateMemberActionPerformed(evt);
             }
         });
 
@@ -75,19 +96,23 @@ public class FGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(addButton)
-                        .addGap(75, 75, 75)
-                        .addComponent(memberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGap(126, 126, 126)
+                .addComponent(jLabel1)
+                .addContainerGap(129, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(UpdateMember, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(addButton)))
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(memberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DeleteMember, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1))
                 .addGap(54, 54, 54))
         );
         layout.setVerticalGroup(
@@ -95,11 +120,15 @@ public class FGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(memberButton)
                     .addComponent(addButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UpdateMember)
+                    .addComponent(DeleteMember))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(29, 29, 29))
         );
@@ -129,6 +158,21 @@ public class FGUI extends javax.swing.JFrame {
         guiStart.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UpdateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberActionPerformed
+        // Shows the update member side
+        this.setVisible(false);
+        fGUIUp.setVisible(true);
+        
+    }//GEN-LAST:event_UpdateMemberActionPerformed
+
+    private void DeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberActionPerformed
+        // Shows the delete member side
+        this.setVisible(false);
+        fGUIDel.setVisible(true);
+        
+        
+    }//GEN-LAST:event_DeleteMemberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +211,8 @@ public class FGUI extends javax.swing.JFrame {
    // } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteMember;
+    private javax.swing.JButton UpdateMember;
     private javax.swing.JButton addButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
