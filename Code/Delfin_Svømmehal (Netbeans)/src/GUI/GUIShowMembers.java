@@ -20,11 +20,12 @@ public class GUIShowMembers extends javax.swing.JFrame {
     /**
      * Creates new form GUIMember
      */
-    private FGUI guiF;
-    private TGUI guiT;
+
     private char calledBy;
+    private GUIStart sGUI;
 
     // + , JFrame tGui
+<<<<<<< HEAD
     public GUIShowMembers(JFrame fGui) {
 
         initComponents();
@@ -33,11 +34,17 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
 //        this.guiF = (FGUI) fGui;
         //this.guiT = (TGUI) tGui;
+=======
+    public GUIShowMembers(JFrame Gui) {
+        this.setTitle("Show members menu");
+        initComponents();
+        //this.guiF = (FGUI) Gui;
+        //this.sGUI = (GUIStart) Gui;
+>>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
     }
 
     public void setCalledBy(char input) {
         calledBy = input;
-
     }
 
     /**
@@ -232,13 +239,19 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
-        if (calledBy == 'f') {
-            guiF.setVisible(true);
+            sGUI.setVisible(true);
             this.setVisible(false);
+<<<<<<< HEAD
         } else if (calledBy == 't') {
             //guiT.setVisible(true);
             // this.setVisible(false);
         }
+=======
+       /* else if (calledBy == 't') {
+            guiT.setVisible(true);
+           this.setVisible(false);
+        }*/
+>>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
 
 
     }//GEN-LAST:event_MenuButtonActionPerformed
@@ -255,7 +268,6 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
         textArea.setText(allMembersString);
 
-        //banas java ep. 21.
 
     }//GEN-LAST:event_AllmembersActionPerformed
 
@@ -319,13 +331,13 @@ public class GUIShowMembers extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   /* public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -345,12 +357,12 @@ public class GUIShowMembers extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //new GUIMember().setVisible(true);
             }
-        });
-    }
+        });*/
+   // }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -11,16 +11,30 @@ public class GUIStart extends javax.swing.JFrame {
     
     private FGUI fGUI;
     private TGUI tGUI;
+<<<<<<< HEAD
     private KGUI kGUI;
     
     String info = "hello there, hope this works";
     
+=======
+    private GUIShowMembers mGUI;
+    
+    
+    String info = "hello there, boom boi ";
+
+>>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
     public GUIStart() {
         initComponents();
+        this.setTitle("Startup menu");
         tGUI = new TGUI(this);
         fGUI = new FGUI(this);
+<<<<<<< HEAD
         kGUI = new KGUI(this);
         this.setTitle("Startup menu");
+=======
+        mGUI = new GUIShowMembers(this);
+        
+>>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
     }
 
     /**
@@ -34,6 +48,7 @@ public class GUIStart extends javax.swing.JFrame {
         chairmanButton1 = new javax.swing.JToggleButton();
         trainerButton = new javax.swing.JToggleButton();
         cashierButton = new javax.swing.JToggleButton();
+        showMembers = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 220));
@@ -64,21 +79,32 @@ public class GUIStart extends javax.swing.JFrame {
             }
         });
 
+        showMembers.setText("Show members");
+        showMembers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showMembersActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chairmanButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(trainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cashierButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cashierButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chairmanButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(showMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(trainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,11 +112,14 @@ public class GUIStart extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(chairmanButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cashierButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(trainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(showMembers)
+                    .addComponent(cashierButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -112,12 +141,24 @@ public class GUIStart extends javax.swing.JFrame {
 
     private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
 //        JOptionPane.showMessageDialog(GUIStart.this, info, "infor", INFORMATION_MESSAGE);
         this.setVisible(false);
         kGUI.setVisible(true);
 
+=======
+       // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
+>>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
     }//GEN-LAST:event_cashierButtonActionPerformed
+
+    private void showMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMembersActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        mGUI.setVisible(true);
+        
+    }//GEN-LAST:event_showMembersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +200,7 @@ public class GUIStart extends javax.swing.JFrame {
     private javax.swing.JToggleButton cashierButton;
     private javax.swing.JToggleButton chairmanButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton showMembers;
     private javax.swing.JToggleButton trainerButton;
     // End of variables declaration//GEN-END:variables
 }
