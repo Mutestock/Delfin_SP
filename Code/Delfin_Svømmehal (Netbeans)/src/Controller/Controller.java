@@ -64,20 +64,7 @@ public class Controller {
     //from the .txt file.
 
     public Member getMember(String phone) {
-<<<<<<< HEAD
-        /*try {
-            Path path = Paths.get("D:\\test.txt");
->>>>>>> d5b0b1bbe594e38675dd1d3c673a2cbab040251d
-            Charset charset = StandardCharsets.UTF_8;
 
-            String content = new String(Files.readAllBytes(path), charset);
-            content = content.replaceAll("age", "bar");
-            Files.write(path, content.getBytes(charset));
-        } catch (IOException ex) {
-
-        }*/
-=======
->>>>>>> 8d86473f9a0d8161a26eefe585eedc4a5fa16338
         String inputFileName = FilePrinter.getFilePath();
         String outputFileName = FilePrinter.getFilePath();
         String lineToUpdate = phone;
