@@ -19,8 +19,8 @@ public class FGUIAddMember extends javax.swing.JFrame {
      */
     public FGUIAddMember(JFrame addGui) {
         this.fGUI = (FGUI) addGui;
-        
         initComponents();
+        this.setTitle("Add member");
         
         
     }

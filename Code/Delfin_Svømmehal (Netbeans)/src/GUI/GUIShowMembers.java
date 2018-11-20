@@ -18,19 +18,22 @@ public class GUIShowMembers extends javax.swing.JFrame {
     /**
      * Creates new form GUIMember
      */
-    
     private FGUI guiF;
     private TGUI guiT;
-    
+    private char calledBy;
+
     // + , JFrame tGui
-    
     public GUIShowMembers(JFrame fGui) {
+        this.setTitle("Show members menu");
         initComponents();
-        this.guiF = (FGUI) fGui;
+//        this.guiF = (FGUI) fGui;
         //this.guiT = (TGUI) tGui;
-        
-        
-        
+
+    }
+
+    public void setCalledBy(char input) {
+        calledBy = input;
+
     }
 
     /**
@@ -50,6 +53,7 @@ public class GUIShowMembers extends javax.swing.JFrame {
         Allmembers = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(630, 380));
@@ -94,6 +98,14 @@ public class GUIShowMembers extends javax.swing.JFrame {
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
+        jButton1.setText("Clear");
+        jButton1.setPreferredSize(new java.awt.Dimension(109, 25));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,6 +115,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(MenuButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
@@ -133,7 +147,9 @@ public class GUIShowMembers extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(MenuButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MenuButton)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -142,10 +158,16 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
-        
-        guiF.setVisible(true);
-        this.setVisible(false);
-        
+        if (calledBy == 'f') {
+            guiF.setVisible(true);
+            this.setVisible(false);
+        }
+        else if (calledBy == 't') {
+            //guiT.setVisible(true);
+           // this.setVisible(false);
+        }
+
+
     }//GEN-LAST:event_MenuButtonActionPerformed
 
     private void AllmembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllmembersActionPerformed
@@ -153,15 +175,15 @@ public class GUIShowMembers extends javax.swing.JFrame {
         String allMembersString = "";
         Controller c = new Controller();
         allMembers = c.getAllMembers();
-        
+
         for (int i = 0; i < allMembers.size(); ++i) {
-            allMembersString += allMembers.get(i)+"\n";
+            allMembersString += allMembers.get(i) + "\n";
         }
-        
+
         textArea.setText(allMembersString);
 
         //banas java ep. 21.
-        
+
     }//GEN-LAST:event_AllmembersActionPerformed
 
     private void CompJuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompJuniorButtonActionPerformed
@@ -172,10 +194,14 @@ public class GUIShowMembers extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SeniorButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        textArea.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -209,7 +235,6 @@ public class GUIShowMembers extends javax.swing.JFrame {
         });
     }
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Allmembers;
@@ -218,6 +243,7 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private javax.swing.JButton JuniorButton;
     private javax.swing.JButton MenuButton;
     private javax.swing.JButton SeniorButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
