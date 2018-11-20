@@ -26,17 +26,24 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
     // + , JFrame tGui
 
+<<<<<<< HEAD
 
 
 //        this.guiF = (FGUI) fGui;
         //this.guiT = (TGUI) tGui;
 
+=======
+>>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
     public GUIShowMembers(JFrame Gui) {
         this.setTitle("Show members menu");
         initComponents();
         //this.guiF = (FGUI) Gui;
 
+<<<<<<< HEAD
         
+=======
+        this.sGUI = (GUIStart) Gui;
+>>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
 
         //this.sGUI = (GUIStart) Gui;
 
@@ -241,16 +248,22 @@ public class GUIShowMembers extends javax.swing.JFrame {
             sGUI.setVisible(true);
             this.setVisible(false);
 
+<<<<<<< HEAD
         //} else if (calledBy == 't') {
             //guiT.setVisible(true);
             // this.setVisible(false);
         }
 
+=======
+>>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
        /* else if (calledBy == 't') {
             guiT.setVisible(true);
            this.setVisible(false);
         }*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
 
 
     }//GEN-LAST:event_MenuButtonActionPerformed
