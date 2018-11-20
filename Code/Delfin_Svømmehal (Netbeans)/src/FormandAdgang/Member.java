@@ -42,6 +42,9 @@ public class Member {
         }
     }
 
+    public String getPhone() {
+        return phone;
+    }
 
     public String getName() {
         return name;
@@ -76,7 +79,7 @@ public class Member {
     }
 
     public int getSubFee() {
-        return subFee;
+       return subFee = calcFee();
     }
 
     public void setSubCatalogueYear(int subCatalogueYear) {
@@ -110,7 +113,7 @@ public class Member {
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
-        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + subFee + ".";
+        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + getSubFee() + ".";
     }
     
     

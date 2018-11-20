@@ -7,15 +7,15 @@ package GUI;
 
 import Controller.Controller;
 import FormandAdgang.Member;
+import Kontingent.Kontingent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  *
  * @author ahmed
  */
-public class GUIShowMembers extends javax.swing.JFrame {
+public class KGUIShowSubs extends javax.swing.JFrame {
 
     /**
      * Creates new form GUIMember
@@ -25,14 +25,12 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private char calledBy;
 
     // + , JFrame tGui
-    public GUIShowMembers(JFrame fGui) {
-
-        initComponents();
- 
+    public KGUIShowSubs(JFrame fGui) {
         this.setTitle("Show members menu");
-
+        initComponents();
 //        this.guiF = (FGUI) fGui;
         //this.guiT = (TGUI) tGui;
+
     }
 
     public void setCalledBy(char input) {
@@ -68,7 +66,6 @@ public class GUIShowMembers extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(630, 380));
 
         MenuButton.setText("Back to menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -246,8 +243,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void AllmembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllmembersActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllMembers();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllMembers();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -262,8 +259,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void CompJuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompJuniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllCompJunior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllCompJunior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -275,8 +272,9 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void SeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllSenior();
+
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllSenior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -293,8 +291,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void JuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllJunior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllJunior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -306,8 +304,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void CompSeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompSeniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllSenior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllSenior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -333,14 +331,16 @@ public class GUIShowMembers extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

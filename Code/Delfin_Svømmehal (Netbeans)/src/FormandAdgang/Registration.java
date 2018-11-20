@@ -1,6 +1,7 @@
 package FormandAdgang;
 
 import Controller.Controller;
+import Kontingent.Kontingent;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import Trainer.*;
@@ -54,6 +55,8 @@ public class Registration {
         r.registerMember(member3);
         r.registerMember(member4);
 
+
+        
         /*
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
