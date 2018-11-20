@@ -30,15 +30,11 @@ public class GUIShowMembers extends javax.swing.JFrame {
         this.setTitle("Show members menu");
         initComponents();
         //this.guiF = (FGUI) Gui;
-<<<<<<< HEAD
+
         this.sGUI = (GUIStart) Gui;
-=======
+
         //this.sGUI = (GUIStart) Gui;
-<<<<<<< HEAD
-=======
->>>>>>> c5cedc58dc2bddd53ee93175edab37bbd7728d65
->>>>>>> d0a1f7bcadf94bdf443dc985926a7d865e4267f6
->>>>>>> f5df090154a6ce537e6a308c1c38b174787d9c01
+
     }
 
     public void setCalledBy(char input) {
