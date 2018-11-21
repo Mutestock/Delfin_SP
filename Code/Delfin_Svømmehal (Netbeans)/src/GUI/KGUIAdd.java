@@ -16,7 +16,7 @@ import javax.swing.JFrame;
  */
 public class KGUIAdd extends javax.swing.JFrame {
 
-    private KGUI kGUI;
+   // private KGUI kGUI;
     private GUIShowMembers guiM;
     private GUIStart guiStart;
     //private GUI2 gui2;
@@ -26,7 +26,7 @@ public class KGUIAdd extends javax.swing.JFrame {
      * Creates new form GUI
      */
     public KGUIAdd(JFrame KGUI) {
-        this.kGUI = (KGUI) KGUI;
+       // this.kGUI = (KGUI) KGUI;
         initComponents();
         this.setTitle("Add member");
         

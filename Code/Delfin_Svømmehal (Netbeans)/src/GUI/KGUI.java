@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  *
  * @author ahmed
  */
-public class TGUI extends javax.swing.JFrame {
+public class KGUI extends javax.swing.JFrame {
 
     //private GUI2 gui2;
     private GUIShowMembers guiM;
@@ -23,7 +23,7 @@ public class TGUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    public TGUI(JFrame TGui) {
+    public KGUI(JFrame TGui) {
         initComponents();
         this.setTitle("Trainers menu");
         this.sMenu =  (GUIStart) TGui;
@@ -42,9 +42,9 @@ public class TGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        top5Members = new javax.swing.JButton();
+        balanceSheetButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        RegiResult = new javax.swing.JButton();
+        ContigentPay = new javax.swing.JButton();
         UpdateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,18 +52,18 @@ public class TGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Delfine Svømmehal Prog.");
 
-        top5Members.setText("Se top 5 medlemmer");
-        top5Members.addActionListener(new java.awt.event.ActionListener() {
+        balanceSheetButton.setText("Balance sheet");
+        balanceSheetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                top5MembersActionPerformed(evt);
+                balanceSheetButtonActionPerformed(evt);
             }
         });
 
         jButton1.setText("Return to menu");
 
-        RegiResult.setText(" Gem resultater");
+        ContigentPay.setText("Contigent payment");
 
-        UpdateButton.setText("Update medlemmer");
+        UpdateButton.setText("Update members");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,10 +77,10 @@ public class TGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(273, 273, 273)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(top5Members, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RegiResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(balanceSheetButton, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                            .addComponent(ContigentPay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1))
@@ -91,9 +91,9 @@ public class TGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
-                .addComponent(top5Members)
+                .addComponent(balanceSheetButton)
                 .addGap(28, 28, 28)
-                .addComponent(RegiResult)
+                .addComponent(ContigentPay)
                 .addGap(34, 34, 34)
                 .addComponent(UpdateButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
@@ -105,12 +105,12 @@ public class TGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void top5MembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_top5MembersActionPerformed
+    private void balanceSheetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balanceSheetButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         //guiM.setVisible(true);
         //guiM.setCalledBy('t');
-    }//GEN-LAST:event_top5MembersActionPerformed
+    }//GEN-LAST:event_balanceSheetButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,10 +151,10 @@ public class TGUI extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RegiResult;
+    private javax.swing.JButton ContigentPay;
     private javax.swing.JButton UpdateButton;
+    private javax.swing.JButton balanceSheetButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton top5Members;
     // End of variables declaration//GEN-END:variables
 }

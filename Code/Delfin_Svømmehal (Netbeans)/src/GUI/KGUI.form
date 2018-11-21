@@ -32,13 +32,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="top5Members" max="32767" attributes="0"/>
-                          <Component id="RegiResult" max="32767" attributes="0"/>
+                          <Component id="balanceSheetButton" pref="147" max="32767" attributes="0"/>
+                          <Component id="ContigentPay" max="32767" attributes="0"/>
                           <Component id="UpdateButton" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -52,9 +52,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="top5Members" min="-2" max="-2" attributes="0"/>
+              <Component id="balanceSheetButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="RegiResult" min="-2" max="-2" attributes="0"/>
+              <Component id="ContigentPay" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="133" max="32767" attributes="0"/>
@@ -73,12 +73,12 @@
         <Property name="text" type="java.lang.String" value="Delfine Sv&#xf8;mmehal Prog."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="top5Members">
+    <Component class="javax.swing.JButton" name="balanceSheetButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Se top 5 medlemmer"/>
+        <Property name="text" type="java.lang.String" value="Balance sheet"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="top5MembersActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balanceSheetButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
@@ -86,14 +86,14 @@
         <Property name="text" type="java.lang.String" value="Return to menu"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="RegiResult">
+    <Component class="javax.swing.JButton" name="ContigentPay">
       <Properties>
-        <Property name="text" type="java.lang.String" value=" Gem resultater"/>
+        <Property name="text" type="java.lang.String" value="Contigent payment"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="UpdateButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Update medlemmer"/>
+        <Property name="text" type="java.lang.String" value="Update members"/>
       </Properties>
     </Component>
   </SubComponents>

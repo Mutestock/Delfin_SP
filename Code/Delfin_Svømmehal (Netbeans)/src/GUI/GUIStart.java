@@ -11,38 +11,29 @@ public class GUIStart extends javax.swing.JFrame {
     
     private FGUI fGUI;
     private TGUI tGUI;
-<<<<<<< HEAD
-    private KGUI kGUI;
+
+    //private KGUI kGUI;
     
     String info = "hello there, hope this works";
     
 
-=======
->>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
+
     private GUIShowMembers mGUI;
     
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
     public GUIStart() {
         initComponents();
         this.setTitle("Startup menu");
         tGUI = new TGUI(this);
         fGUI = new FGUI(this);
-<<<<<<< HEAD
 
-        kGUI = new KGUI(this);
+        //kGUI = new KGUI(this);
         this.setTitle("Startup menu");
 
         mGUI = new GUIShowMembers(this);
         
-
-=======
-        mGUI = new GUIShowMembers(this);
         
->>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
     }
 
     /**
@@ -149,22 +140,22 @@ public class GUIStart extends javax.swing.JFrame {
 
     private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
+
 
         // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
 //        JOptionPane.showMessageDialog(GUIStart.this, info, "infor", INFORMATION_MESSAGE);
         this.setVisible(false);
-        kGUI.setVisible(true);
+        //kGUI.setVisible(true);
 
 
        // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
          JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
 
-=======
+
 
        // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
          JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
->>>>>>> b3d6b94e479e2e574a5681885f7790954dcc252c
+
     }//GEN-LAST:event_cashierButtonActionPerformed
 
     private void showMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMembersActionPerformed
