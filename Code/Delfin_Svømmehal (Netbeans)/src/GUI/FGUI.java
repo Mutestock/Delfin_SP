@@ -1,6 +1,6 @@
 package GUI;
 
-import Trainer.Teams;
+
 import javax.swing.JFrame;
 
 /*

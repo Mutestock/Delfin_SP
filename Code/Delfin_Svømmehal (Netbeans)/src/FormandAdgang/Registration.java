@@ -28,9 +28,9 @@ public class Registration {
         this.registeredMembers.add(member);
         //team.addMember is a method of adding the member to the correct team.
         team.addMemberToTeam(member);
+
         
-        String path = FilePrinter.getFilePath();
-        PrintWriter print = FilePrinter.getPrintwriter(path);
+        PrintWriter print = FilePrinter.getPrintwriter(FilePrinter.getFilePath());
         FilePrinter.subLister(registeredMembers, print);
         print.close();
     }
@@ -45,41 +45,20 @@ public class Registration {
         //Creating instances of Member. 
         //This is necessary when trying to test the functionality of the filePrinter class.
         Member member1 = new Member("Emil", 60, "12345678", true, true);
-        Member member2 = new Member("ahmed", 20, "33445566", true, true);
-        Member member3 = new Member("Emil skov", 20, "34343477", false, true);
-        Member member4 = new Member("Dolf bo", 15, "99998888", true, true);
-      
-        Registration r = new Registration();
-        r.registerMember(member1);
-        r.registerMember(member2);
-        r.registerMember(member3);
-        r.registerMember(member4);
+        Member member2 = new Member("Emil1", 60, "12345678", true, true);
+        Member member3 = new Member("Emil2", 60, "12345678", true, true);
+        Member member4 = new Member("Emil3", 60, "12345678", true, true);
+        Member member5 = new Member("Emil4", 60, "12345678", true, true);
 
-
-        
-        /*
-        FilePrinter f = new FilePrinter(FilePrinter.getFilePath(),FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
-        f.getFileInfo(FilePrinter.getFilePath());
-        f.printArrayList();
-        */
-        
-        //Testing controller functionality..
-        
         Controller c = new Controller();
-        //System.out.println(c.getAllMembers());
-        //c.deleteMember("12345678");
-        //System.out.println(c.getMember("22853084"));
-        System.out.println(c.getAllMembers());
-        /*
-        System.out.println("");
-        
-        
-        //c.updateMember();
-        for (int i = 0; i < c.getAllMembers().size(); ++i) {
-            System.out.println(c.getAllMembers().get(i));
-        }
-       
-        System.out.println(c.getAllMembers());
-        */
+
+        /*c.registerResult(member1, "Butterfly", 1);
+        c.registerResult(member2, "Butterfly", 2);
+        c.registerResult(member3, "Butterfly", 3);
+        c.registerResult(member4, "Butterfly", 4);
+        c.registerResult(member5, "Butterfly", 5);*/
+        System.out.println(c.getAllResults());
+        //System.out.println(c.getTop5Results(c.getAllResults()));
+        System.out.println(c.getDiciplineTop5("Butterfly"));
     }
 }

@@ -20,11 +20,12 @@ import java.util.ArrayList;
  */
 public class FilePrinter {
 
-    ArrayList<String> membersArrayList = new ArrayList();
+    ArrayList<String> arrayList = new ArrayList();
     
     //Defining filepath. Can be redefined if a new path is necessary.
     //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
-    private static String filePath = "D:\\registrationNew.txt";
+    private static String filePath = "D:\\MembersList.txt";
+    private static String filePathResults = "D:\\results.txt";
     
     
     //Creates file at set location. See createFile method
@@ -60,7 +61,7 @@ public class FilePrinter {
     public void getFileInfo(String path) {
         //System.out.println("Info written to file...\n");
         File subListUpgrade = new File(path);
-        membersArrayList.clear();
+        arrayList.clear();
 
         try {
             BufferedReader getInfo = new BufferedReader(new FileReader(subListUpgrade));
@@ -68,7 +69,7 @@ public class FilePrinter {
             
 
             while (subInfo != null) {
-                membersArrayList.add(subInfo);
+                arrayList.add(subInfo);
                 subInfo = getInfo.readLine();
             }
 
@@ -91,6 +92,10 @@ public class FilePrinter {
     public static String getFilePath() {
         return filePath;
     }
+    
+    public static String getFilePathResults() {
+        return filePathResults;
+    }
 
     public static PrintWriter getPrintwriter(String path) {
         printwriter = FilePrinter.createFile(path);
@@ -98,13 +103,13 @@ public class FilePrinter {
     }
 
     
-    public ArrayList<String> getMembersArrayList() {
-        return membersArrayList;
+    public ArrayList<String> getFileArrayList() {
+        return arrayList;
     }
     
     public void printArrayList() {
-        for (int i = 0; i < membersArrayList.size(); ++i) {
-            System.out.println(membersArrayList.get(i));
+        for (int i = 0; i < arrayList.size(); ++i) {
+            System.out.println(arrayList.get(i));
         }
         
     }

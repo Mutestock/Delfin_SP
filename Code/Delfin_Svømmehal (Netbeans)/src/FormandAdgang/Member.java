@@ -10,8 +10,6 @@ public class Member {
     private String phone;
     private boolean activity;
     private boolean competetive;
-    
-    //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
     private boolean senior;
     private boolean junior;
@@ -20,6 +18,11 @@ public class Member {
     private int subCatalogueYear;
     private int subFee;
     
+    //Trainer fields added to member class
+    private boolean compButterfly;
+    private boolean compBreastStroke;
+    private boolean compBackstroke;
+    private boolean compFree;
 
     public Member(String name, int age, String phone, boolean activityForm, boolean competetive) {
 
@@ -88,6 +91,40 @@ public class Member {
 
     public void setSubFee(int subFee) {
         this.subFee = subFee;
+    }
+    
+    
+
+    public boolean isCompButterfly() {
+        return compButterfly;
+    }
+
+    public void setCompButterfly(boolean compButterfly) {
+        this.compButterfly = compButterfly;
+    }
+
+    public boolean isCompBreastStroke() {
+        return compBreastStroke;
+    }
+
+    public void setCompBreastStroke(boolean compBreastStroke) {
+        this.compBreastStroke = compBreastStroke;
+    }
+
+    public boolean isCompBackstroke() {
+        return compBackstroke;
+    }
+
+    public void setCompBackstroke(boolean compBackstroke) {
+        this.compBackstroke = compBackstroke;
+    }
+
+    public boolean isCompFree() {
+        return compFree;
+    }
+
+    public void setCompFree(boolean compFree) {
+        this.compFree = compFree;
     }
 
     
