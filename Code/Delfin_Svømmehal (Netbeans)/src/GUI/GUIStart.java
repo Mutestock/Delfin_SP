@@ -8,16 +8,17 @@ import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
  * @author ahmed
  */
 public class GUIStart extends javax.swing.JFrame {
-    
+
     private FGUI fGUI;
     private TGUI tGUI;
     private KGUI kGUI;
+
     
     String info = "hello there, hope this works";
 
     private GUIShowMembers mGUI;
     
-    
+
     public GUIStart() {
         initComponents();
         this.setTitle("Startup menu");
@@ -29,8 +30,6 @@ public class GUIStart extends javax.swing.JFrame {
         this.setTitle("Startup menu");
 
         mGUI = new GUIShowMembers(this);
-        
-        
     }
 
     /**
@@ -132,7 +131,7 @@ public class GUIStart extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         tGUI.setVisible(true);
-        
+
 
     }//GEN-LAST:event_trainerButtonActionPerformed
 
@@ -141,7 +140,7 @@ public class GUIStart extends javax.swing.JFrame {
         this.setVisible(false);
         kGUI.setVisible(true);
 
-         
+
 
     }//GEN-LAST:event_cashierButtonActionPerformed
 
@@ -149,7 +148,7 @@ public class GUIStart extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         mGUI.setVisible(true);
-        
+
     }//GEN-LAST:event_showMembersActionPerformed
 
     /**

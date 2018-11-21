@@ -12,12 +12,12 @@ import java.io.PrintWriter;
 public class Result {
     
     private Member member;
-    private String diciplin;
+    private String discipline;
     private int time;
 
-    public Result(Member member, String diciplin, int time) {
+    public Result(Member member, String discipline, int time) {
         this.member = member;
-        this.diciplin = diciplin;
+        this.discipline = discipline;
         this.time = time;
     }
 
@@ -33,8 +33,8 @@ public class Result {
         return member;
     }
 
-    public String getDiciplin() {
-        return diciplin;
+    public String getDiscipline() {
+        return discipline;
     }
 
     public int getTime() {
@@ -43,7 +43,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return '{' + member.getName() + "," + member.getAge() + "," + member.getPhone() + "}" + diciplin + "," + time + '.';
+        return '{' + member.getName() + "," + member.getAge() + "," + member.getPhone() + "}" + discipline + "," + time + '.';
     }
     
     

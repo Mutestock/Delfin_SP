@@ -26,6 +26,7 @@ public class FilePrinter {
     //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
     private static String filePath = "D:\\MembersList.txt";
     private static String filePathResults = "D:\\Results.txt";
+    private static String filePathKontingent = "D:\\Kontingent.txt";
     
     
     //Creates file at set location. See createFile method
