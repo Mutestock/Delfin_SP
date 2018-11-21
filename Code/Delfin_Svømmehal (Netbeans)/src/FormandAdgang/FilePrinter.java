@@ -21,17 +21,12 @@ import java.util.ArrayList;
 public class FilePrinter {
 
     ArrayList<String> arrayList = new ArrayList();
-    
+
     //Defining filepath. Can be redefined if a new path is necessary.
     //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
-<<<<<<< HEAD
-    private static String filePath = "registrationNew.txt";
-=======
-    private static String filePath = "D:\\MembersList.txt";
-    private static String filePathResults = "D:\\results.txt";
->>>>>>> 2c24fb0fd36b987412d3d90fa898a78b4e8f8cd6
-    
-    
+    private static String filePath = "MembersList.txt";
+    private static String filePathResults = "results.txt";
+
     //Creates file at set location. See createFile method
     private static PrintWriter printwriter = FilePrinter.createFile(filePath);
 
@@ -41,7 +36,6 @@ public class FilePrinter {
         this.printwriter = printwriter;
     }
 
-    
     //Creates new file at the chosen filepath and then writes to the file. 
     //The boolean value in filwriter indicates, whether you want to append to the file or not. 
     //if false or removed, the filewriter will overwrite
@@ -58,8 +52,7 @@ public class FilePrinter {
         }
         return null;
     }
-    
-    
+
     //File reader. This method allows us to read and react from the .txt file. 
     //This is necessary when using the function where the user pays his fee(kontingentBetaling)(WIP)
     public void getFileInfo(String path) {
@@ -70,7 +63,6 @@ public class FilePrinter {
         try {
             BufferedReader getInfo = new BufferedReader(new FileReader(subListUpgrade));
             String subInfo = getInfo.readLine();
-            
 
             while (subInfo != null) {
                 arrayList.add(subInfo);
@@ -96,7 +88,7 @@ public class FilePrinter {
     public static String getFilePath() {
         return filePath;
     }
-    
+
     public static String getFilePathResults() {
         return filePathResults;
     }
@@ -106,16 +98,15 @@ public class FilePrinter {
         return printwriter;
     }
 
-    
     public ArrayList<String> getFileArrayList() {
         return arrayList;
     }
-    
+
     public void printArrayList() {
         for (int i = 0; i < arrayList.size(); ++i) {
             System.out.println(arrayList.get(i));
         }
-        
+
     }
 
 }
