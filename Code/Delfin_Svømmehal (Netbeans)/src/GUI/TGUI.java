@@ -65,7 +65,12 @@ public class TGUI extends javax.swing.JFrame {
             }
         });
 
-        RegiResult.setText(" Gem resultater");
+        RegiResult.setText("Register result");
+        RegiResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegiResultActionPerformed(evt);
+            }
+        });
 
         UpdateButton.setText("Update medlemmer");
 
@@ -84,7 +89,7 @@ public class TGUI extends javax.swing.JFrame {
                             .addComponent(top5Members, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(RegiResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1))
@@ -121,6 +126,10 @@ public class TGUI extends javax.swing.JFrame {
         this.setVisible(false);
         sMenu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void RegiResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegiResultActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegiResultActionPerformed
 
     /**
      * @param args the command line arguments
