@@ -53,6 +53,6 @@ public class Registration {
         
         Controller c = new Controller();
         
-        System.out.println(c.getDisciplineTop5("Butterfly", c.getAllSeniorResults()));
+        //System.out.println(c.getDisciplineTop5("Butterfly", c.getAllSeniorResults()));
     }
 }

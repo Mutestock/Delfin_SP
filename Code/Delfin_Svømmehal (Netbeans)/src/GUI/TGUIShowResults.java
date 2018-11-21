@@ -9,6 +9,7 @@ package GUI;
 import Controller.Controller;
 import Trainer.Result;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 /**
  *
@@ -18,10 +19,12 @@ public class TGUIShowResults extends javax.swing.JFrame {
     
     private boolean t1 = false;
     private boolean t2 = false;
+    private TGUI tgui;
 
     /** Creates new form TGUIShowResults */
-    public TGUIShowResults() {
+    public TGUIShowResults(JFrame tgui) {
         initComponents();
+        this.tgui = (TGUI) tgui;
     }
 
     /** This method is called from within the constructor to
@@ -81,6 +84,11 @@ public class TGUIShowResults extends javax.swing.JFrame {
         jToggleButton5.setText("Clear");
 
         jButton1.setText("Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         juniorCheck.setText("Junior");
         juniorCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -172,14 +180,12 @@ public class TGUIShowResults extends javax.swing.JFrame {
         if (juniorCheck.isSelected()) {
             results = c.getDisciplineTop5("Butterfly", c.getAllJuniorResults());
         } else if (seniorCheck.isSelected()) {
-            System.out.println(c.getAllSeniorResults());
             results = c.getDisciplineTop5("Butterfly", c.getAllSeniorResults());
         }
         String text = "";
         
         for (int i = 0; i < results.size(); ++i) {
             text += results.get(i) + "\n";
-            System.out.println(text);
         }
         
         textArea.setText(text);
@@ -187,51 +193,62 @@ public class TGUIShowResults extends javax.swing.JFrame {
     }//GEN-LAST:event_butterflyButtonActionPerformed
 
     private void backstrokeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backstrokeButtonActionPerformed
-        // TODO add your handling code here:
+        Controller c = new Controller();
+        ArrayList<Result> results = new ArrayList();
+        if (juniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Backstroke", c.getAllJuniorResults());
+        } else if (seniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Backstroke", c.getAllSeniorResults());
+        }
+        String text = "";
+        
+        for (int i = 0; i < results.size(); ++i) {
+            text += results.get(i) + "\n";
+        }
+        
+        textArea.setText(text);
     }//GEN-LAST:event_backstrokeButtonActionPerformed
 
     private void cheststrokeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cheststrokeButtonActionPerformed
-        // TODO add your handling code here:
+        Controller c = new Controller();
+        ArrayList<Result> results = new ArrayList();
+        if (juniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Cheststroke", c.getAllJuniorResults());
+        } else if (seniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Cheststroke", c.getAllSeniorResults());
+        }
+        String text = "";
+        
+        for (int i = 0; i < results.size(); ++i) {
+            text += results.get(i) + "\n";
+        }
+        
+        textArea.setText(text);
     }//GEN-LAST:event_cheststrokeButtonActionPerformed
 
     private void freeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freeButtonActionPerformed
-        // TODO add your handling code here:
+        Controller c = new Controller();
+        ArrayList<Result> results = new ArrayList();
+        if (juniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Free", c.getAllJuniorResults());
+        } else if (seniorCheck.isSelected()) {
+            results = c.getDisciplineTop5("Free", c.getAllSeniorResults());
+        }
+        String text = "";
+        
+        for (int i = 0; i < results.size(); ++i) {
+            text += results.get(i) + "\n";
+        }
+        
+        textArea.setText(text);
     }//GEN-LAST:event_freeButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TGUIShowResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TGUIShowResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TGUIShowResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TGUIShowResults.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        tgui.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TGUIShowResults().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton backstrokeButton;

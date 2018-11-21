@@ -17,6 +17,7 @@ public class TGUI extends javax.swing.JFrame {
     private GUIShowMembers guiM;
     private GUIStart sMenu;
     private TGUIRegisterResults guiR;
+    private TGUIShowResults guiSR;
 
     
     /**
@@ -29,7 +30,12 @@ public class TGUI extends javax.swing.JFrame {
         //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
         guiR = new TGUIRegisterResults(this);
+        guiSR = new TGUIShowResults(this);
         
+    }
+
+    TGUI() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -120,8 +126,7 @@ public class TGUI extends javax.swing.JFrame {
     private void top5MembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_top5MembersActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        //guiM.setVisible(true);
-        //guiM.setCalledBy('t');
+        guiSR.setVisible(true);
     }//GEN-LAST:event_top5MembersActionPerformed
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
