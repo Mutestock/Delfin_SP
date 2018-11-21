@@ -125,7 +125,7 @@ public class Kontingent {
         int counter = 0;
 
         ArrayList<Member> membersList = new ArrayList();
-        ArrayList<String> allMembers = f.getMembersArrayList();
+        ArrayList<String> allMembers = f.getFileArrayList();
         for (int i = 0; i < allMembers.size(); ++i) {
             String name = "";
             String parseAge = "";
@@ -137,37 +137,37 @@ public class Kontingent {
             
             for (int j = 0; j < allMembers.get(i).length(); ++j) {
 
-                if (f.getMembersArrayList().get(i).charAt(j) == '.') {
+                if (f.getFileArrayList().get(i).charAt(j) == '.') {
                     int age = Integer.parseInt(parseAge);
                     Member member = new Member(name, age, phone, activityForm, competetive);
                     membersList.add(member);
                     counter = 0;
                 }
 
-                if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+                if (f.getFileArrayList().get(i).charAt(j) == ',') {
 
                     counter++;
                 } else if (counter == 0) {
-                    if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
 
                     } else {
-                        name += f.getMembersArrayList().get(i).charAt(j);
+                        name += f.getFileArrayList().get(i).charAt(j);
                     }
                 } else if (counter == 1) {
-                    if (f.getMembersArrayList().get(i).charAt(j) == ',') {
+                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
 
                     } else {
-                        parseAge += f.getMembersArrayList().get(i).charAt(j);
+                        parseAge += f.getFileArrayList().get(i).charAt(j);
                     }
                 } else if (counter == 2) {
-                    phone += f.getMembersArrayList().get(i).charAt(j);
+                    phone += f.getFileArrayList().get(i).charAt(j);
                 } else if (counter == 3) {
-                    act += f.getMembersArrayList().get(i).charAt(j);
+                    act += f.getFileArrayList().get(i).charAt(j);
                     if (act.contains("true")) {
                         activityForm = true;
                     }
                 } else if (counter == 4) {
-                    comp += f.getMembersArrayList().get(i).charAt(j);
+                    comp += f.getFileArrayList().get(i).charAt(j);
                     if (comp.contains("true")) {
                         competetive = true;
                     }

@@ -2,7 +2,6 @@ package GUI;
 
 import Controller.Controller;
 import Kontingent.Kontingent;
-import Trainer.Teams;
 import javax.swing.JFrame;
 
 /*
