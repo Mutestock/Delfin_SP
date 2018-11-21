@@ -60,6 +60,7 @@ public class GUIStart extends javax.swing.JFrame {
         });
 
         trainerButton.setText("Træner");
+        trainerButton.setBorderPainted(false);
         trainerButton.setPreferredSize(new java.awt.Dimension(90, 25));
         trainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
