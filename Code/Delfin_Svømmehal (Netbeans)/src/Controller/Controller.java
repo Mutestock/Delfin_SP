@@ -338,8 +338,12 @@ public class Controller {
         Member member = new Member("",0,"",true,true);
         Result result = new Result(member,"",999999999);
         top5.add(result);
+        int x = results.size();
+        if (results.size() > 5) {
+            x = 5;
+        }
         
-        for (int i = 0; i < 5; ++i) {
+        for (int i = 0; i < x; ++i) {
             int n = 0;
             int temp = top5.get(0).getTime();
             
