@@ -170,10 +170,10 @@ public class TGUIShowResults extends javax.swing.JFrame {
         Controller c = new Controller();
         ArrayList<Result> results = new ArrayList();
         if (juniorCheck.isSelected()) {
-            results = c.getDiciplineTop5("Butterfly", c.getAllJuniorResults());
+            results = c.getDisciplineTop5("Butterfly", c.getAllJuniorResults());
         } else if (seniorCheck.isSelected()) {
             System.out.println(c.getAllSeniorResults());
-            results = c.getDiciplineTop5("Butterfly", c.getAllSeniorResults());
+            results = c.getDisciplineTop5("Butterfly", c.getAllSeniorResults());
         }
         String text = "";
         

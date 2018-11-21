@@ -89,6 +89,7 @@
     <Component class="javax.swing.JToggleButton" name="trainerButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tr&#xe6;ner"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[90, 25]"/>
         </Property>

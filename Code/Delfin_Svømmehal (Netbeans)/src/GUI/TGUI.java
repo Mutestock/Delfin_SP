@@ -16,9 +16,8 @@ public class TGUI extends javax.swing.JFrame {
     //private GUI2 gui2;
     private GUIShowMembers guiM;
     private GUIStart sMenu;
-    private TGUIRegisterResult guiR;
+    private TGUIRegisterResults guiR;
 
-    
     
     /**
      * Creates new form GUI
@@ -29,7 +28,7 @@ public class TGUI extends javax.swing.JFrame {
         this.sMenu =  (GUIStart) TGui;
         //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
-        guiR = new TGUIRegisterResult(this);
+        guiR = new TGUIRegisterResults(this);
         
     }
 

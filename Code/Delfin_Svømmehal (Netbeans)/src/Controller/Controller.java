@@ -43,9 +43,9 @@ public class Controller {
     //getAllMembers()               (added)
     // - (^ read members)
     //Controller methods (methods of which we have yet to implement at all)
-    //top5Members(Diciplin diciplin)
-    // - (^ We should create a class for eat diciplin and save
-    // - (the top 5 members of each diciplin in their seperate classes)
+    //top5Members(Discipline discipline)
+    // - (^ We should create a class for eat discipline and save
+    // - (the top 5 members of each discipline in their seperate classes)
     //registerResult()
     //getResult(-unknown parameter-)
     //getBalanceSheet()
@@ -281,8 +281,8 @@ public class Controller {
         r.registerMember(member);
     }
 
-    public void registerResult(Member member, String diciplin, int time) {
-        Result result = new Result(member, diciplin, time);
+    public void registerResult(Member member, String discipline, int time) {
+        Result result = new Result(member, discipline, time);
         Result.registerResult(result);
     }
 
@@ -299,7 +299,7 @@ public class Controller {
             String parseAge = "";
             String phone = "";
 
-            String diciplin = "";
+            String discipline = "";
             String parseTime = "";
 
             for (int j = 0; j < fileInfo.get(i).length(); ++j) {
@@ -312,7 +312,7 @@ public class Controller {
                 } else if (counter == 3) {
                     phone += fileInfo.get(i).charAt(j);
                 } else if (counter == 4) {
-                    diciplin += fileInfo.get(i).charAt(j);
+                    discipline += fileInfo.get(i).charAt(j);
                 } else if (counter == 5 && fileInfo.get(i).charAt(j) != '.') {
                     parseTime += fileInfo.get(i).charAt(j);
 
@@ -321,7 +321,7 @@ public class Controller {
                     int age = Integer.parseInt(parseAge);
                     Member member = new Member(name, age, phone, true, true);
                     int time = Integer.parseInt(parseTime);
-                    Result result = new Result(member, diciplin, time);
+                    Result result = new Result(member, discipline, time);
                     resultList.add(result);
                     counter = 0;
                 }
@@ -369,6 +369,7 @@ public class Controller {
         return allJuniorResults;
     }
     
+
     public ArrayList<Result> getAllSeniorResults() {
         Controller c = new Controller();
         ArrayList<Result> allResults = c.getAllResults();
@@ -382,17 +383,18 @@ public class Controller {
         return allSeniorResults;
     }
     
-    public ArrayList<Result> getDiciplineTop5(String discipline,ArrayList<Result> results) {
+    public ArrayList<Result> getDisciplineTop5(String discipline,ArrayList<Result> results) {
         Controller c = new Controller();
         ArrayList<Result> allResults = results;
         ArrayList<Result> disciplineResults = new ArrayList();
         
         for (int i = 0; i < allResults.size(); ++i) {
-            if (allResults.get(i).getDiciplin().equals(discipline)) {
+            if (allResults.get(i).getDiscipline().equals(discipline)) {
                 disciplineResults.add(allResults.get(i));
             }
         }
         return c.getTop5Results(disciplineResults);
     }
+
 
 }
