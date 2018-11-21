@@ -11,17 +11,28 @@ public class GUIStart extends javax.swing.JFrame {
     
     private FGUI fGUI;
     private TGUI tGUI;
+
+    //private KGUI kGUI;
+    
+    String info = "hello there, hope this works";
+    
+
+
     private GUIShowMembers mGUI;
     
-    
-    String info = "hello there, boom boi ";
+
 
     public GUIStart() {
         initComponents();
         this.setTitle("Startup menu");
         tGUI = new TGUI(this);
         fGUI = new FGUI(this);
+
+        //kGUI = new KGUI(this);
+        this.setTitle("Startup menu");
+
         mGUI = new GUIShowMembers(this);
+        
         
     }
 
@@ -130,8 +141,21 @@ public class GUIStart extends javax.swing.JFrame {
     private void cashierButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashierButtonActionPerformed
         // TODO add your handling code here:
 
+
+        // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+//        JOptionPane.showMessageDialog(GUIStart.this, info, "infor", INFORMATION_MESSAGE);
+        this.setVisible(false);
+        //kGUI.setVisible(true);
+
+
        // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
          JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
+
+
+
+       // JOptionPane.showMessageDialog(Start.this, info, "infor", INFORMATION_MESSAGE);
+         JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_cashierButtonActionPerformed
 
     private void showMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMembersActionPerformed

@@ -371,4 +371,31 @@ public class Controller {
         return c.getTop5Results(diciplineTop5);
     }
 
+    
+    
+    
+    public ArrayList<String> formatMembers(ArrayList<Member> arrayList) {
+        FilePrinter fpf = new FilePrinter(FilePrinter.getFilePathResults(), FilePrinter.getPrintwriter(FilePrinter.getFilePathResults()));
+        fpf.getFileInfo(FilePrinter.getFilePathResults());
+        ArrayList<String> fileInfo = fpf.getFileArrayList();
+        String firstName = "";
+        int age;
+        String phone = "";
+        boolean comp = 
+        
+        ArrayList<String> Format = new ArrayList();
+        Member test = new Member("emil",21,"",true,true);
+        for(int i =0; i<fileInfo.get(i).length();i++){
+            if(test.getName().length() == 0);{
+                firstName = test.getName();
+    
+                if(test.getName().length() < 10){
+                    firstName += " ";
+                }
+            }       
+        }
+            return Format;
+    }
+    
+    
 }

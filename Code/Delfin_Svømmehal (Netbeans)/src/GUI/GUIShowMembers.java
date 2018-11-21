@@ -26,12 +26,21 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
     // + , JFrame tGui
 
+
+
+
+//        this.guiF = (FGUI) fGui;
+        //this.guiT = (TGUI) tGui;
+
+
     public GUIShowMembers(JFrame Gui) {
         this.setTitle("Show members menu");
         initComponents();
         //this.guiF = (FGUI) Gui;
 
+
         this.sGUI = (GUIStart) Gui;
+
 
         //this.sGUI = (GUIStart) Gui;
 
@@ -236,11 +245,17 @@ public class GUIShowMembers extends javax.swing.JFrame {
             sGUI.setVisible(true);
             this.setVisible(false);
 
+
+        //} else if (calledBy == 't') {
+            //guiT.setVisible(true);
+            // this.setVisible(false);
+        
+
+
        /* else if (calledBy == 't') {
             guiT.setVisible(true);
            this.setVisible(false);
         }*/
-
 
     }//GEN-LAST:event_MenuButtonActionPerformed
 
@@ -375,3 +390,4 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
+

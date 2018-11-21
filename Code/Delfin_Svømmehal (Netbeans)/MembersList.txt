@@ -1,2 +1,1 @@
-18,38,392394,false,true,false,true,false,0,500.
-emil,21,12345678,false,false,false,true,false,0,500.
+Emil,21,12345678,true,true,false,true,false,0,1600.
