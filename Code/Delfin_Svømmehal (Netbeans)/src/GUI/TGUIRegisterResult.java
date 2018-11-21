@@ -71,7 +71,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
         jLabel1.setText("Time in seconds");
 
-        jLabel3.setText("Diciplin");
+        jLabel3.setText("Discipline");
 
         jToggleButton1.setText("Register result");
 

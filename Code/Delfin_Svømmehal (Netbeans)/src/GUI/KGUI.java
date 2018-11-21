@@ -5,18 +5,39 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author ahmed
  */
 public class KGUI extends javax.swing.JFrame {
 
+    
+    private KGUIAdd kGUIAdd;
+//    private KGUIAdd kGUIADD;
+    private KGUIShowSubs kShowSubs;
+    private GUIStart guiStart;
+//    private FGUIUpdateMember fGUIUp;
+//    private FGUIDeleteMember fGUIDel;
+    
     /**
      * Creates new form KGUI
      */
-    public KGUI() {
+    public KGUI(JFrame kGUI) {
+       this.setTitle("Chairmans menu");
         initComponents();
+
+        kGUIAdd = new KGUIAdd(this);
+        this.setResizable(false);
+        guiStart = (GUIStart) kGUI;
+        kShowSubs = new KGUIShowSubs(this);
     }
+
+    private KGUI() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,67 +48,120 @@ public class KGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MenuButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        addSubButton = new javax.swing.JButton();
+        showSubTable = new javax.swing.JButton();
+        delSubButton = new javax.swing.JButton();
+        upSubButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 350));
+        setPreferredSize(new java.awt.Dimension(489, 369));
 
-        MenuButton.setText("Menu");
-        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.setText("Return to menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuButtonActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
         jLabel1.setFont(new java.awt.Font("Sitka Banner", 1, 18)); // NOI18N
         jLabel1.setText("Kontigent menu");
+
+        addSubButton.setText("Add subscriber");
+        addSubButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addSubButtonActionPerformed(evt);
+            }
+        });
+
+        showSubTable.setText("Show subscribers");
+        showSubTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showSubTableActionPerformed(evt);
+            }
+        });
+
+        delSubButton.setText("Delete subscriber");
+        delSubButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delSubButtonActionPerformed(evt);
+            }
+        });
+
+        upSubButton.setText("Update subscriber");
+        upSubButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upSubButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(174, 174, 174))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(upSubButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addSubButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(98, 98, 98)
-                        .addComponent(jButton2)
-                        .addGap(93, 93, 93))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(150, 150, 150))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(MenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))))
+                    .addComponent(delSubButton)
+                    .addComponent(showSubTable, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel1)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
-                .addComponent(MenuButton)
-                .addContainerGap())
+                    .addComponent(addSubButton)
+                    .addComponent(delSubButton))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(upSubButton)
+                    .addComponent(showSubTable))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(menuButton)
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
+
+    }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void delSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSubButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuButtonActionPerformed
+    }//GEN-LAST:event_delSubButtonActionPerformed
+
+    private void addSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubButtonActionPerformed
+        // TODO add your handling code here:
+        
+         this.setVisible(false);
+        kGUIAdd.setVisible(true);
+
+
+    }//GEN-LAST:event_addSubButtonActionPerformed
+
+    private void upSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upSubButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_upSubButtonActionPerformed
+
+    private void showSubTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showSubTableActionPerformed
+          this.setVisible(false);
+        kShowSubs.setVisible(true);
+    }//GEN-LAST:event_showSubTableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,8 +169,7 @@ public class KGUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and fmenuButton    * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -125,9 +198,11 @@ public class KGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuButton;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton addSubButton;
+    private javax.swing.JButton delSubButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton menuButton;
+    private javax.swing.JButton showSubTable;
+    private javax.swing.JButton upSubButton;
     // End of variables declaration//GEN-END:variables
 }
