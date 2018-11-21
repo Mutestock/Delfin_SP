@@ -5,17 +5,26 @@
  */
 package GUI;
 
+import Controller.Controller;
+import FormandAdgang.Member;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Emil PC
  */
 public class TGUIRegisterResult extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form TGUIRegisterResult
      */
-    public TGUIRegisterResult() {
+    
+    private TGUI tGUI;
+    
+    public TGUIRegisterResult(JFrame fGui) {
         initComponents();
+       // this.tGUI = (TGUI) fGui;
     }
 
     /**
@@ -27,6 +36,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         butterflyClick = new javax.swing.JCheckBox();
         backstrokeClick = new javax.swing.JCheckBox();
         freeClick = new javax.swing.JCheckBox();
@@ -37,9 +47,9 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        regResButton = new javax.swing.JToggleButton();
+        clearButton = new javax.swing.JToggleButton();
+        menuButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,8 +68,18 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         });
 
         freeClick.setText("Free");
+        freeClick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                freeClickActionPerformed(evt);
+            }
+        });
 
         cheststrokeClick.setText("Cheststroke");
+        cheststrokeClick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cheststrokeClickActionPerformed(evt);
+            }
+        });
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,15 +89,42 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
         phonenumberText.setText("Phonenumber");
 
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("Time in seconds");
 
         jLabel3.setText("Discipline");
 
+<<<<<<< HEAD
+        regResButton.setText("Register result");
+
+        clearButton.setText("Clear");
+=======
         jToggleButton1.setText("Register result");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jToggleButton2.setText("Clear");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+>>>>>>> 05a257f7226812283fb817620e1d4e835587ee2c
 
-        jToggleButton3.setText("Menu");
+        menuButton.setText("Menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,12 +158,12 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                             .addComponent(jLabel2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(regResButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jToggleButton3)
+                .addComponent(menuButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,7 +182,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jToggleButton1))
+                    .addComponent(regResButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backstrokeClick)
@@ -144,9 +191,9 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(freeClick, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cheststrokeClick)
-                    .addComponent(jToggleButton2))
+                    .addComponent(clearButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(jToggleButton3)
+                .addComponent(menuButton)
                 .addContainerGap())
         );
 
@@ -154,27 +201,122 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backstrokeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backstrokeClickActionPerformed
-        // TODO add your handling code here:
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
     }//GEN-LAST:event_backstrokeClickActionPerformed
 
     private void butterflyClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butterflyClickActionPerformed
-        // TODO add your handling code here:
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
     }//GEN-LAST:event_butterflyClickActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
+        // TODO add your handling code here:
+       // this.setVisible(false);
+       // tGUI.setVisible(true);
+        
+    }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        String phone = jTextField1.getText();
+        Controller c = new Controller();
+        Member member = c.getMember(phone);
+        String discipline = "";
+        
+        if (freeClick.isSelected()) {
+            discipline = "Free";
+        }
+        if (backstrokeClick.isSelected()) {
+            discipline = "Backstroke";
+        }
+        if (butterflyClick.isSelected()) {
+            discipline = "Butterfly";
+        }
+        if (cheststrokeClick.isSelected()) {
+            discipline = "Cheststroke";
+        }
+        
+        int time = Integer.parseInt(jTextField2.getText());
+        c.registerResult(member, discipline, time);
+        
+        jToggleButton2.doClick();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void freeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freeClickActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
+    }//GEN-LAST:event_freeClickActionPerformed
+
+    private void cheststrokeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cheststrokeClickActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+    }//GEN-LAST:event_cheststrokeClickActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+  /*  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -189,30 +331,31 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TGUIRegisterResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TGUIRegisterResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TGUIRegisterResult().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox backstrokeClick;
     private javax.swing.JCheckBox butterflyClick;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox cheststrokeClick;
+    private javax.swing.JToggleButton clearButton;
     private javax.swing.JCheckBox freeClick;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton menuButton;
     private javax.swing.JLabel phonenumberText;
+    private javax.swing.JToggleButton regResButton;
     // End of variables declaration//GEN-END:variables
 }

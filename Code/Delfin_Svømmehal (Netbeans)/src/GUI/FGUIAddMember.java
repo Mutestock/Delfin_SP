@@ -234,6 +234,8 @@ public class FGUIAddMember extends javax.swing.JFrame {
 
         c.createMember(name, age, phone,active,comp);
         
+        //JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
+        
         // makes sure that the input fields is always clean when it is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");

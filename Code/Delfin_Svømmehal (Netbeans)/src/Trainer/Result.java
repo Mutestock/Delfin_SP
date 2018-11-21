@@ -25,7 +25,7 @@ public class Result {
     public static void registerResult(Result result) {
         String path = FilePrinter.getFilePathResults();
         PrintWriter print = FilePrinter.getPrintwriter(path);
-        print.println(result);
+        print.println(result);  
         print.close();
     }
     
