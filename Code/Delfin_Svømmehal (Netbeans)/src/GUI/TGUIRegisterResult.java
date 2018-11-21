@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Controller.Controller;
+import FormandAdgang.Member;
 import javax.swing.JFrame;
 
 /**
@@ -34,6 +36,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         butterflyClick = new javax.swing.JCheckBox();
         backstrokeClick = new javax.swing.JCheckBox();
         freeClick = new javax.swing.JCheckBox();
@@ -65,8 +68,18 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         });
 
         freeClick.setText("Free");
+        freeClick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                freeClickActionPerformed(evt);
+            }
+        });
 
         cheststrokeClick.setText("Cheststroke");
+        cheststrokeClick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cheststrokeClickActionPerformed(evt);
+            }
+        });
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,13 +89,35 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
         phonenumberText.setText("Phonenumber");
 
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("Time in seconds");
 
         jLabel3.setText("Diciplin");
 
+<<<<<<< HEAD
         regResButton.setText("Register result");
 
         clearButton.setText("Clear");
+=======
+        jToggleButton1.setText("Register result");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton2.setText("Clear");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+>>>>>>> 05a257f7226812283fb817620e1d4e835587ee2c
 
         menuButton.setText("Menu");
         menuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -166,11 +201,27 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backstrokeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backstrokeClickActionPerformed
-        // TODO add your handling code here:
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
     }//GEN-LAST:event_backstrokeClickActionPerformed
 
     private void butterflyClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butterflyClickActionPerformed
-        // TODO add your handling code here:
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
     }//GEN-LAST:event_butterflyClickActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -183,6 +234,78 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         tGUI.setVisible(true);
         
     }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        String phone = jTextField1.getText();
+        Controller c = new Controller();
+        Member member = c.getMember(phone);
+        String discipline = "";
+        
+        if (freeClick.isSelected()) {
+            discipline = "Free";
+        }
+        if (backstrokeClick.isSelected()) {
+            discipline = "Backstroke";
+        }
+        if (butterflyClick.isSelected()) {
+            discipline = "Butterfly";
+        }
+        if (cheststrokeClick.isSelected()) {
+            discipline = "Cheststroke";
+        }
+        
+        int time = Integer.parseInt(jTextField2.getText());
+        c.registerResult(member, discipline, time);
+        
+        jToggleButton2.doClick();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void freeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freeClickActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
+    }//GEN-LAST:event_freeClickActionPerformed
+
+    private void cheststrokeClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cheststrokeClickActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+    }//GEN-LAST:event_cheststrokeClickActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        if (backstrokeClick.isSelected()) {
+            backstrokeClick.doClick();
+        }
+        if (butterflyClick.isSelected()) {
+            butterflyClick.doClick();
+        }
+        if (freeClick.isSelected()) {
+            freeClick.doClick();
+        }
+        if (cheststrokeClick.isSelected()) {
+            cheststrokeClick.doClick();
+        }
+        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +345,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox backstrokeClick;
     private javax.swing.JCheckBox butterflyClick;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox cheststrokeClick;
     private javax.swing.JToggleButton clearButton;
     private javax.swing.JCheckBox freeClick;
