@@ -62,8 +62,8 @@
               </Group>
               <EmptySpace pref="73" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jToggleButton1" max="32767" attributes="0"/>
-                  <Component id="jToggleButton2" max="32767" attributes="0"/>
+                  <Component id="regResButton" max="32767" attributes="0"/>
+                  <Component id="clearButton" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
@@ -92,7 +92,7 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="regResButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -103,7 +103,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="freeClick" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="cheststrokeClick" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="clearButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="55" max="32767" attributes="0"/>
               <Component id="menuButton" min="-2" max="-2" attributes="0"/>
@@ -163,12 +163,12 @@
         <Property name="text" type="java.lang.String" value="Diciplin"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+    <Component class="javax.swing.JToggleButton" name="regResButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Register result"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+    <Component class="javax.swing.JToggleButton" name="clearButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>

@@ -44,8 +44,8 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        regResButton = new javax.swing.JToggleButton();
+        clearButton = new javax.swing.JToggleButton();
         menuButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,9 +80,9 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
         jLabel3.setText("Diciplin");
 
-        jToggleButton1.setText("Register result");
+        regResButton.setText("Register result");
 
-        jToggleButton2.setText("Clear");
+        clearButton.setText("Clear");
 
         menuButton.setText("Menu");
         menuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,8 +123,8 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                             .addComponent(jLabel2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(regResButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -147,7 +147,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jToggleButton1))
+                    .addComponent(regResButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backstrokeClick)
@@ -156,7 +156,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(freeClick, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cheststrokeClick)
-                    .addComponent(jToggleButton2))
+                    .addComponent(clearButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(menuButton)
                 .addContainerGap())
@@ -179,6 +179,9 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        tGUI.setVisible(true);
+        
     }//GEN-LAST:event_menuButtonActionPerformed
 
     /**
@@ -220,15 +223,15 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     private javax.swing.JCheckBox backstrokeClick;
     private javax.swing.JCheckBox butterflyClick;
     private javax.swing.JCheckBox cheststrokeClick;
+    private javax.swing.JToggleButton clearButton;
     private javax.swing.JCheckBox freeClick;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton menuButton;
     private javax.swing.JLabel phonenumberText;
+    private javax.swing.JToggleButton regResButton;
     // End of variables declaration//GEN-END:variables
 }
