@@ -52,11 +52,11 @@ public class Registration {
 
         Controller c = new Controller();
 
-        /*c.registerResult(member1, "Butterfly", 1);
+        c.registerResult(member1, "Butterfly", 1);
         c.registerResult(member2, "Butterfly", 2);
         c.registerResult(member3, "Butterfly", 3);
         c.registerResult(member4, "Butterfly", 4);
-        c.registerResult(member5, "Butterfly", 5);*/
+        c.registerResult(member5, "Butterfly", 5);
         System.out.println(c.getAllResults());
         //System.out.println(c.getTop5Results(c.getAllResults()));
         System.out.println(c.getDiciplineTop5("Butterfly"));

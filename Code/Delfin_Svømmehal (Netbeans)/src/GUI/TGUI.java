@@ -16,8 +16,8 @@ public class TGUI extends javax.swing.JFrame {
     //private GUI2 gui2;
     private GUIShowMembers guiM;
     private GUIStart sMenu;
+    private TGUIRegisterResults guiR;
 
-    
     
     /**
      * Creates new form GUI
@@ -28,6 +28,7 @@ public class TGUI extends javax.swing.JFrame {
         this.sMenu =  (GUIStart) TGui;
         //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
+        guiR = new TGUIRegisterResults(this);
         
     }
 
@@ -42,47 +43,58 @@ public class TGUI extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         top5Members = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         RegiResult = new javax.swing.JButton();
         UpdateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Banner", 1, 18)); // NOI18N
         jLabel1.setText("Delfine Svømmehal Prog.");
 
-        top5Members.setText("Se top 5 medlemmer");
+        top5Members.setText("See top 5 members");
         top5Members.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 top5MembersActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Return to menu");
+        menuButton.setText("Return to menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButtonActionPerformed(evt);
+            }
+        });
 
-        RegiResult.setText(" Gem resultater");
+        RegiResult.setText("Register result");
+        RegiResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegiResultActionPerformed(evt);
+            }
+        });
 
-        UpdateButton.setText("Update medlemmer");
+        UpdateButton.setText("Update members");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(top5Members, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RegiResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(273, 273, 273)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(top5Members, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RegiResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(137, 137, 137))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(menuButton)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,8 +107,8 @@ public class TGUI extends javax.swing.JFrame {
                 .addComponent(RegiResult)
                 .addGap(34, 34, 34)
                 .addComponent(UpdateButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(menuButton)
                 .addContainerGap())
         );
 
@@ -110,6 +122,19 @@ public class TGUI extends javax.swing.JFrame {
         //guiM.setVisible(true);
         //guiM.setCalledBy('t');
     }//GEN-LAST:event_top5MembersActionPerformed
+
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        sMenu.setVisible(true);
+    }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void RegiResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegiResultActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        guiR.setVisible(true);
+        
+    }//GEN-LAST:event_RegiResultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,8 +177,8 @@ public class TGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RegiResult;
     private javax.swing.JButton UpdateButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton menuButton;
     private javax.swing.JButton top5Members;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,6 +27,7 @@ public class FilePrinter {
     private static String filePath = "MembersList.txt";
     private static String filePathResults = "results.txt";
 
+
     //Creates file at set location. See createFile method
     private static PrintWriter printwriter = FilePrinter.createFile(filePath);
 

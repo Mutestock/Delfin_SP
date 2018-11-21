@@ -301,7 +301,7 @@ public class Controller {
             String parseAge = "";
             String phone = "";
 
-            String diciplin = "";
+            String diciplin = "";   
             String parseTime = "";
 
             for (int j = 0; j < fileInfo.get(i).length(); ++j) {
