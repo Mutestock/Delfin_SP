@@ -59,6 +59,11 @@ public class TGUI extends javax.swing.JFrame {
         });
 
         jButton1.setText("Return to menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         RegiResult.setText(" Gem resultater");
 
@@ -110,6 +115,12 @@ public class TGUI extends javax.swing.JFrame {
         //guiM.setVisible(true);
         //guiM.setCalledBy('t');
     }//GEN-LAST:event_top5MembersActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        sMenu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
