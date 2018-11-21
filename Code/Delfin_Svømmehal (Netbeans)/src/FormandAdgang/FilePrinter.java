@@ -25,7 +25,7 @@ public class FilePrinter {
     //Defining filepath. Can be redefined if a new path is necessary.
     //If there's no D:\\ drive on your computer, you can change the path in order to get the .txt
     private static String filePath = "D:\\MembersList.txt";
-    private static String filePathResults = "D:\\results.txt";
+    private static String filePathResults = "D:\\Results.txt";
     
     
     //Creates file at set location. See createFile method
