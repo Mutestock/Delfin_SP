@@ -24,7 +24,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     
     public TGUIRegisterResult(JFrame fGui) {
         initComponents();
-        this.tGUI = (TGUI) fGui;
+       // this.tGUI = (TGUI) fGui;
     }
 
     /**
@@ -230,8 +230,8 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        tGUI.setVisible(true);
+       // this.setVisible(false);
+       // tGUI.setVisible(true);
         
     }//GEN-LAST:event_menuButtonActionPerformed
 
