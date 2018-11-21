@@ -7,38 +7,35 @@ package GUI;
 
 import Controller.Controller;
 import FormandAdgang.Member;
+import Kontingent.Kontingent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  *
  * @author ahmed
  */
-public class GUIShowMembers extends javax.swing.JFrame {
+public class KGUIShowSubs extends javax.swing.JFrame {
 
     /**
      * Creates new form GUIMember
      */
-
+    private FGUI guiF;
+    private TGUI guiT;
     private char calledBy;
-    private GUIStart sGUI;
 
     // + , JFrame tGui
-
-    public GUIShowMembers(JFrame Gui) {
+    public KGUIShowSubs(JFrame fGui) {
         this.setTitle("Show members menu");
         initComponents();
-        //this.guiF = (FGUI) Gui;
-
-        this.sGUI = (GUIStart) Gui;
-
-        //this.sGUI = (GUIStart) Gui;
+//        this.guiF = (FGUI) fGui;
+        //this.guiT = (TGUI) tGui;
 
     }
 
     public void setCalledBy(char input) {
         calledBy = input;
+
     }
 
     /**
@@ -69,7 +66,6 @@ public class GUIShowMembers extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(630, 380));
 
         MenuButton.setText("Back to menu");
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -233,13 +229,13 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
-            sGUI.setVisible(true);
+        if (calledBy == 'f') {
+            guiF.setVisible(true);
             this.setVisible(false);
-
-       /* else if (calledBy == 't') {
-            guiT.setVisible(true);
-           this.setVisible(false);
-        }*/
+        } else if (calledBy == 't') {
+            //guiT.setVisible(true);
+            // this.setVisible(false);
+        }
 
 
     }//GEN-LAST:event_MenuButtonActionPerformed
@@ -247,8 +243,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void AllmembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AllmembersActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllMembers();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllMembers();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -256,14 +252,15 @@ public class GUIShowMembers extends javax.swing.JFrame {
 
         textArea.setText(allMembersString);
 
+        //banas java ep. 21.
 
     }//GEN-LAST:event_AllmembersActionPerformed
 
     private void CompJuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompJuniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllCompJunior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllCompJunior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -275,8 +272,9 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void SeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllSenior();
+
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllSenior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -293,8 +291,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void JuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllJunior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllJunior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -306,8 +304,8 @@ public class GUIShowMembers extends javax.swing.JFrame {
     private void CompSeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompSeniorButtonActionPerformed
         ArrayList<Member> allMembers = new ArrayList();
         String allMembersString = "";
-        Controller c = new Controller();
-        allMembers = c.getAllSenior();
+        Kontingent k = new Kontingent();
+        allMembers = k.getAllSenior();
 
         for (int i = 0; i < allMembers.size(); ++i) {
             allMembersString += allMembers.get(i) + "\n";
@@ -319,13 +317,13 @@ public class GUIShowMembers extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   /* public static void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-       /* try {
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -333,24 +331,26 @@ public class GUIShowMembers extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUIShowMembers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KGUIShowSubs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //new GUIMember().setVisible(true);
             }
-        });*/
-   // }
+        });
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -10,8 +10,6 @@ public class Member {
     private String phone;
     private boolean activity;
     private boolean competetive;
-    
-    //MemberAF fields has been merged to Member class.
     private boolean ageBonus;
     private boolean senior;
     private boolean junior;
@@ -20,6 +18,11 @@ public class Member {
     private int subCatalogueYear;
     private int subFee;
     
+    //Trainer fields added to member class
+    private boolean compButterfly;
+    private boolean compBreastStroke;
+    private boolean compBackstroke;
+    private boolean compFree;
 
     public Member(String name, int age, String phone, boolean activityForm, boolean competetive) {
 
@@ -31,17 +34,20 @@ public class Member {
         //Sets the value of a member to either Junior or Senior
         //and also checks if the member is old enough for an age bonus.
         if (getAge() < 18) {
-            junior = true;
-            senior = false;
+            this.junior = true;
+            this.senior = false;
         } else {
-            senior = true;
-            junior = false;
+            this.senior = true;
+            this.junior = false;
         }
         if (getAge() > 60) {
-            ageBonus = true;
+            this.ageBonus = true;
         }
     }
 
+    public String getPhone() {
+        return phone;
+    }
 
     public String getName() {
         return name;
@@ -76,7 +82,7 @@ public class Member {
     }
 
     public int getSubFee() {
-        return subFee;
+       return subFee = calcFee();
     }
 
     public void setSubCatalogueYear(int subCatalogueYear) {
@@ -85,6 +91,40 @@ public class Member {
 
     public void setSubFee(int subFee) {
         this.subFee = subFee;
+    }
+    
+    
+
+    public boolean isCompButterfly() {
+        return compButterfly;
+    }
+
+    public void setCompButterfly(boolean compButterfly) {
+        this.compButterfly = compButterfly;
+    }
+
+    public boolean isCompBreastStroke() {
+        return compBreastStroke;
+    }
+
+    public void setCompBreastStroke(boolean compBreastStroke) {
+        this.compBreastStroke = compBreastStroke;
+    }
+
+    public boolean isCompBackstroke() {
+        return compBackstroke;
+    }
+
+    public void setCompBackstroke(boolean compBackstroke) {
+        this.compBackstroke = compBackstroke;
+    }
+
+    public boolean isCompFree() {
+        return compFree;
+    }
+
+    public void setCompFree(boolean compFree) {
+        this.compFree = compFree;
     }
 
     
@@ -110,7 +150,7 @@ public class Member {
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
-        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + subFee;
+        return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + getSubFee() + ".";
     }
     
     
