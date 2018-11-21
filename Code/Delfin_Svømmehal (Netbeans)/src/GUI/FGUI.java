@@ -1,6 +1,6 @@
 package GUI;
 
-import Trainer.Teams;
+
 import javax.swing.JFrame;
 
 /*
@@ -28,7 +28,7 @@ public class FGUI extends javax.swing.JFrame {
         initComponents();
         fGUIADD = new FGUIAddMember(this);
         fGUIUp = new FGUIUpdateMember(this);
-        guiM = new GUIShowMembers(this);
+        //guiM = new GUIShowMembers(this);
         fGUIDel = new FGUIDeleteMember(this);
         this.setResizable(false);
         guiStart = (GUIStart) fGui;
@@ -45,8 +45,7 @@ public class FGUI extends javax.swing.JFrame {
 
         addButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        memberButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         DeleteMember = new javax.swing.JButton();
         UpdateMember = new javax.swing.JButton();
 
@@ -62,17 +61,10 @@ public class FGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Delfine Svømmehal Prog.");
 
-        memberButton.setText("Show all members");
-        memberButton.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.setText("Return to menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberButtonActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Return to menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
@@ -101,17 +93,16 @@ public class FGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(UpdateMember, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
+                                .addGap(2, 2, 2)
                                 .addComponent(addButton)))
-                        .addGap(75, 75, 75)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(memberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DeleteMember, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1))
+                        .addGap(53, 53, 53)
+                        .addComponent(DeleteMember, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)))
                 .addGap(54, 54, 54))
         );
         layout.setVerticalGroup(
@@ -121,14 +112,12 @@ public class FGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(memberButton)
-                    .addComponent(addButton))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateMember)
+                    .addComponent(addButton)
                     .addComponent(DeleteMember))
+                .addGap(58, 58, 58)
+                .addComponent(UpdateMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(menuButton)
                 .addGap(29, 29, 29))
         );
 
@@ -145,19 +134,12 @@ public class FGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addButtonActionPerformed
 
-    private void memberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberButtonActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        guiM.setVisible(true);
-        guiM.setCalledBy('f');
-    }//GEN-LAST:event_memberButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         guiStart.setVisible(true);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_menuButtonActionPerformed
 
     private void UpdateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberActionPerformed
         // Shows the update member side
@@ -214,8 +196,7 @@ public class FGUI extends javax.swing.JFrame {
     private javax.swing.JButton DeleteMember;
     private javax.swing.JButton UpdateMember;
     private javax.swing.JButton addButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton memberButton;
+    private javax.swing.JButton menuButton;
     // End of variables declaration//GEN-END:variables
 }

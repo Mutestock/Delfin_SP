@@ -17,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Stream;
+import Trainer.*;
 
 public class Controller {
 
@@ -86,8 +87,7 @@ public class Controller {
                 line = reader.readLine();
             }
             reader.close();
-            
-            
+
             String name = "";
             String parseAge = "";
             boolean activityForm = false;
@@ -136,15 +136,114 @@ public class Controller {
         }
         return member;
     }
-    
-    
 
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
-    public ArrayList<String> getAllMembers() {
+    public ArrayList<Member> getAllMembers() {
         FilePrinter f = new FilePrinter(FilePrinter.getFilePath(), FilePrinter.getPrintwriter(FilePrinter.getFilePath()));
         f.getFileInfo(FilePrinter.getFilePath());
-        return f.getMembersArrayList();
+
+        int counter = 0;
+
+        ArrayList<Member> membersList = new ArrayList();
+        ArrayList<String> allMembers = f.getFileArrayList();
+        for (int i = 0; i < allMembers.size(); ++i) {
+            String name = "";
+            String parseAge = "";
+            String phone = "";
+            boolean activityForm = false;
+            String act = "";
+            boolean competetive = false;
+            String comp = "";
+
+            for (int j = 0; j < allMembers.get(i).length(); ++j) {
+
+                if (f.getFileArrayList().get(i).charAt(j) == '.') {
+                    int age = Integer.parseInt(parseAge);
+                    Member member = new Member(name, age, phone, activityForm, competetive);
+                    membersList.add(member);
+                    counter = 0;
+                }
+
+                if (f.getFileArrayList().get(i).charAt(j) == ',') {
+                    counter++;
+
+                } else if (counter == 0) {
+                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
+
+                    } else {
+                        name += f.getFileArrayList().get(i).charAt(j);
+                    }
+                } else if (counter == 1) {
+                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
+
+                    } else {
+                        parseAge += f.getFileArrayList().get(i).charAt(j);
+                    }
+                } else if (counter == 2) {
+                    phone += f.getFileArrayList().get(i).charAt(j);
+                } else if (counter == 3) {
+                    act += f.getFileArrayList().get(i).charAt(j);
+                    if (act.contains("true")) {
+                        activityForm = true;
+                    }
+                } else if (counter == 4) {
+                    comp += f.getFileArrayList().get(i).charAt(j);
+                    if (comp.contains("true")) {
+                        competetive = true;
+                    }
+                }
+            }
+        }
+        return membersList;
+    }
+
+    public ArrayList<Member> getAllJunior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> junior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isJunior()) {
+                junior.add(memberinst);
+            }
+        }
+        return junior;
+    }
+
+    public ArrayList<Member> getAllSenior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> senior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isSenior()) {
+                senior.add(memberinst);
+            }
+        }
+        return senior;
+    }
+
+    public ArrayList<Member> getAllCompJunior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> compJunior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isJunior() && memberinst.isCompetetive()) {
+                compJunior.add(memberinst);
+            }
+        }
+        return compJunior;
+    }
+
+    public ArrayList<Member> getAllCompSenior() {
+        ArrayList<Member> member = getAllMembers();
+        ArrayList<Member> senior = new ArrayList();
+        for (int i = 0; i < member.size(); ++i) {
+            Member memberinst = member.get(i);
+            if (memberinst.isSenior() && memberinst.isCompetetive()) {
+                senior.add(memberinst);
+            }
+        }
+        return senior;
     }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
@@ -177,6 +276,99 @@ public class Controller {
 
         } catch (IOException e) {
         }
+    }
+
+    public void registerMember(Member member) {
+        Registration r = new Registration();
+        r.registerMember(member);
+    }
+
+    public void registerResult(Member member, String diciplin, int time) {
+        Result result = new Result(member, diciplin, time);
+        Result.registerResult(result);
+    }
+
+    public ArrayList<Result> getAllResults() {
+        FilePrinter fp = new FilePrinter(FilePrinter.getFilePathResults(), FilePrinter.getPrintwriter(FilePrinter.getFilePathResults()));
+        fp.getFileInfo(FilePrinter.getFilePathResults());
+
+        int counter = 0;
+        ArrayList<String> fileInfo = fp.getFileArrayList();
+        ArrayList<Result> resultList = new ArrayList();
+        for (int i = 0; i < fileInfo.size(); ++i) {
+
+            String name = "";
+            String parseAge = "";
+            String phone = "";
+
+            String diciplin = "";
+            String parseTime = "";
+
+            for (int j = 0; j < fileInfo.get(i).length(); ++j) {
+                if (fileInfo.get(i).charAt(j) == '}' || fileInfo.get(i).charAt(j) == ',' || fileInfo.get(i).charAt(j) == '{') {
+                    counter++;
+                } else if (counter == 1) {
+                    name += fileInfo.get(i).charAt(j);
+                } else if (counter == 2) {
+                    parseAge += fileInfo.get(i).charAt(j);
+                } else if (counter == 3) {
+                    phone += fileInfo.get(i).charAt(j);
+                } else if (counter == 4) {
+                    diciplin += fileInfo.get(i).charAt(j);
+                } else if (counter == 5 && fileInfo.get(i).charAt(j) != '.') {
+                    parseTime += fileInfo.get(i).charAt(j);
+
+                } else if (fileInfo.get(i).charAt(j) == '.') {
+
+                    int age = Integer.parseInt(parseAge);
+                    Member member = new Member(name, age, phone, true, true);
+                    int time = Integer.parseInt(parseTime);
+                    Result result = new Result(member, diciplin, time);
+                    resultList.add(result);
+                    counter = 0;
+                }
+
+            }
+        }
+        return resultList;
+    }
+
+    public ArrayList<Result> getTop5Results(ArrayList<Result> results) {
+        ArrayList<Result> top5 = new ArrayList();
+        Controller c = new Controller();
+
+        Member member = new Member("",0,"",true,true);
+        Result result = new Result(member,"",999999999);
+        top5.add(result);
+        
+        for (int i = 0; i < 5; ++i) {
+            int n = 0;
+            int temp = top5.get(i).getTime();
+            
+            for (int j = 0; j < results.size(); ++j) {    
+                if (results.get(j).getTime() < temp) {
+                    temp = results.get(j).getTime();
+                    n = j;
+                }
+            }
+            top5.add(results.get(n));
+            results.remove(n);
+        }
+        top5.remove(0);
+        return top5;
+    }
+
+    
+    public ArrayList<Result> getDiciplineTop5(String dicipline) {
+        Controller c = new Controller();
+        ArrayList<Result> allResults = c.getAllResults();
+        ArrayList<Result> diciplineTop5 = new ArrayList();
+        for (int i = 0; i < allResults.size(); ++i) {
+            if (allResults.get(i).getDiciplin().equals(dicipline)) {
+                diciplineTop5.add(allResults.get(i));
+            }
+        }
+        return c.getTop5Results(diciplineTop5);
     }
 
 }
