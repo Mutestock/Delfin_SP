@@ -5,17 +5,24 @@
  */
 package GUI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Emil PC
  */
 public class TGUIRegisterResult extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form TGUIRegisterResult
      */
-    public TGUIRegisterResult() {
+    
+    private TGUI tGUI;
+    
+    public TGUIRegisterResult(JFrame fGui) {
         initComponents();
+        this.tGUI = (TGUI) fGui;
     }
 
     /**
@@ -39,7 +46,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        menuButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,7 +84,12 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
 
         jToggleButton2.setText("Clear");
 
-        jToggleButton3.setText("Menu");
+        menuButton.setText("Menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,7 +128,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jToggleButton3)
+                .addComponent(menuButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -146,7 +158,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
                     .addComponent(cheststrokeClick)
                     .addComponent(jToggleButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(jToggleButton3)
+                .addComponent(menuButton)
                 .addContainerGap())
         );
 
@@ -165,16 +177,20 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+  /*  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -189,16 +205,16 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TGUIRegisterResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TGUIRegisterResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TGUIRegisterResult().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox backstrokeClick;
@@ -212,7 +228,7 @@ public class TGUIRegisterResult extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton menuButton;
     private javax.swing.JLabel phonenumberText;
     // End of variables declaration//GEN-END:variables
 }

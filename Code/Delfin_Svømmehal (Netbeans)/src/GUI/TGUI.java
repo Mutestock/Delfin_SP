@@ -16,6 +16,7 @@ public class TGUI extends javax.swing.JFrame {
     //private GUI2 gui2;
     private GUIShowMembers guiM;
     private GUIStart sMenu;
+    private TGUIRegisterResult guiR;
 
     
     
@@ -28,6 +29,7 @@ public class TGUI extends javax.swing.JFrame {
         this.sMenu =  (GUIStart) TGui;
         //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
+        guiR = new TGUIRegisterResult(this);
         
     }
 
@@ -129,6 +131,9 @@ public class TGUI extends javax.swing.JFrame {
 
     private void RegiResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegiResultActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        guiR.setVisible(true);
+        
     }//GEN-LAST:event_RegiResultActionPerformed
 
     /**
