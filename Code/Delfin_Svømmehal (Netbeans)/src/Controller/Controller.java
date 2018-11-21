@@ -281,6 +281,11 @@ public class Controller {
         r.registerMember(member);
     }
 
+    public Result createResult(Member member, String discipline, int time) {
+        Result result = new Result(member,discipline,time);
+        return result;
+    }
+    
     public void registerResult(Member member, String discipline, int time) {
         Result result = new Result(member, discipline, time);
         Result.registerResult(result);
@@ -400,5 +405,7 @@ public class Controller {
         return c.getTop5Results(disciplineResults);
     }
 
+    
+    
 
 }
