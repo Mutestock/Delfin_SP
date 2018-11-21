@@ -341,7 +341,7 @@ public class Controller {
         
         for (int i = 0; i < 5; ++i) {
             int n = 0;
-            int temp = top5.get(i).getTime();
+            int temp = top5.get(0).getTime();
             
             for (int j = 0; j < results.size(); ++j) {    
                 if (results.get(j).getTime() < temp) {
@@ -356,17 +356,43 @@ public class Controller {
         return top5;
     }
 
-    
-    public ArrayList<Result> getDiciplineTop5(String dicipline) {
+    public ArrayList<Result> getAllJuniorResults() {
         Controller c = new Controller();
         ArrayList<Result> allResults = c.getAllResults();
-        ArrayList<Result> diciplineTop5 = new ArrayList();
+        ArrayList<Result> allJuniorResults = new ArrayList();
+        
         for (int i = 0; i < allResults.size(); ++i) {
-            if (allResults.get(i).getDiciplin().equals(dicipline)) {
-                diciplineTop5.add(allResults.get(i));
+            if (allResults.get(i).getMember().isJunior()) {
+                allJuniorResults.add(allResults.get(i));
             }
         }
-        return c.getTop5Results(diciplineTop5);
+        return allJuniorResults;
+    }
+    
+    public ArrayList<Result> getAllSeniorResults() {
+        Controller c = new Controller();
+        ArrayList<Result> allResults = c.getAllResults();
+        ArrayList<Result> allSeniorResults = new ArrayList();
+        
+        for (int i = 0; i < allResults.size(); ++i) {
+            if (allResults.get(i).getMember().isSenior()) {
+                allSeniorResults.add(allResults.get(i));
+            }
+        }
+        return allSeniorResults;
+    }
+    
+    public ArrayList<Result> getDiciplineTop5(String discipline,ArrayList<Result> results) {
+        Controller c = new Controller();
+        ArrayList<Result> allResults = results;
+        ArrayList<Result> disciplineResults = new ArrayList();
+        
+        for (int i = 0; i < allResults.size(); ++i) {
+            if (allResults.get(i).getDiciplin().equals(discipline)) {
+                disciplineResults.add(allResults.get(i));
+            }
+        }
+        return c.getTop5Results(disciplineResults);
     }
 
 }
