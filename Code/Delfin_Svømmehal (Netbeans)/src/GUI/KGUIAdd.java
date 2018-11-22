@@ -80,6 +80,12 @@ public class KGUIAdd extends javax.swing.JFrame {
 
         jLabel6.setText("Does the person wish an active subscription?");
 
+        subCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subCheckActionPerformed(evt);
+            }
+        });
+
         ConfirmButton.setText("Confirm");
         ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +94,11 @@ public class KGUIAdd extends javax.swing.JFrame {
         });
 
         MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
         ageIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,26 +239,36 @@ public class KGUIAdd extends javax.swing.JFrame {
         Controller c = new Controller();
 
         // takes the input values and implements them into the register class to save them.
-        int age = Integer.parseInt(ageIn.getText());
-        String name = nameIn.getText();
+//        int age = Integer.parseInt(ageIn.getText());
+//        String name = nameIn.getText();
         String phone = phoneIn.getText();
         boolean active = subCheck.isSelected();
         boolean comp = compCheck.isSelected();
-
         Member member = c.getMember(phone);
-       
 
-        // makes sure that the input fields is always clean when it is open again
         int subYear = Integer.parseInt(yearIn.getText());
-         c.createSubscriber(member, subYear);
-        c.registerSubscriber(member, subYear);
 
+//        c.getKFee(member, subYear);
+//
         if (subCheck.isSelected()) {
             subCheck.doClick();
         }
         if (compCheck.isSelected()) {
             compCheck.doClick();
         }
+
+        System.out.println("====================================");
+        System.out.println(member);
+        System.out.println(subYear);
+
+        
+       // Kontingent k = new Kontingent(member, subYear, active, comp);
+      //  Kontingent k = new Kontingent(member, subYear);
+
+        // makes sure that the input fields is always clean when it is open again
+        c.createSubscriber(member, subYear, active, comp);
+        
+
 
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
@@ -262,19 +283,27 @@ public class KGUIAdd extends javax.swing.JFrame {
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         // TODO add your handling code here:
 
-        nameIn.setText("");
-        ageIn.setText("");
-        phoneIn.setText("");
-
-        if (subCheck.isSelected()) {
-            subCheck.doClick();
-        }
-        if (compCheck.isSelected()) {
-            compCheck.doClick();
-        }
+//        nameIn.setText("");
+//        ageIn.setText("");
+//        phoneIn.setText("");
+//
+//        if (subCheck.isSelected()) {
+//            subCheck.doClick();
+//        }
+//        if (compCheck.isSelected()) {
+//            compCheck.doClick();
+//        }
 
 
     }//GEN-LAST:event_clearButtonActionPerformed
+
+    private void subCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subCheckActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments

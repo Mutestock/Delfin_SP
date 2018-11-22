@@ -61,7 +61,7 @@ public class FGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Delfine Svømmehal Prog.");
 
-        menuButton.setText("Return to menu");
+        menuButton.setText("Return to start menu");
         menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuButtonActionPerformed(evt);
@@ -103,7 +103,7 @@ public class FGUI extends javax.swing.JFrame {
                         .addGap(0, 60, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(menuButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

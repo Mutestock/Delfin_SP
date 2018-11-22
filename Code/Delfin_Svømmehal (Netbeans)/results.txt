@@ -1,6 +1,3 @@
-{Emil,21,12345678}Backstroke,18.
-{Emil,21,12345678}Butterfly,16.
-{Emil,21,12345678}Free,25.
-{Emil,21,12345678}Cheststroke,56.
-{Emil,21,12345678}Backstroke,44.
-
+{Emil,21,12345678}Backstroke,15.
+{Ahmed,61,12344321}Butterfly,27.
+{Henning,15,12345677}Cheststroke,45.

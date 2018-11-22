@@ -22,15 +22,23 @@ public class Kontingent {
     private Member member;
     private int subYear;
     private int fee;
+    private final boolean wasActive;
+    private final boolean wasCompetitive;
 
-    public Kontingent(Member member, int subYear) {
+    public Kontingent(Member member, int subYear, boolean wasActive, boolean wasCompetitive) {
         this.member = member;
         this.subYear = subYear;
+        this.wasActive = wasActive;
+        this.wasCompetitive = wasCompetitive;
+        
     }
 
     public static void registerKontingent(Kontingent k) {
+        System.out.println("##########################");
+        System.out.println(k);
         String path = FilePrinter.getFilePathKontingent();
         PrintWriter print = FilePrinter.getPrintwriter(path);
+        String output = k.member.getName()+","+k.member.getAge()+","+k.member.getPhone()+","+k.wasActive+","+k.wasCompetitive+k.getSubYear()+k.getSubFee();
         print.println(k);
         print.close();
     }
@@ -59,7 +67,7 @@ public class Kontingent {
 
     @Override
     public String toString() {
-        return member.getName() + member.getAge() + member.getPhone() + member.isActive() + member.isCompetetive() + getSubYear() + getSubFee();
+        return member.getName() + member.getAge()+ member.getPhone() +  member.isActive() + member.isCompetetive() + getSubYear() + getSubFee();
     }
 
 }
