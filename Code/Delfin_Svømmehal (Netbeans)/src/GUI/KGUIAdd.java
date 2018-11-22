@@ -18,9 +18,8 @@ public class KGUIAdd extends javax.swing.JFrame {
 
     // private KGUI kGUI;
     private GUIShowMembers guiM;
-    private GUIStart guiStart;
-    //private GUI2 gui2;
     private GUIStart sMenu;
+    private KGUI kGUI;
 
     /**
      * Creates new form GUI
@@ -29,7 +28,7 @@ public class KGUIAdd extends javax.swing.JFrame {
         // this.kGUI = (KGUI) KGUI;
         initComponents();
         this.setTitle("Add member");
-
+        this.kGUI = (KGUI) KGUI;
     }
 
     /**
@@ -94,6 +93,11 @@ public class KGUIAdd extends javax.swing.JFrame {
         });
 
         MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
         ageIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,6 +300,13 @@ public class KGUIAdd extends javax.swing.JFrame {
     private void subCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCheckActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subCheckActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        kGUI.setVisible(true);
+        
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments

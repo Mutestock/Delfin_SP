@@ -163,7 +163,6 @@ public class KGUI extends javax.swing.JFrame {
 
     private void addSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubButtonActionPerformed
         // TODO add your handling code here:
-        
          this.setVisible(false);
         kGUIAdd.setVisible(true);
     }//GEN-LAST:event_addSubButtonActionPerformed
