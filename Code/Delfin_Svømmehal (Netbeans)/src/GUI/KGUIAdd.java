@@ -261,7 +261,8 @@ public class KGUIAdd extends javax.swing.JFrame {
       //  Kontingent k = new Kontingent(member, subYear);
 
         // makes sure that the input fields is always clean when it is open again
-        c.createSubscriber(member, subYear, active, comp);
+        //c.createSubscriber(member, subYear, active, comp);
+        c.registerSubscriber(member, subYear, active, comp);
         
 
 
