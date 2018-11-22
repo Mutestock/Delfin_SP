@@ -226,16 +226,22 @@ public class FGUIAddMember extends javax.swing.JFrame {
         Controller c = new Controller();
 
         // takes the input values and implements them into the register class to save them.
-        int age = Integer.parseInt(AgeInput.getText());
-        try {
-            String name = NameInput.getText();
-            String phone = PhoneInput.getText();
-            boolean active = subCheck.isSelected();
-            boolean comp = compCheck.isSelected();
+        String name = "";
+        String phone = "";
+        if ( NameInput.getText().length() >= 2 || PhoneInput.getText().length() != 8) {
+            JOptionPane.showMessageDialog(rootPane, "Error in input value (string or phone)");
+        }else{
+        name = NameInput.getText();
+        phone = PhoneInput.getText();
+        }
+        boolean active = subCheck.isSelected();
+        boolean comp = compCheck.isSelected();
 
+        try {
+            int age = Integer.parseInt(AgeInput.getText());
             c.createMember(name, age, phone, active, comp);
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(FGUIAddMember.this, error, "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "Error in int value");
         }
 
         //JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);

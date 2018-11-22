@@ -1,6 +1,7 @@
 package Controller;
 
 import FormandAdgang.*;
+import Kontingent.Kontingent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,6 +19,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 import Trainer.*;
+import java.util.Collections;
 
 public class Controller {
 
@@ -33,6 +35,8 @@ public class Controller {
     //Make it possible for the GUI to go back to the main menu after having chosen a role.
     //Change GUI Class names.
     //Clean up redundant GUI code
+    //Clean up in general
+    //GUI tables
     //Stretch goals:
     //Additional basic information for members and trainer (e.g. phonenumber).
     //Make unit test for the .txt files. Test the perfomance of the PrintWriter.
@@ -64,7 +68,6 @@ public class Controller {
     //updateMember should in the easiest way update all parameters of any member
     //from the .txt file.
     public Member getMember(String phone) {
-
         String inputFileName = FilePrinter.getFilePath();
         String outputFileName = FilePrinter.getFilePath();
         String lineToUpdate = phone;
@@ -244,6 +247,21 @@ public class Controller {
         }
         return senior;
     }
+    
+//     public ArrayList<Kontingent> getByYear() {
+//        ArrayList<Kontingent> kontingent = getAllSubscribers();
+//        ArrayList<Kontingent> byYear = new ArrayList();
+//        
+//
+//        
+//        for (int i = 0; i < kontingent.size(); ++i) {
+//            Kontingent k = kontingent.get(i);
+//            if (k.isSenior() && memberinst.isCompetetive()) {
+//                senior.add(memberinst);
+//            }
+//        }
+//        return senior;
+//    }
 
     //Deletes all lines containing the contents of lineToRemove from a .txt
     public void deleteMember(String phone) {
@@ -282,9 +300,70 @@ public class Controller {
         r.registerMember(member);
     }
 
+    public Result createResult(Member member, String discipline, int time) {
+        Result result = new Result(member, discipline, time);
+        return result;
+    }
+
     public void registerResult(Member member, String discipline, int time) {
         Result result = new Result(member, discipline, time);
         Result.registerResult(result);
+    }
+
+    public void registerMember2(Member member) {
+        Registration r = new Registration();
+        r.registerMember(member);
+    }
+
+    public Kontingent createSubscriber(Member member, int subYear) {
+        Kontingent k = new Kontingent(member, subYear);
+        return k;
+    }
+
+    public void registerSubscriber(Member member, int subYear) {
+        Kontingent k = new Kontingent(member, subYear);
+        Kontingent.registerKontingent(k);
+    }
+
+    public ArrayList<Kontingent> getAllSubscribers() {
+        FilePrinter fp = new FilePrinter(FilePrinter.getFilePathKontingent(), FilePrinter.getPrintwriter(FilePrinter.getFilePathKontingent()));
+        fp.getFileInfo(FilePrinter.getFilePathKontingent());
+
+        int counter = 0;
+        ArrayList<String> fileInfo = fp.getFileArrayList();
+        ArrayList<Kontingent> subscriberList = new ArrayList();
+
+        for (int i = 0; i < fileInfo.size(); ++i) {
+
+            String name = "";
+            String parseAge = "";
+            String phone = "";
+
+            String parseSubYear = "";
+
+            for (int j = 0; j < fileInfo.get(i).length(); ++j) {
+                if (fileInfo.get(i).charAt(j) == '}' || fileInfo.get(i).charAt(j) == ',' || fileInfo.get(i).charAt(j) == '{') {
+                    counter++;
+                } else if (counter == 1) {
+                    name += fileInfo.get(i).charAt(j);
+                } else if (counter == 2) {
+                    parseAge += fileInfo.get(i).charAt(j);
+                } else if (counter == 3) {
+                    phone += fileInfo.get(i).charAt(j);
+                } else if (counter == 4 && fileInfo.get(i).charAt(j) != '.') {
+                    parseSubYear += fileInfo.get(i).charAt(j);
+                } else if (fileInfo.get(i).charAt(j) == '.') {
+                    int age = Integer.parseInt(parseSubYear);
+                    Member member = new Member(name, age, phone, true, true);
+                    int subYear = Integer.parseInt(parseSubYear);
+                    Kontingent k = new Kontingent(member, subYear);
+                    subscriberList.add(k);
+                    counter = 0;
+                }
+
+            }
+        }
+        return subscriberList;
     }
 
     public ArrayList<Result> getAllResults() {
@@ -301,7 +380,6 @@ public class Controller {
             String phone = "";
 
             String discipline = "";
-
             String parseTime = "";
 
             for (int j = 0; j < fileInfo.get(i).length(); ++j) {
@@ -340,10 +418,14 @@ public class Controller {
         Member member = new Member("", 0, "", true, true);
         Result result = new Result(member, "", 999999999);
         top5.add(result);
+        int x = results.size();
+        if (results.size() > 5) {
+            x = 5;
+        }
 
-        for (int i = 0; i < 5; ++i) {
+        for (int i = 0; i < x; ++i) {
             int n = 0;
-            int temp = top5.get(i).getTime();
+            int temp = top5.get(0).getTime();
 
             for (int j = 0; j < results.size(); ++j) {
                 if (results.get(j).getTime() < temp) {
@@ -358,54 +440,43 @@ public class Controller {
         return top5;
     }
 
-    public ArrayList<Result> getDisciplineeTop5(String disciplinee) {
+    public ArrayList<Result> getAllJuniorResults() {
         Controller c = new Controller();
         ArrayList<Result> allResults = c.getAllResults();
-        ArrayList<Result> disciplineeTop5 = new ArrayList();
+        ArrayList<Result> allJuniorResults = new ArrayList();
+
         for (int i = 0; i < allResults.size(); ++i) {
-            if (allResults.get(i).getDiscipline().equals(disciplinee)) {
-                disciplineeTop5.add(allResults.get(i));
+            if (allResults.get(i).getMember().isJunior()) {
+                allJuniorResults.add(allResults.get(i));
             }
         }
-        return c.getTop5Results(disciplineeTop5);
+        return allJuniorResults;
     }
 
-    public ArrayList<String> formatMembers(ArrayList<Member> arrayList) {
-        FilePrinter fpf = new FilePrinter(FilePrinter.getFilePathResults(), FilePrinter.getPrintwriter(FilePrinter.getFilePathResults()));
-        fpf.getFileInfo(FilePrinter.getFilePathResults());
-        ArrayList<String> fileInfo = fpf.getFileArrayList();
-        String firstName = "";
-        int age;
-        String phone = "";
-        boolean comp;
-        int counter = 0;
+    public ArrayList<Result> getAllSeniorResults() {
+        Controller c = new Controller();
+        ArrayList<Result> allResults = c.getAllResults();
+        ArrayList<Result> allSeniorResults = new ArrayList();
 
-        ArrayList<String> Format = new ArrayList();
-        Member test = new Member("emil", 21, "", true, true);
-        for (int i = 0; i < fileInfo.get(i).length(); i++) {
-            if (test.getName().length() == 0);
-            {
-                firstName = test.getName();
-
-                if (test.getName().length() < 10) {
-                    firstName += " ";
-                }
+        for (int i = 0; i < allResults.size(); ++i) {
+            if (allResults.get(i).getMember().isSenior()) {
+                allSeniorResults.add(allResults.get(i));
             }
-
         }
-        firstName.addtomember;
-        if (test.getAge() >= 0 && test.getAge() <= 9);
-        {
-
-            age = test.getAge() + "      ";
-        }
-        if(test.getName().length() < 10){
-                    age = test.getAge() + "      ";
-                }
-        age.addtomember;
-        
-        phone = ge
-        
-        return Format;
+        return allSeniorResults;
     }
+
+    public ArrayList<Result> getDisciplineTop5(String discipline, ArrayList<Result> results) {
+        Controller c = new Controller();
+        ArrayList<Result> allResults = results;
+        ArrayList<Result> disciplineResults = new ArrayList();
+
+        for (int i = 0; i < allResults.size(); ++i) {
+            if (allResults.get(i).getDiscipline().equals(discipline)) {
+                disciplineResults.add(allResults.get(i));
+            }
+        }
+        return c.getTop5Results(disciplineResults);
+    }
+
 }

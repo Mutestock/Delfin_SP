@@ -92,6 +92,10 @@ public class FilePrinter {
     public static String getFilePathResults() {
         return filePathResults;
     }
+    
+    public static String getFilePathKontingent() {
+        return filePathKontingent;
+    }
 
     public static PrintWriter getPrintwriter(String path) {
         printwriter = FilePrinter.createFile(path);

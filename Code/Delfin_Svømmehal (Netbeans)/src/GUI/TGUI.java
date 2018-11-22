@@ -17,6 +17,7 @@ public class TGUI extends javax.swing.JFrame {
     private GUIShowMembers guiM;
     private GUIStart sMenu;
     private TGUIRegisterResults guiR;
+    private TGUIShowResults guiSR;
 
     
     /**
@@ -29,7 +30,12 @@ public class TGUI extends javax.swing.JFrame {
         //guiM = new GUIShowMembers(this);
         sMenu = (GUIStart) TGui;
         guiR = new TGUIRegisterResults(this);
+        guiSR = new TGUIShowResults(this);
         
+    }
+
+    TGUI() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -79,13 +85,6 @@ public class TGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(273, 273, 273)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(top5Members, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegiResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(65, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,19 +94,27 @@ public class TGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(menuButton)
                         .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(top5Members))
+                .addGap(63, 63, 63)
+                .addComponent(RegiResult, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(top5Members)
-                .addGap(28, 28, 28)
-                .addComponent(RegiResult)
-                .addGap(34, 34, 34)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(top5Members)
+                    .addComponent(RegiResult))
+                .addGap(33, 33, 33)
                 .addComponent(UpdateButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
                 .addComponent(menuButton)
                 .addContainerGap())
         );
@@ -119,8 +126,7 @@ public class TGUI extends javax.swing.JFrame {
     private void top5MembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_top5MembersActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        //guiM.setVisible(true);
-        //guiM.setCalledBy('t');
+        guiSR.setVisible(true);
     }//GEN-LAST:event_top5MembersActionPerformed
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
