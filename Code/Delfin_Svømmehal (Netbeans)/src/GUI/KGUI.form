@@ -39,7 +39,6 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="upSubButton" min="-2" pref="142" max="-2" attributes="0"/>
                           <Component id="addSubButton" min="-2" pref="142" max="-2" attributes="0"/>
                           <Component id="paySubButton" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
                       </Group>
@@ -62,16 +61,14 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="delSubButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="upSubButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addSubButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="addSubButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="showSubTable" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="paySubButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Component id="paySubButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace pref="156" max="32767" attributes="0"/>
               <Component id="menuButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -117,14 +114,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delSubButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="upSubButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Update subscriber"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="upSubButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="paySubButton">

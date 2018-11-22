@@ -52,7 +52,6 @@ public class KGUI extends javax.swing.JFrame {
         addSubButton = new javax.swing.JButton();
         showSubTable = new javax.swing.JButton();
         delSubButton = new javax.swing.JButton();
-        upSubButton = new javax.swing.JButton();
         paySubButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,13 +88,6 @@ public class KGUI extends javax.swing.JFrame {
             }
         });
 
-        upSubButton.setText("Update subscriber");
-        upSubButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upSubButtonActionPerformed(evt);
-            }
-        });
-
         paySubButton.setText("Pay subscription");
         paySubButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +110,6 @@ public class KGUI extends javax.swing.JFrame {
                         .addGap(187, 187, 187))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(upSubButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addSubButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(paySubButton, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(72, 72, 72)
@@ -135,14 +126,12 @@ public class KGUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delSubButton)
-                    .addComponent(upSubButton))
+                    .addComponent(addSubButton))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addSubButton)
-                    .addComponent(showSubTable))
-                .addGap(29, 29, 29)
-                .addComponent(paySubButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                    .addComponent(showSubTable)
+                    .addComponent(paySubButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(menuButton)
                 .addContainerGap())
         );
@@ -168,13 +157,6 @@ public class KGUI extends javax.swing.JFrame {
         kGUIAdd.setVisible(true);
     }//GEN-LAST:event_addSubButtonActionPerformed
 
-    private void upSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upSubButtonActionPerformed
-        // TODO add your handling code here:
-        //this.setVisible(false);
-        //fGUIUp.setVisible(true);
-        
-    }//GEN-LAST:event_upSubButtonActionPerformed
-
     private void showSubTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showSubTableActionPerformed
           this.setVisible(false);
         kShowSubs.setVisible(true);
@@ -198,6 +180,5 @@ public class KGUI extends javax.swing.JFrame {
     private javax.swing.JButton menuButton;
     private javax.swing.JButton paySubButton;
     private javax.swing.JButton showSubTable;
-    private javax.swing.JButton upSubButton;
     // End of variables declaration//GEN-END:variables
 }
