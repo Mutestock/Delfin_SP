@@ -50,15 +50,9 @@ public class Registration {
         Member member4 = new Member("Emil3", 60, "12345678", true, true);
         Member member5 = new Member("Emil4", 60, "12345678", true, true);
 
+        
         Controller c = new Controller();
-
-        c.registerResult(member1, "Butterfly", 1);
-        c.registerResult(member2, "Butterfly", 2);
-        c.registerResult(member3, "Butterfly", 3);
-        c.registerResult(member4, "Butterfly", 4);
-        c.registerResult(member5, "Butterfly", 5);
-        System.out.println(c.getAllResults());
-        //System.out.println(c.getTop5Results(c.getAllResults()));
-        System.out.println(c.getDisciplineeTop5("Butterfly"));
+        
+        //System.out.println(c.getDisciplineTop5("Butterfly", c.getAllSeniorResults()));
     }
 }

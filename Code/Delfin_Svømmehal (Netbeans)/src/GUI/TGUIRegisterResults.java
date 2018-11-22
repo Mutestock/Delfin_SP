@@ -96,6 +96,12 @@ public class TGUIRegisterResults extends javax.swing.JFrame {
 
         jLabel2.setText("Time in seconds");
 
+        timeInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeInputActionPerformed(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
         jLabel3.setText("Register Results");
 
@@ -299,6 +305,10 @@ public class TGUIRegisterResults extends javax.swing.JFrame {
         this.setVisible(false);
         tGUI.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void timeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timeInputActionPerformed
 
     /**
      * @param delete or comment out the manins of the GUI to make them connect
