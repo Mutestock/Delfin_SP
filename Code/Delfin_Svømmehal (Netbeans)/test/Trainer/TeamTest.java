@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  */
 public class TeamTest {
     
-    @Test
+        @Test
     public void testAddMemberToTeam() {
         Member juncomp = new Member("test", 7,"12345679", true, true);
         Member sencomp = new Member("test", 25,"12345679", false, true);
@@ -31,5 +31,5 @@ public class TeamTest {
         assertNotNull(team.getJuniorTeam());
         assertNotNull(team.getCompSeniorTeam()); 
         assertNotNull(team.getSeniorTeam());
-    }    
+    }   
 }
