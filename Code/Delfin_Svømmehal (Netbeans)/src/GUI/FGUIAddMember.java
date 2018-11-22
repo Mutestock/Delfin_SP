@@ -228,8 +228,9 @@ public class FGUIAddMember extends javax.swing.JFrame {
         // takes the input values and implements them into the register class to save them.
         String name = "";
         String phone = "";
-        if ( NameInput.getText().length() >= 2 || PhoneInput.getText().length() != 8) {
+        if ( NameInput.getText().length() < 2 || PhoneInput.getText().length() != 8) {
             JOptionPane.showMessageDialog(rootPane, "Error in input value (string or phone)");
+            return;
         }else{
         name = NameInput.getText();
         phone = PhoneInput.getText();

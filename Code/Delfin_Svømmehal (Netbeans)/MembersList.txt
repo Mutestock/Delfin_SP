@@ -7,3 +7,6 @@ Emil,21,12345678,true,true,false,true,false,0,1600.
 ,77,12345678,false,false,true,true,false,0,500.
 ,21,,true,false,false,true,false,0,1600.
 ,21,,false,true,false,true,false,0,500.
+,21,,false,true,false,true,false,0,500.
+lasse ,25,52525225,true,true,false,true,false,0,1600.
+,21,,false,false,false,true,false,0,500.
