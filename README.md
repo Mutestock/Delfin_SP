@@ -15,7 +15,7 @@ And other various specific methods of handling the members.
 Delfinen is used by running the GUIStart GUI and through it you can select 4 options: Chairman, Trainer, Cashier and show members.
 With the chairman option you can use the privileges of the chairman of can add, update and remove members.
 With the Trainer option you can add the records of the competitive swimmers and see the current top 5 records the competitive swimmers have set for this club. By entering the phone nummber of a registered member we can add a record to them.
-Cashier!!!!!!!!!!!!
+Cashier can add subscription to the members for keeping track of which members who have yet to pay for their subscription.
 Show Members allows us to see all current members and even divide them into the 4 different teams they are assignt to:
 Junior, Competitive Junior, Senior and Competitive Seniors. 
 
