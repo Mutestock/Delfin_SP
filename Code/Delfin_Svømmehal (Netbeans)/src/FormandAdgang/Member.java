@@ -1,8 +1,6 @@
-
 package FormandAdgang;
 
 public class Member {
-    
 
     //The fields/values of a member.
     private String name;
@@ -13,11 +11,11 @@ public class Member {
     private boolean ageBonus;
     private boolean senior;
     private boolean junior;
-    
+
     //Kontingent fields has been merged to 
     private int subCatalogueYear;
     private int subFee;
-    
+
     //Trainer fields added to member class
     private boolean compButterfly;
     private boolean compBreastStroke;
@@ -64,7 +62,7 @@ public class Member {
     public boolean isCompetetive() {
         return competetive;
     }
-    
+
     public boolean isAgeBonus() {
         return ageBonus;
     }
@@ -82,7 +80,7 @@ public class Member {
     }
 
     public int getSubFee() {
-       return subFee = calcFee();
+        return subFee = calcFee();
     }
 
     public void setSubCatalogueYear(int subCatalogueYear) {
@@ -92,8 +90,6 @@ public class Member {
     public void setSubFee(int subFee) {
         this.subFee = subFee;
     }
-    
-    
 
     public boolean isCompButterfly() {
         return compButterfly;
@@ -127,12 +123,9 @@ public class Member {
         this.compFree = compFree;
     }
 
-    
-    
     //Logic method used to calculate a certain members fee (based on their age)
     //It's functionality has been implemented in the constructor.
     //Kept since it might become useful later.
-    
     public int calcFee() {
         if (isActive() == true) {
             if (getAge() >= 60) {
@@ -144,19 +137,12 @@ public class Member {
             }
         }
         return 500;
-   }
+    }
 
-    
     //toString will have to get simplified and easier to read.
     @Override
     public String toString() {
         return name + "," + age + "," + phone + "," + activity + "," + competetive + "," + ageBonus + "," + senior + "," + junior + "," + subCatalogueYear + "," + getSubFee() + ".";
     }
-    
-    
-    
-   
-    
-    
-    
+
 }
