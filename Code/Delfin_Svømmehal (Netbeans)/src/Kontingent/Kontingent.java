@@ -21,8 +21,6 @@ import jdk.nashorn.internal.parser.TokenType;
  */
 public class Kontingent {
 
-   
-    
     static ArrayList<Member> registeredMembers = new ArrayList();
     private Member member;
     private int subYear;
@@ -45,13 +43,25 @@ public class Kontingent {
         System.out.println(k);
         String path = FilePrinter.getFilePathKontingent();
 
+        int fee = 0;
+        if (k.member.isActive() == true) {
+            if (k.member.getAge() >= 60) {
+                fee = 1200;
+            } else if (k.member.getAge() >= 18) {
+                fee = 1600;
+            } else {
+                fee = 1000;
+            }
+        } else {
+            fee = 500;
+        }
+
         PrintWriter print = FilePrinter.getPrintwriter(path);
-       FilePrinter fp = new FilePrinter(path, print);
-        String output = k.member.getName() + "," + k.member.getAge() + "," + k.member.getPhone() + "," + k.wasActive + "," + k.wasCompetitive + k.getSubYear() + k.getSubFee();
+        FilePrinter fp = new FilePrinter(path, print);
+        String output = k.member.getName() + "," + k.member.getAge() + "," + k.member.getPhone() + "," + k.wasActive + "," + k.wasCompetitive + k.getSubYear() + k.getSubFeeKVersion(k);
         list.add(output);
         System.out.println(list);
 
-    
         for (int i = 0; i < list.size(); ++i) {
             print.println(list.get(i).toString());
         }
@@ -77,7 +87,22 @@ public class Kontingent {
             } else {
                 fee = 1000;
             }
-        } else {
+        } else if (member.isActive() == false) {
+            fee = 500;
+        }
+        return fee;
+    }
+    
+        public int getSubFeeKVersion(Kontingent k) {
+        if (k.member.isActive() == true) {
+            if (k.member.getAge() >= 60) {
+                fee = 1200;
+            } else if (k.member.getAge() >= 18) {
+                fee = 1600;
+            } else {
+                fee = 1000;
+            }
+        } else if(k.member.isActive() == false) {
             fee = 500;
         }
         return fee;

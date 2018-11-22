@@ -8,7 +8,10 @@ package GUI;
 import Controller.Controller;
 import FormandAdgang.Member;
 import Kontingent.Kontingent;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -45,10 +48,6 @@ public class KGUIShowSubs extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuButton = new javax.swing.JButton();
-        JuniorButton = new javax.swing.JButton();
-        SeniorButton = new javax.swing.JButton();
-        CompJuniorButton = new javax.swing.JButton();
-        CompSeniorButton = new javax.swing.JButton();
         Allmembers = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
@@ -70,38 +69,6 @@ public class KGUIShowSubs extends javax.swing.JFrame {
         MenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuButtonActionPerformed(evt);
-            }
-        });
-
-        JuniorButton.setText("Junior");
-        JuniorButton.setPreferredSize(new java.awt.Dimension(107, 25));
-        JuniorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JuniorButtonActionPerformed(evt);
-            }
-        });
-
-        SeniorButton.setText("Senior");
-        SeniorButton.setPreferredSize(new java.awt.Dimension(107, 25));
-        SeniorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SeniorButtonActionPerformed(evt);
-            }
-        });
-
-        CompJuniorButton.setText("Comp. Junior");
-        CompJuniorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CompJuniorButtonActionPerformed(evt);
-            }
-        });
-
-        CompSeniorButton.setText("Comp. Senior");
-        CompSeniorButton.setMaximumSize(new java.awt.Dimension(107, 25));
-        CompSeniorButton.setPreferredSize(new java.awt.Dimension(107, 25));
-        CompSeniorButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CompSeniorButtonActionPerformed(evt);
             }
         });
 
@@ -152,56 +119,44 @@ public class KGUIShowSubs extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(19, 19, 19)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel10))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Allmembers, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(JuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(SeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(CompJuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(CompSeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(MenuButton)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel10))
+                                    .addComponent(Allmembers, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(MenuButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Allmembers)
-                    .addComponent(SeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompJuniorButton)
-                    .addComponent(JuniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompSeniorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addComponent(Allmembers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -215,7 +170,7 @@ public class KGUIShowSubs extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MenuButton)
@@ -241,8 +196,16 @@ public class KGUIShowSubs extends javax.swing.JFrame {
         String allSubs = "";
         ArrayList<Kontingent> kontingentList = new ArrayList<>();
         String allMembersString = "";
-
-        kontingentList = c.getAllSubscribers();
+        try {
+            System.out.println(c.getAllSubs2());
+        } catch (IOException ex) {
+            Logger.getLogger(KGUIShowSubs.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            kontingentList = c.getAllSubs2();
+        } catch (IOException ex) {
+            Logger.getLogger(KGUIShowSubs.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         for (int i = 0; i < kontingentList.size(); ++i) {
             allSubs += kontingentList.get(i) + "\n";
@@ -254,63 +217,10 @@ public class KGUIShowSubs extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AllmembersActionPerformed
 
-    private void CompJuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompJuniorButtonActionPerformed
-//        ArrayList<Member> allMembers = new ArrayList();
-//        String allMembersString = "";
-//        Kontingent k = new Kontingent();
-//        allMembers = k.getAllCompJunior();
-//
-//        for (int i = 0; i < allMembers.size(); ++i) {
-//            allMembersString += allMembers.get(i) + "\n";
-//        }
-//
-//        textArea.setText(allMembersString);
-    }//GEN-LAST:event_CompJuniorButtonActionPerformed
-
-    private void SeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeniorButtonActionPerformed
-//        ArrayList<Member> allMembers = new ArrayList();
-//        String allMembersString = "";
-//
-//        Kontingent k = new Kontingent();
-//        allMembers = k.getAllSenior();
-//
-//        for (int i = 0; i < allMembers.size(); ++i) {
-//            allMembersString += allMembers.get(i) + "\n";
-//        }
-//
-//        textArea.setText(allMembersString);
-    }//GEN-LAST:event_SeniorButtonActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         textArea.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void JuniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuniorButtonActionPerformed
-//        ArrayList<Member> allMembers = new ArrayList();
-//        String allMembersString = "";
-//        Kontingent k = new Kontingent();
-//        allMembers = k.getAllJunior();
-//
-//        for (int i = 0; i < allMembers.size(); ++i) {
-//            allMembersString += allMembers.get(i) + "\n";
-//        }
-//
-//        textArea.setText(allMembersString);
-    }//GEN-LAST:event_JuniorButtonActionPerformed
-
-    private void CompSeniorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompSeniorButtonActionPerformed
-//        ArrayList<Member> allMembers = new ArrayList();
-//        String allMembersString = "";
-//        Kontingent k = new Kontingent();
-//        allMembers = k.getAllSenior();
-//
-//        for (int i = 0; i < allMembers.size(); ++i) {
-//            allMembersString += allMembers.get(i) + "\n";
-//        }
-//
-//        textArea.setText(allMembersString);
-    }//GEN-LAST:event_CompSeniorButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,11 +263,7 @@ public class KGUIShowSubs extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Allmembers;
-    private javax.swing.JButton CompJuniorButton;
-    private javax.swing.JButton CompSeniorButton;
-    private javax.swing.JButton JuniorButton;
     private javax.swing.JButton MenuButton;
-    private javax.swing.JButton SeniorButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

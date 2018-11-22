@@ -147,7 +147,7 @@ public class KGUIPay extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Controller c = new Controller();
         String phone = jTextField1.getText();
-        c.deleteMember(phone);
+        c.deleteSubscriber(phone);
         this.jTextField1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
