@@ -272,15 +272,10 @@ public class KGUIAdd extends javax.swing.JFrame {
     }//GEN-LAST:event_subCheckActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-<<<<<<< HEAD
-        this.setVisible(false);
-        guiStart.setVisible(true);
-=======
+
         // TODO add your handling code here:
         this.setVisible(false);
         kGUI.setVisible(true);
-        
->>>>>>> c0fe5177a12d1561623de8f4af022d5a7afcfa37
     }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
