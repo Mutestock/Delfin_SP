@@ -229,7 +229,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
         String name = "";
         String phone = "";
         if ( NameInput.getText().length() < 2 || PhoneInput.getText().length() != 8) {
-            JOptionPane.showMessageDialog(rootPane, "Error in input value (string or phone)");
+            JOptionPane.showMessageDialog(rootPane, "Error in Name or Phonenumber: Name must be atleast 2 characters long and phone must be 8 characters");
             return;
         }else{
         name = NameInput.getText();
