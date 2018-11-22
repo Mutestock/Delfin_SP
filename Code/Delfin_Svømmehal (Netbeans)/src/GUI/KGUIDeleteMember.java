@@ -12,16 +12,16 @@ import javax.swing.JFrame;
  *
  * @author ahmed
  */
-public class FGUIDeleteMember extends javax.swing.JFrame {
+public class KGUIDeleteMember extends javax.swing.JFrame {
 
     /**
      * Creates new form FGUIDeleteMember
      */
-    private FGUI fGUI;
+    private KGUI kGUI;
 
-    public FGUIDeleteMember(JFrame fGui) {
+    public KGUIDeleteMember(JFrame fGui) {
         initComponents();
-        //this.fGUI = (FGUI) fGui;
+        this.kGUI = (KGUI) fGui;
         this.setTitle("Delete member");
     }
 
@@ -41,7 +41,6 @@ public class FGUIDeleteMember extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 350));
 
         jLabel2.setText("Write the phone number of the person you want to delete:");
 
@@ -157,7 +156,7 @@ public class FGUIDeleteMember extends javax.swing.JFrame {
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        fGUI.setVisible(true);
+        kGUI.setVisible(true);
     }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**

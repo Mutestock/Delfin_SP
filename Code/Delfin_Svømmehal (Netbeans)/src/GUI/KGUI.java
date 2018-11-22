@@ -19,7 +19,7 @@ public class KGUI extends javax.swing.JFrame {
     private KGUIShowSubs kShowSubs;
     private GUIStart guiStart;
 //    private FGUIUpdateMember fGUIUp;
-//    private FGUIDeleteMember fGUIDel;
+    private FGUIDeleteMember fGUIDel;
     
     /**
      * Creates new form KGUI
@@ -32,12 +32,8 @@ public class KGUI extends javax.swing.JFrame {
         this.setResizable(false);
         guiStart = (GUIStart) kGUI;
         kShowSubs = new KGUIShowSubs(this);
+        fGUIDel = new FGUIDeleteMember(this);
     }
-
-    private KGUI() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,20 +125,23 @@ public class KGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(upSubButton)
                     .addComponent(showSubTable))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(menuButton)
-                .addGap(39, 39, 39))
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
-
+        this.setVisible(false);
+        guiStart.setVisible(true);
     }//GEN-LAST:event_menuButtonActionPerformed
 
     private void delSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSubButtonActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        fGUIDel.setVisible(true);
     }//GEN-LAST:event_delSubButtonActionPerformed
 
     private void addSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubButtonActionPerformed
@@ -164,36 +163,7 @@ public class KGUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and fmenuButton    * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(KGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(KGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(KGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(KGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new KGUI().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addSubButton;
