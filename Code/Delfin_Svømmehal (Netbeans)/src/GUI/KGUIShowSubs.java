@@ -20,16 +20,15 @@ public class KGUIShowSubs extends javax.swing.JFrame {
     /**
      * Creates new form GUIMember
      */
-    private FGUI guiF;
-    private TGUI guiT;
+    private KGUI Kgui;
     private char calledBy;
 
     // + , JFrame tGui
-    public KGUIShowSubs(JFrame fGui) {
+    public KGUIShowSubs(JFrame Gui) {
         this.setTitle("Show members menu");
         initComponents();
-//        this.guiF = (FGUI) fGui;
-        //this.guiT = (TGUI) tGui;
+        this.Kgui = (KGUI) Gui;
+
 
     }
 
@@ -229,13 +228,9 @@ public class KGUIShowSubs extends javax.swing.JFrame {
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
         // TODO add your handling code here:
-        if (calledBy == 'f') {
-            guiF.setVisible(true);
+            Kgui.setVisible(true);
             this.setVisible(false);
-        } else if (calledBy == 't') {
-            //guiT.setVisible(true);
-            // this.setVisible(false);
-        }
+
 
 
     }//GEN-LAST:event_MenuButtonActionPerformed
