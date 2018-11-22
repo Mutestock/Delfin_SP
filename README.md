@@ -20,7 +20,7 @@ Show Members allows us to see all current members and even divide them into the 
 Junior, Competitive Junior, Senior and Competitive Seniors. 
 
 # Documentation 
-User case, domain diagram and UI mock up
+User case, domain diagram and UI mock up. //
 User case and domain diagram can be opened through https://www.draw.io/
 
 
