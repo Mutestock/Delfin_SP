@@ -41,9 +41,7 @@ public class Kontingent {
         String output = k.member.getName()+","+k.member.getAge()+","+k.member.getPhone()+","+k.wasActive+","+k.wasCompetitive+k.getSubYear()+k.getSubFee();
         print.println(k);
         print.close();
-
     }
-
     public Member getMember() {
         return member;
     }
