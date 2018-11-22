@@ -1,4 +1,0 @@
-NAME: Emil, AGE: 20, ACTIVITY: true, COMPETETIVE: true, AGEBONUS: false, SENIOR: true, JUNIOR: false
-NAME: ahmed, AGE: 20, ACTIVITY: true, COMPETETIVE: true, AGEBONUS: false, SENIOR: true, JUNIOR: false
-NAME: Emil skov, AGE: 20, ACTIVITY: false, COMPETETIVE: true, AGEBONUS: false, SENIOR: true, JUNIOR: false
-NAME: Dolf bo, AGE: 15, ACTIVITY: true, COMPETETIVE: true, AGEBONUS: false, SENIOR: false, JUNIOR: true
