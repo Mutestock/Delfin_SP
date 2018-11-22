@@ -7,7 +7,6 @@ package Kontingent;
 
 import FormandAdgang.FilePrinter;
 import FormandAdgang.Member;
-import FormandAdgang.Registration;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -19,22 +18,23 @@ import java.util.ArrayList;
  * @author Moi(
  */
 public class Kontingent {
-    
+
     //A lot of these methods have been taken directly from Controller. This is not the best choice of action.
-     static ArrayList<Member> registeredMembers = new ArrayList();
-    String kontingentPath = "D:\\kontingentList.txt";
+    static ArrayList<Member> registeredMembers = new ArrayList();
+    ArrayList<String> membersArrayList = new ArrayList();
+    String kontingentPath = "kontingentList.txt";
     Member member;
     int subYear;
 
-    public Kontingent(){
+    public Kontingent() {
     }
 
     public void createMember(String name, int age, String phone, boolean activityForm, boolean competetive) {
         Member member = new Member(name, age, phone, activityForm, competetive);
         registerMember(member);
     }
-    
-     public void registerMember(Member member) {
+
+    public void registerMember(Member member) {
         this.registeredMembers.clear();
         //RegisteredMembers is a list of ALL registered members in the club.
         this.registeredMembers.add(member);
@@ -44,8 +44,8 @@ public class Kontingent {
         FilePrinter.subLister(registeredMembers, print);
         print.close();
     }
-    
-     public Member getMember(String phone) {
+
+    public Member getMember(String phone) {
         String inputFileName = kontingentPath;
         String outputFileName = kontingentPath;
         String lineToUpdate = phone;
@@ -117,15 +117,14 @@ public class Kontingent {
         return member;
     }
 
-     
-     public ArrayList<Member> getAllMembers() {
+    public ArrayList<Member> getAllMembers() {
         FilePrinter f = new FilePrinter(kontingentPath, FilePrinter.getPrintwriter(kontingentPath));
         f.getFileInfo(kontingentPath);
 
         int counter = 0;
 
         ArrayList<Member> membersList = new ArrayList();
-        ArrayList<String> allMembers = f.getFileArrayList();
+        ArrayList<String> allMembers = membersArrayList;
         for (int i = 0; i < allMembers.size(); ++i) {
             String name = "";
             String parseAge = "";
@@ -134,40 +133,40 @@ public class Kontingent {
             String act = "";
             boolean competetive = false;
             String comp = "";
-            
+
             for (int j = 0; j < allMembers.get(i).length(); ++j) {
 
-                if (f.getFileArrayList().get(i).charAt(j) == '.') {
+                if (membersArrayList.get(i).charAt(j) == '.') {
                     int age = Integer.parseInt(parseAge);
                     Member member = new Member(name, age, phone, activityForm, competetive);
                     membersList.add(member);
                     counter = 0;
                 }
 
-                if (f.getFileArrayList().get(i).charAt(j) == ',') {
+                if (membersArrayList.get(i).charAt(j) == ',') {
 
                     counter++;
                 } else if (counter == 0) {
-                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
+                    if (membersArrayList.get(i).charAt(j) == ',') {
 
                     } else {
-                        name += f.getFileArrayList().get(i).charAt(j);
+                        name += membersArrayList.get(i).charAt(j);
                     }
                 } else if (counter == 1) {
-                    if (f.getFileArrayList().get(i).charAt(j) == ',') {
+                    if (membersArrayList.get(i).charAt(j) == ',') {
 
                     } else {
-                        parseAge += f.getFileArrayList().get(i).charAt(j);
+                        parseAge += membersArrayList.get(i).charAt(j);
                     }
                 } else if (counter == 2) {
-                    phone += f.getFileArrayList().get(i).charAt(j);
+                    phone += membersArrayList.get(i).charAt(j);
                 } else if (counter == 3) {
-                    act += f.getFileArrayList().get(i).charAt(j);
+                    act += membersArrayList.get(i).charAt(j);
                     if (act.contains("true")) {
                         activityForm = true;
                     }
                 } else if (counter == 4) {
-                    comp += f.getFileArrayList().get(i).charAt(j);
+                    comp += membersArrayList.get(i).charAt(j);
                     if (comp.contains("true")) {
                         competetive = true;
                     }
@@ -176,7 +175,7 @@ public class Kontingent {
         }
         return membersList;
     }
-     
+
     public Member getMember() {
         return member;
     }
@@ -209,7 +208,7 @@ public class Kontingent {
         }
         return junior;
     }
-    
+
     public ArrayList<Member> getAllSenior() {
         ArrayList<Member> member = getAllMembers();
         ArrayList<Member> senior = new ArrayList();
@@ -221,7 +220,7 @@ public class Kontingent {
         }
         return senior;
     }
-    
+
     public ArrayList<Member> getAllCompJunior() {
         ArrayList<Member> member = getAllMembers();
         ArrayList<Member> compJunior = new ArrayList();
@@ -233,24 +232,22 @@ public class Kontingent {
         }
         return compJunior;
     }
-    
+
     public ArrayList<Member> getAllCompSenior() {
         ArrayList<Member> member = getAllMembers();
         ArrayList<Member> senior = new ArrayList();
         for (int i = 0; i < member.size(); ++i) {
             Member memberinst = member.get(i);
-            if (memberinst.isSenior()&& memberinst.isCompetetive()) {
+            if (memberinst.isSenior() && memberinst.isCompetetive()) {
                 senior.add(memberinst);
             }
         }
         return senior;
     }
-    
+
     @Override
     public String toString() {
-        return member.getName() + member.getAge() + member.getPhone() +member.isActive() + member.isCompetetive()+ ", subYear=" + subYear + ", subFee=" + getSubFee();
+        return member.getName() + member.getAge() + member.getPhone() + member.isActive() + member.isCompetetive() + ", subYear=" + subYear + ", subFee=" + getSubFee();
     }
-    
-    
-    
+
 }

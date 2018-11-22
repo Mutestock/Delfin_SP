@@ -4,6 +4,7 @@ import Controller.Controller;
 import FormandAdgang.Member;
 import FormandAdgang.Registration;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,15 +16,15 @@ public class FGUIAddMember extends javax.swing.JFrame {
 
     /**
      * Creates new form FGUIAdd
-     * 
+     *
      */
     public FGUIAddMember(JFrame addGui) {
         this.fGUI = (FGUI) addGui;
         initComponents();
         this.setTitle("Add member");
-        
-        
+
     }
+    String error = "error in the input field.";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,34 +218,38 @@ public class FGUIAddMember extends javax.swing.JFrame {
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         // When the button is pressed, the GUI2 will get invisible and FGUI get visible.
-        
+
         //- Hvad hvis man vil adde flere members på én gang? Tror det er
         //overflødigt når man alligevel har en "menu-knap" i samme gui.
         //fGUI.setVisible(true);
         //this.setVisible(false);
-
         Controller c = new Controller();
 
         // takes the input values and implements them into the register class to save them.
         int age = Integer.parseInt(AgeInput.getText());
-        String name = NameInput.getText();
-        String phone = PhoneInput.getText();
-        boolean active = subCheck.isSelected();
-        boolean comp = compCheck.isSelected();
+        try {
+            String name = NameInput.getText();
+            String phone = PhoneInput.getText();
+            boolean active = subCheck.isSelected();
+            boolean comp = compCheck.isSelected();
 
-        c.createMember(name, age, phone,active,comp);
-        
+            c.createMember(name, age, phone, active, comp);
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(FGUIAddMember.this, error, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
         //JOptionPane.showMessageDialog(GUIStart.this, info, "text button test", INFORMATION_MESSAGE);
-        
         // makes sure that the input fields is always clean when it is open again
         this.NameInput.setText("");
+
         this.AgeInput.setText("");
+
         this.PhoneInput.setText("");
-        
-        if (subCheck.isSelected()){
+
+        if (subCheck.isSelected()) {
             subCheck.doClick();
         }
-        if (compCheck.isSelected()){
+        if (compCheck.isSelected()) {
             compCheck.doClick();
         }
 
@@ -258,10 +263,10 @@ public class FGUIAddMember extends javax.swing.JFrame {
         // makes sure that the input fields is always clean when is is open again
         this.NameInput.setText("");
         this.AgeInput.setText("");
-        if (subCheck.isSelected()){
+        if (subCheck.isSelected()) {
             subCheck.doClick();
         }
-        if (compCheck.isSelected()){
+        if (compCheck.isSelected()) {
             compCheck.doClick();
         }
     }//GEN-LAST:event_MenuButtonActionPerformed
@@ -277,14 +282,13 @@ public class FGUIAddMember extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
-  /*  public static void main(String args[]) {
+    /*  public static void main(String args[]) {
          Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-    /*
+     */
+ /*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -304,7 +308,7 @@ public class FGUIAddMember extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-     /*   java.awt.EventQueue.invokeLater(new Runnable() {
+ /*   java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FGUIAdd().setVisible(true);
             }

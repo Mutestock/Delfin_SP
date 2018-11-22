@@ -59,6 +59,6 @@ public class Registration {
         c.registerResult(member5, "Butterfly", 5);
         System.out.println(c.getAllResults());
         //System.out.println(c.getTop5Results(c.getAllResults()));
-        System.out.println(c.getDiciplineTop5("Butterfly"));
+        System.out.println(c.getDisciplineeTop5("Butterfly"));
     }
 }
