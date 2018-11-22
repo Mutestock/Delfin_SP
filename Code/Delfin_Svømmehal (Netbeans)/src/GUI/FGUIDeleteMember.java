@@ -21,7 +21,7 @@ public class FGUIDeleteMember extends javax.swing.JFrame {
 
     public FGUIDeleteMember(JFrame fGui) {
         initComponents();
-        //this.fGUI = (FGUI) fGui;
+        this.fGUI = (FGUI) fGui;
         this.setTitle("Delete member");
     }
 

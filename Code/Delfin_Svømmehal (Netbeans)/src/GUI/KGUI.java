@@ -19,7 +19,7 @@ public class KGUI extends javax.swing.JFrame {
     private KGUIShowSubs kShowSubs;
     private GUIStart guiStart;
 //    private FGUIUpdateMember fGUIUp;
-    private FGUIDeleteMember fGUIDel;
+    private KGUIDeleteMember kGUIDel;
     
     /**
      * Creates new form KGUI
@@ -32,7 +32,7 @@ public class KGUI extends javax.swing.JFrame {
         this.setResizable(false);
         guiStart = (GUIStart) kGUI;
         kShowSubs = new KGUIShowSubs(this);
-        fGUIDel = new FGUIDeleteMember(this);
+        kGUIDel = new KGUIDeleteMember(this);
     }
 
     /**
@@ -141,7 +141,7 @@ public class KGUI extends javax.swing.JFrame {
     private void delSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delSubButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        fGUIDel.setVisible(true);
+        kGUIDel.setVisible(true);
     }//GEN-LAST:event_delSubButtonActionPerformed
 
     private void addSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSubButtonActionPerformed
