@@ -1,3 +1,2 @@
-Emil,21,12345678,true,true,false,true,false,0,1600.
-Ahmed,61,12344321,false,false,true,true,false,0,500.
-Henning,15,12345677,false,true,false,false,true,0,500.
+Jason,19,11223344,true,true,false,true,false,0,1600.
+oasudhf,24,87654321,true,true,false,true,false,0,1600.

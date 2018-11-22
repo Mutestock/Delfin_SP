@@ -91,16 +91,17 @@ public class Controller {
 //                line = reader.readLine();
 //            }
             String line;
-            while((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 String[] tokens = line.split(",");
                 String phone2 = tokens[2];
-                if(!phone2.equals(phone)) continue;
+                if (!phone2.equals(phone)) {
+                    continue;
+                }
                 String firstname = tokens[0];
                 int age = Integer.parseInt(tokens[1]);
                 boolean isActive = Boolean.parseBoolean(tokens[3]);
                 boolean isCompetetive = Boolean.parseBoolean(tokens[4]);
-                
-                
+
                 member = new Member(firstname, age, phone, isActive, isCompetetive);
             }
 
@@ -157,9 +158,6 @@ public class Controller {
         return member;
     }
 
-    
-    
-    
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
     public ArrayList<Member> getAllMembers() {
@@ -218,6 +216,39 @@ public class Controller {
                 }
             }
         }
+        return membersList;
+    }
+
+    public ArrayList<Kontingent> getAllSubs2() throws FileNotFoundException, IOException {
+        FilePrinter f = new FilePrinter(FilePrinter.getFilePathKontingent(), FilePrinter.getPrintwriter(FilePrinter.getFilePathKontingent()));
+        f.getFileInfo(FilePrinter.getFilePathKontingent());
+
+        String inputFileName = FilePrinter.getFilePathKontingent();
+        String outputFileName = FilePrinter.getFilePathKontingent();
+
+        File inputFile = new File(inputFileName);
+
+        int counter = 0;
+
+        Member member;
+
+        ArrayList<Kontingent> membersList = new ArrayList();
+        ArrayList<String> allMembers = f.getFileArrayList();
+        String line = "";
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        while ((line = reader.readLine()) != null) {
+            String[] tokens = line.split(",");
+            String phone2 = tokens[2];
+            String firstname = tokens[0];
+            int age = Integer.parseInt(tokens[1]);
+//            int phone = Integer.parseInt(tokens[2]);
+            boolean isActive = Boolean.parseBoolean(tokens[3]);
+            boolean isCompetetive = Boolean.parseBoolean(tokens[4]);
+            member = new Member(line, age, phone2, isActive, isCompetetive);
+            Kontingent k = new Kontingent(member, counter, isActive, isCompetetive);
+            membersList.add(k);
+        }
+
         return membersList;
     }
 
@@ -315,6 +346,37 @@ public class Controller {
         }
     }
 
+    public void deleteSubscriber(String phone) {
+        String inputFileName = FilePrinter.getFilePathKontingent();
+        String outputFileName = FilePrinter.getFilePathKontingent();
+        String lineToRemove = phone;
+
+        File inputFile = new File(inputFileName);
+        File outputFile = new File(outputFileName);
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            String line = reader.readLine();
+            ArrayList<String> temp = new ArrayList();
+            while (line != null) {
+                if (!line.contains(lineToRemove)) {
+                    temp.add(line);
+                }
+                line = reader.readLine();
+            }
+            reader.close();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
+            for (int i = 0; i < temp.size(); ++i) {
+                writer.write(temp.get(i));
+                writer.newLine();
+            }
+            writer.close();
+
+        } catch (IOException e) {
+        }
+    }
+
     public void registerMember(Member member) {
         Registration r = new Registration();
         r.registerMember(member);
@@ -350,7 +412,6 @@ public class Controller {
 //        int subReturn = k.getSubFee();
 //        return subReturn;
 //    }
-
     public ArrayList<Kontingent> getAllSubscribers() {
         FilePrinter fp = new FilePrinter(FilePrinter.getFilePathKontingent(), FilePrinter.getPrintwriter(FilePrinter.getFilePathKontingent()));
         fp.getFileInfo(FilePrinter.getFilePathKontingent());

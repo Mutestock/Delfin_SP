@@ -5,6 +5,7 @@
  */
 package Kontingent;
 
+import Controller.Controller;
 import FormandAdgang.FilePrinter;
 import FormandAdgang.Member;
 import java.io.BufferedReader;
@@ -12,6 +13,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import jdk.nashorn.internal.parser.TokenType;
 
 /**
  *
@@ -19,6 +21,7 @@ import java.util.ArrayList;
  */
 public class Kontingent {
 
+    static ArrayList<Member> registeredMembers = new ArrayList();
     private Member member;
     private int subYear;
     private int fee;
@@ -30,16 +33,39 @@ public class Kontingent {
         this.subYear = subYear;
         this.wasActive = wasActive;
         this.wasCompetitive = wasCompetitive;
-        
+
     }
 
     public static void registerKontingent(Kontingent k) {
+
+        ArrayList<String> list = new ArrayList();
         System.out.println("##########################");
         System.out.println(k);
         String path = FilePrinter.getFilePathKontingent();
+
+        int fee = 0;
+        if (k.member.isActive() == true) {
+            if (k.member.getAge() >= 60) {
+                fee = 1200;
+            } else if (k.member.getAge() >= 18) {
+                fee = 1600;
+            } else {
+                fee = 1000;
+            }
+        } else {
+            fee = 500;
+        }
+
         PrintWriter print = FilePrinter.getPrintwriter(path);
-        String output = k.member.getName()+","+k.member.getAge()+","+k.member.getPhone()+","+k.wasActive+","+k.wasCompetitive+k.getSubYear()+k.getSubFee();
-        print.println(k);
+        FilePrinter fp = new FilePrinter(path, print);
+        String output = k.member.getName() + "," + k.member.getAge() + "," + k.member.getPhone() + "," + k.wasActive + "," + k.wasCompetitive + k.getSubYear() + k.getSubFeeKVersion(k);
+        list.add(output);
+        System.out.println(list);
+
+        for (int i = 0; i < list.size(); ++i) {
+            print.println(list.get(i).toString());
+        }
+//        print.println(output);
         print.close();
     }
     public Member getMember() {
@@ -59,7 +85,22 @@ public class Kontingent {
             } else {
                 fee = 1000;
             }
-        } else {
+        } else if (member.isActive() == false) {
+            fee = 500;
+        }
+        return fee;
+    }
+    
+        public int getSubFeeKVersion(Kontingent k) {
+        if (k.member.isActive() == true) {
+            if (k.member.getAge() >= 60) {
+                fee = 1200;
+            } else if (k.member.getAge() >= 18) {
+                fee = 1600;
+            } else {
+                fee = 1000;
+            }
+        } else if(k.member.isActive() == false) {
             fee = 500;
         }
         return fee;
@@ -67,7 +108,7 @@ public class Kontingent {
 
     @Override
     public String toString() {
-        return member.getName() + member.getAge()+ member.getPhone() +  member.isActive() + member.isCompetetive() + getSubYear() + getSubFee();
+        return member.getName() + member.getAge() + member.getPhone() + member.isActive() + member.isCompetetive() + getSubYear() + getSubFee();
     }
 
 }

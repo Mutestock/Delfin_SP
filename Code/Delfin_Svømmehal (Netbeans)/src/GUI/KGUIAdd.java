@@ -94,11 +94,6 @@ public class KGUIAdd extends javax.swing.JFrame {
         });
 
         MenuButton.setText("Menu");
-        MenuButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuButtonActionPerformed(evt);
-            }
-        });
 
         ageIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,7 +261,8 @@ public class KGUIAdd extends javax.swing.JFrame {
       //  Kontingent k = new Kontingent(member, subYear);
 
         // makes sure that the input fields is always clean when it is open again
-        c.createSubscriber(member, subYear, active, comp);
+        //c.createSubscriber(member, subYear, active, comp);
+        c.registerSubscriber(member, subYear, active, comp);
         
 
 
@@ -300,10 +296,6 @@ public class KGUIAdd extends javax.swing.JFrame {
     private void subCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCheckActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subCheckActionPerformed
-
-    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
