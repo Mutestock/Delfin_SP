@@ -38,9 +38,7 @@ public class GUIShowMembers extends javax.swing.JFrame {
         initComponents();
         //this.guiF = (FGUI) Gui;
 
-
         this.sGUI = (GUIStart) Gui;
-
 
         //this.sGUI = (GUIStart) Gui;
 

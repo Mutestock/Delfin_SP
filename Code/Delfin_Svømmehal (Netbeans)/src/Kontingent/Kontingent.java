@@ -67,9 +67,7 @@ public class Kontingent {
         }
 //        print.println(output);
         print.close();
-
     }
-
     public Member getMember() {
         return member;
     }

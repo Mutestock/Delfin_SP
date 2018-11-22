@@ -7,6 +7,7 @@ package GUI;
 
 import Controller.Controller;
 import FormandAdgang.Member;
+import Kontingent.Kontingent;
 import javax.swing.JFrame;
 
 /**

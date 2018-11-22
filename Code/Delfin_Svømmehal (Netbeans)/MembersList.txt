@@ -1,4 +1,5 @@
 Emil,21,12345678,true,true,false,true,false,0,1600.
+<<<<<<< HEAD
 ,22,12345698,false,false,false,true,false,0,500.
 ,27,3189458943,false,false,false,true,false,0,500.
 ,99,1234895,false,true,true,true,false,0,500.
@@ -13,3 +14,7 @@ lasse ,25,52525225,true,true,false,true,false,0,1600.
 Jake,21,12345678,true,true,false,true,false,0,1600.
 Johnson,17,13371337,false,true,false,false,true,0,500.
 asdf,78,13371337,true,true,true,true,false,0,1200.
+=======
+Ahmed,61,12344321,false,false,true,true,false,0,500.
+Henning,15,12345677,false,true,false,false,true,0,500.
+>>>>>>> b9f3d464c7f245072bc557fc17a65061c30372db

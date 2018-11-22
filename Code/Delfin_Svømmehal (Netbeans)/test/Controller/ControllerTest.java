@@ -38,9 +38,6 @@ public class ControllerTest {
 
     }
 
-    @Test
-    public static void testgetMember() {
-        Member instance1 = new Member("teis", 7, "12345678", true, true);
-    }
-
+    
+    
 }
