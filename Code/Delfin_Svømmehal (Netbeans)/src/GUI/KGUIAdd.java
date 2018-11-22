@@ -94,6 +94,11 @@ public class KGUIAdd extends javax.swing.JFrame {
         });
 
         MenuButton.setText("Menu");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuButtonActionPerformed(evt);
+            }
+        });
 
         ageIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,6 +301,11 @@ public class KGUIAdd extends javax.swing.JFrame {
     private void subCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subCheckActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subCheckActionPerformed
+
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        this.setVisible(false);
+        guiStart.setVisible(true);
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
