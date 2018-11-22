@@ -33,9 +33,7 @@ public class Kontingent {
         PrintWriter print = FilePrinter.getPrintwriter(path);
         print.println(k);
         print.close();
-
     }
-
     public Member getMember() {
         return member;
     }
