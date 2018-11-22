@@ -6,7 +6,7 @@
 Register of the new members.  
 Removal of exsisting members.  
 Updating current members.  
-Adding personal records of the competitive swimmers based on the following categories: butterfly, backstroke, cheststroke and free.  
+Adding personal records of the competitive swimmers based on the following categories  butterfly, backstroke, cheststroke and free.  
 Keeping track of who has the top 5 results in the club.  
 adding subscription to memebers.  
 And other various specific methods of handling the members.  
@@ -25,3 +25,4 @@ User case and domain diagram can be opened through https://www.draw.io/
 
 
 
+  
