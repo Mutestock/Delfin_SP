@@ -189,6 +189,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="subCheck">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subCheckActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ConfirmButton">
       <Properties>

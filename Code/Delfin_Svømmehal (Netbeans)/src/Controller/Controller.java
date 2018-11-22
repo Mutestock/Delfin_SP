@@ -61,6 +61,8 @@ public class Controller {
     //createMember creates a new instance of a member and adds it to the .txt file.
     public void createMember(String name, int age, String phone, boolean activityForm, boolean competetive) {
         Member member = new Member(name, age, phone, activityForm, competetive);
+        System.out.println("&&&&&&&&&");
+        System.out.println(member);
         Registration r = new Registration();
         r.registerMember(member);
     }
@@ -79,66 +81,85 @@ public class Controller {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            String line = reader.readLine();
-            String temp = new String();
-            while (line != null) {
-                if (line.contains(lineToUpdate)) {
-                    temp = line;
-                    break;
-                }
-                line = reader.readLine();
+//            String line = reader.readLine();
+//            String temp = new String();
+//            while (line != null) {
+//                if (line.contains(lineToUpdate)) {
+//                    temp = line;
+//                    break;
+//                }
+//                line = reader.readLine();
+//            }
+            String line;
+            while((line = reader.readLine()) != null){
+                String[] tokens = line.split(",");
+                String phone2 = tokens[2];
+                if(!phone2.equals(phone)) continue;
+                String firstname = tokens[0];
+                int age = Integer.parseInt(tokens[1]);
+                boolean isActive = Boolean.parseBoolean(tokens[3]);
+                boolean isCompetetive = Boolean.parseBoolean(tokens[4]);
+                
+                
+                member = new Member(firstname, age, phone, isActive, isCompetetive);
             }
+
             reader.close();
 
-            String name = "";
-            String parseAge = "";
-            boolean activityForm = false;
-            boolean competetive = false;
-            int counter = 0;
-            for (int i = 0; i < line.length(); ++i) {
-                if (line.charAt(i) == ',') {
-                    counter++;
-                }
-
-                if (counter == 0) {
-                    name += line.charAt(i);
-                }
-
-                if (counter == 1) {
-                    if (line.charAt(i) == ',') {
-
-                    } else {
-                        parseAge += line.charAt(i);
-                    }
-                }
-
-                if (counter == 2) {
-                    if (line.charAt(i) == ',') {
-                    } else {
-                        if (line.charAt(i) == 't') {
-                            activityForm = true;
-                        }
-                    }
-                }
-
-                if (counter == 3) {
-                    if (line.charAt(i) == ',') {
-                    } else {
-                        if (line.charAt(i) == 't') {
-                            competetive = true;
-                        }
-                    }
-                }
-            }
-            System.out.println(parseAge);
-            int age = Integer.parseInt(parseAge);
-            member = new Member(name, age, phone, activityForm, competetive);
+//            String name = "";
+//            String parseAge = "";
+//            boolean activityForm = false;
+//            boolean competetive = false;
+//            int counter = 0;
+//            for (int i = 0; i < line.length(); ++i) {
+//                if (line.charAt(i) == ',') {
+//                    counter++;
+//                }
+//
+//                if (counter == 0) {
+//                    name += line.charAt(i);
+//                }
+//
+//                if (counter == 1) {
+//                    if (line.charAt(i) == ',') {
+//
+//                    } else {
+//                        parseAge += line.charAt(i);
+//                    }
+//                }
+//
+//                if (counter == 2) {
+//                    if (line.charAt(i) == ',') {
+//                    } else {
+//                        if (line.charAt(i) == 't') {
+//                            activityForm = true;
+//                        }
+//                    }
+//                }
+//
+//                if (counter == 3) {
+//                    if (line.charAt(i) == ',') {
+//                    } else {
+//                        if (line.charAt(i) == 't') {
+//                            competetive = true;
+//                        }
+//                    }
+//                }
+//            }
+//            System.out.println(parseAge);
+//            int age = Integer.parseInt(parseAge);
+//            member = new Member(name, age, phone, activityForm, competetive);
+            System.out.println("%%%%%%%%%%%%%%%%%%%%");
+            System.out.println(member);
 
         } catch (Exception e) {
         }
         return member;
     }
 
+    
+    
+    
     //Returns a list of all the members that is contained by the .txt file from
     //getFilePath();
     public ArrayList<Member> getAllMembers() {
@@ -247,7 +268,7 @@ public class Controller {
         }
         return senior;
     }
-    
+
 //     public ArrayList<Kontingent> getByYear() {
 //        ArrayList<Kontingent> kontingent = getAllSubscribers();
 //        ArrayList<Kontingent> byYear = new ArrayList();
@@ -262,7 +283,6 @@ public class Controller {
 //        }
 //        return senior;
 //    }
-
     //Deletes all lines containing the contents of lineToRemove from a .txt
     public void deleteMember(String phone) {
         String inputFileName = FilePrinter.getFilePath();
@@ -315,15 +335,21 @@ public class Controller {
         r.registerMember(member);
     }
 
-    public Kontingent createSubscriber(Member member, int subYear) {
-        Kontingent k = new Kontingent(member, subYear);
+    public Kontingent createSubscriber(Member member, int subYear, boolean active, Boolean competitive) {
+        Kontingent k = new Kontingent(member, subYear, active, competitive);
         return k;
     }
 
-    public void registerSubscriber(Member member, int subYear) {
-        Kontingent k = new Kontingent(member, subYear);
+    public void registerSubscriber(Member member, int subYear, boolean active, Boolean competitive) {
+        Kontingent k = new Kontingent(member, subYear, active, competitive);
         Kontingent.registerKontingent(k);
     }
+
+//    public int getKFee(Member member, int subYear) {
+//        Kontingent k = new Kontingent(member, subYear);
+//        int subReturn = k.getSubFee();
+//        return subReturn;
+//    }
 
     public ArrayList<Kontingent> getAllSubscribers() {
         FilePrinter fp = new FilePrinter(FilePrinter.getFilePathKontingent(), FilePrinter.getPrintwriter(FilePrinter.getFilePathKontingent()));
@@ -340,6 +366,10 @@ public class Controller {
             String phone = "";
 
             String parseSubYear = "";
+            boolean activityForm = false;
+            String act = "";
+            boolean competetive = false;
+            String comp = "";
 
             for (int j = 0; j < fileInfo.get(i).length(); ++j) {
                 if (fileInfo.get(i).charAt(j) == '}' || fileInfo.get(i).charAt(j) == ',' || fileInfo.get(i).charAt(j) == '{') {
@@ -350,13 +380,24 @@ public class Controller {
                     parseAge += fileInfo.get(i).charAt(j);
                 } else if (counter == 3) {
                     phone += fileInfo.get(i).charAt(j);
-                } else if (counter == 4 && fileInfo.get(i).charAt(j) != '.') {
+                } else if (counter == 4) {
+                    act += fp.getFileArrayList().get(i).charAt(j);
+                    if (act.contains("true")) {
+                        activityForm = true;
+                    }
+                } else if (counter == 5) {
+                    comp += fp.getFileArrayList().get(i).charAt(j);
+                    if (comp.contains("true")) {
+                        competetive = true;
+                    }
+                } else if (counter == 6 && fileInfo.get(i).charAt(j) != '.') {
                     parseSubYear += fileInfo.get(i).charAt(j);
+
                 } else if (fileInfo.get(i).charAt(j) == '.') {
                     int age = Integer.parseInt(parseSubYear);
                     Member member = new Member(name, age, phone, true, true);
                     int subYear = Integer.parseInt(parseSubYear);
-                    Kontingent k = new Kontingent(member, subYear);
+                    Kontingent k = createSubscriber(member, subYear, activityForm, competetive);
                     subscriberList.add(k);
                     counter = 0;
                 }
